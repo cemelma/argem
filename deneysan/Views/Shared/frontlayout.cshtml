@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    @*<meta name="viewport" content="width=device-width" />*@
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>@ViewBag.Title</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link href="/css/jquery-ui-1.10.3.custom.css" rel="stylesheet" />
+    <!--<link href="css/animate.css" rel="stylesheet" />-->
+    <link href="/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/css/blue.css" id="style-switch" />
+    <!-- REVOLUTION BANNER CSS SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="/rs-plugin/css/settings.min.css" media="screen" />
+    <!--[if IE 9]>
+        <link rel="stylesheet" type="text/css" href="/css/ie9.css" />
+    <![endif]-->
+    <link rel="icon" type="image/png" href="images/fevicon.png">
+    <link rel="stylesheet" type="text/css" href="/css/slides.css" />
+    <link rel="stylesheet" type="text/css" href="css/inline.min.css" />
+
+    @*<script src="/Content/Scripts/modernizr-2.5.3.js"></script>
+    <script src="~/Content/Scripts/modernizr-2.0.4.min.js"></script>*@
+</head>
+<body>
+    <div id="loader-overlay"><img src="images/loader.gif" alt="Loading" /></div>
+    <header>
+
+        <div class="header-bg">
+
+            <div id="search-overlay">
+                <div class="container">
+                    <div id="close">X</div>
+
+                    <input id="hidden-search" type="text" placeholder="Start Typing..." autofocus autocomplete="off" /> <!--hidden input the user types into-->
+                    <input id="display-search" type="text" placeholder="Start Typing..." autofocus autocomplete="off" /> <!--mirrored input that shows the actual input value-->
+                </div>
+            </div>
+
+
+            <!--Topbar-->
+            <div class="topbar-info no-pad">
+                <div class="container">
+                    <div class="social-wrap-head col-md-2 no-pad">
+                        <ul>
+                            <li><a href="#"><i class="icon-facebook head-social-icon" id="face-head" data-original-title="" title=""></i></a></li>
+                            <li><a href="#"><i class="icon-social-twitter head-social-icon" id="tweet-head" data-original-title="" title=""></i></a></li>
+                            <li><a href="#"><i class="icon-google-plus head-social-icon" id="gplus-head" data-original-title="" title=""></i></a></li>
+                            <li><a href="#"><i class="icon-linkedin head-social-icon" id="link-head" data-original-title="" title=""></i></a></li>
+                            <li><a href="#"><i class="icon-rss head-social-icon" id="rss-head" data-original-title="" title=""></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="top-info-contact pull-right col-md-6">
+                        Yeni Sanayi Sitesi 60. Sok. No:2-1/A KARESİ BALIKESİR   |   0 266 246 2 274<div id="search" class="fa fa-search search-head"></div>
+                    </div>
+                </div>
+            </div><!--Topbar-info-close-->
+
+
+
+            <div id="headerstic">
+
+                <div class=" top-bar container">
+                    <div class="row">
+                        <nav class="navbar navbar-default" role="navigation">
+                            <div class="container-fluid">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+
+                                    <button type="button" class="navbar-toggle icon-list-ul" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                        <span class="sr-only">Toggle navigation</span>
+                                    </button>
+                                    <button type="button" class="navbar-toggle icon-rocket" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                                        <span class="sr-only">Toggle navigation</span>
+                                    </button>
+                                    <a href="index.html"><div class="logo"></div></a>
+                                </div>
+
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li class="active"><a href="index.html"><i class="icon-home"></i>Anasayfa</a></li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog"></i>Kurumsal<b class="icon-angle-down"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Hakkımızda</a></li>
+                                                <li><a href="#">Misyon / Vizyon</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Projeler</a></li>
+                                        <li><a href="#">Haberler</a></li>
+                                        <li><a href="#">Referanslar</a></li>
+                                        <li><a href="#">İletişim</a></li>
+
+                                    </ul>
+                                </div><!-- /.navbar-collapse -->
+
+
+                                <div class="hide-mid collapse navbar-collapse option-drop" id="bs-example-navbar-collapse-2">
+
+
+                                    <ul class="nav navbar-nav navbar-right other-op">
+                                        <li><i class="icon-phone2"></i>+91 9028556688</li>
+                                        <li><i class="icon-mail"></i><a href="#" class="mail-menu">demo@companyname.com</a></li>
+
+                                        <li>
+                                            <i class="icon-globe"></i>
+                                            <a href="#" class="mail-menu"><i class="icon-facebook"></i></a>
+                                            <a href="#" class="mail-menu"><i class="icon-google-plus"></i></a>
+                                            <a href="#" class="mail-menu"><i class="icon-linkedin"></i></a>
+                                            <a href="#" class="mail-menu"><i class="icon-social-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <i class="icon-search"></i>
+                                            <div class="search-wrap">
+                                                <input type="text" id="search-text" class="search-txt" name="search-text">
+                                                <button id="searchbt" name="searchbt" class="icon-search search-bt"></button>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div><!-- /.navbar-collapse -->
+
+                                <div class="hide-mid collapse navbar-collapse cart-drop" id="bs-example-navbar-collapse-3">
+
+
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li><a href="#"><i class="icon-cart"></i>0 item(s) - $0.00</a></li>
+                                        <li><a href="#"><i class="icon-user"></i>My Account</a></li>
+                                    </ul>
+                                </div><!-- /.navbar-collapse -->
+
+
+
+                            </div><!-- /.container-fluid -->
+                        </nav>
+                    </div>
+                </div><!--Topbar End-->
+            </div>
+        </div>
+    </header>
+
+
+    <div class="complete-content">
+    
+        @RenderBody()
+
+        <div class="cl-wrap icl-wrap">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-left client-logo-flex wow fadeInUp" data-wow-delay="0.5s" data-wow-offset="100">
+                        <ul id="clients-carousel" class="icl-carousel">
+                            <li><a href="#"><img src="/images/nlogo1.png" alt="" class="img-responsive client-logo-img" /></a></li>
+                            <li><a href="#"><img src="/images/nlogo2.png" alt="" class="img-responsive client-logo-img" /></a></li>
+                            <li><a href="#"><img src="/images/nlogo3.png" alt="" class="img-responsive client-logo-img" /></a></li>
+                            <li><a href="#"><img src="/images/nlogo4.png" alt="" class="img-responsive client-logo-img" /></a></li>
+                            <li><a href="#"><img src="/images/nlogo5.png" alt="" class="img-responsive client-logo-img" /></a></li>
+                            <li><a href="#"><img src="/images/nlogo6.png" alt="" class="img-responsive client-logo-img" /></a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="complete-footer">
+        <div class="bottom-footer">
+            <div class="container">
+                <div class="row">
+                    <!--Foot widget-->
+                    <div class="col-xs-12 col-sm-12 col-md-12 foot-widget-bottom">
+                        <p class="col-xs-12 col-md-5 no-pad">ARGEMSAN PROJE ÜRETİM VE DANIŞMANLIK HİZMETLERİ A.Ş. | © 2015</p>
+                        <ul class="foot-menu col-xs-12 col-md-7 no-pad">
+                            <li><a href="#">İletişim</a></li>
+                            <li><a href="#">Referanslar</a></li>
+                            <li><a href="#">Misyonumuz</a></li>
+                            <li><a href="#">Vizyonumuz</a></li>
+                            <li><a href="#">Hakkımızda</a></li>
+                            <li><a href="index.html">Anasayfa</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript" src="/bootstrap-new/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+<script type="text/javascript" src="/js/jquery.scrollUp.min.js"></script>
+<script type="text/javascript" src="/js/jquery.sticky.min.js"></script>
+<script type="text/javascript" src="/js/wow.min.js"></script>
+<script type="text/javascript" src="/js/jquery.flexisel.min.js"></script>
+<script type="text/javascript" src="/js/jquery.imedica.min.js"></script>
+<script type="text/javascript" src="/js/custom-imedicajs.min.js"></script>
+<script type='text/javascript'>
+		$(window).load(function(){
+			$('#loader-overlay').fadeOut(900);
+			$("html").css("overflow","visible");
+		});
+</script>
+

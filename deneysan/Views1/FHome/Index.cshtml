@@ -1,0 +1,119 @@
+﻿@model deneysan.Models.HomePageWrapperModel
+@{
+    ViewBag.Title = "Deneysan Eğitim Cihazları";
+    Layout = "/Views/Shared/frontlayout.cshtml";
+}
+
+<div class="main_content main_equal">
+    <div class="wrapper grid_12" style="margin-right:0; width:720px">
+        <div class="ebso_news_panel">
+            <div id="news_tabs" class="news_tabs">
+                <div id="ebso_haberler" class="ebso_news">
+                    <div class="cycle">
+                       @foreach(var newsitem in Model.news)
+                        {
+                         <div class="news_content">
+                            <div class="news_image">
+                                <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_news/@newsitem.PageSlug/@newsitem.NewsId">
+                                    <img src="@newsitem.NewsImage" alt="@newsitem.Header" width="280" height="230"></a>
+                            </div>
+                            <h2>@newsitem.Header
+                            </h2>
+                            <p>
+                               @newsitem.Spot
+                                 <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_news/@newsitem.PageSlug/@newsitem.NewsId">Devamı »</a>
+                            </p>
+                        </div>
+                        }
+                    </div>
+                    <div class="slide-controls-bar slide-controls"></div>
+                </div>
+                <ul class="news_tab_menu ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                    <div class="ebso_arsiv"><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_allnews">» @HomeRess.HomeStrings.allnews</a></div>
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main_sidebar main_equal" style="height: 305px; border-left: 1px solid #eee; border-right: 1px solid #eee;">
+    <div class="wrapper grid_4">
+        <div class="box kurumsal">
+            <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_products"><img src="@HomeRess.HomeStrings.ourproductsimage" /></a>
+            <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_offer"><img src="@HomeRess.HomeStrings.takeofferimage" /></a>
+            <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_career"><img src="@HomeRess.HomeStrings.workwithusimage" /></a>
+        </div>
+
+    </div>
+</div>
+<a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_projects">
+    <div class="column one-third  ">
+        <div class="bordered-box-content">
+            <div class="box-container">
+                <div class="icon"><span class="projects-icon"></span></div>
+                <h2>@HomeRess.HomeStrings.ourprojects</h2>
+                <p>
+                    @HomeRess.HomeStrings.projectBoxContent
+                </p>
+            </div>
+            <span class="border"></span>
+        </div>
+    </div>
+</a>
+<a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_documents">
+    <div class="column one-third">
+        <div class="bordered-box-content">
+            <div class="box-container">
+                <div class="icon"><span class="strategy-icon"></span></div>
+                <h2>@HomeRess.HomeStrings.documents</h2>
+                <p>
+                    @HomeRess.HomeStrings.documentBoxContent
+                </p>
+            </div>
+            <span class="border"></span>
+        </div>
+    </div>
+</a>
+<a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_links">
+    <div class="column one-third last">
+        <div class="bordered-box-content">
+            <div class="box-container">
+                <div class="icon"><span class="connection-icon"></span></div>
+                <h2>@HomeRess.HomeStrings.links</h2>
+                <p>
+                   @HomeRess.HomeStrings.linkBoxContent
+                </p>
+            </div>
+            <span class="border"></span>
+        </div>
+    </div>
+</a>
+<div class="clients-skin-carousel">
+    <div style="width: 960px; margin: 0 auto;">
+        <h2>@HomeRess.HomeStrings.references</h2>
+        <ul class="clients-carousel">
+            @foreach(var reference in Model.references)
+            {
+            <li>
+                <a href="@reference.Link" target="_blank" title="@reference.ReferenceName"><img src="@reference.Logo" width="96" height="96" alt="" title="" /></a>
+            </li>
+            }
+        </ul>
+    </div>
+</div>
+
+<script> 
+    $(document).ready(function () {
+
+        $('.clients-carousel').jcarousel({
+            auto: 1, //delay 3 seconds
+            wrap: 'circular',
+            animation: 1000,
+            scroll: 1
+        });
+        //jQuery('.clients-carousel').jcarousel();
+        //setTimeout(function () {
+        //        jQuery('.jcarousel-next').trigger('click');
+        //    }, 1000);
+    });
+</script>

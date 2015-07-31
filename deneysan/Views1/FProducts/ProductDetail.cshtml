@@ -1,0 +1,166 @@
+﻿@model deneysan_DAL.Entities.Product
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/Styles/portfolio.css" type="text/css" />
+<script src="/Content/Scripts/jquery.prettyPhoto.js"></script>
+<link href="/Content/Styles/prettyPhoto.css" rel="stylesheet" />
+<link href="~/Content/Styles/jquery.gritter.css" rel="stylesheet" />
+<script src="~/Content/Scripts/jquery.gritter.min.js"></script>
+<script>
+    $(function () {
+        $(".gallery a").live("click", function () {
+            $('img').bind('contextmenu', function (e) {
+                return false;
+            });
+        });
+        
+    });
+    </script>
+<div class="main_content mainpage pageheight" style="">
+    <div class="wrapper mainpage grid_12">
+        <div class="content_page page">
+
+            <h2 style="float:left; width: 800px;">@Model.Name</h2>
+            @{
+                string sharelink = "http://www.facebook.com/sharer.php?u=" + Request.Url.AbsoluteUri;
+            }
+            <button type="button" onclick="history.go(-1)" style="cursor:pointer">&lt;&lt; @SharedRess.SharedStrings.goback</button>
+            <hr class="wide" />
+            <div class="news_panel grid_4">
+                <div class="news_main_image">
+                    <ul class="gallery clearfix">
+                        <li>
+                            <a href="@Model.ProductImage" rel="prettyPhoto" title="@Model.Name">
+                                <img id="contentmain_imgnews" title="@Model.Name" src="@Model.ProductImage" style="height: 160px; width: 200px;" />
+                            </a>
+                           
+                        </li>
+                    </ul>
+                </div>
+                <div id="contentmain_divrelateddocuments" class="news_task list">
+                    <h3><span id="contentmain_lblrelateddocumentsheader">@ProductRess.ProductStrings.relateddocs</span></h3>
+                    <ul>
+                        @if (Model.filetechnical != null)
+                        {
+                            <li class="fl100">
+                                <div class="icon">
+                                    <a target="_blank" href='@Model.filetechnical' title="@ProductRess.ProductStrings.productinfo">
+                                        <img src='/Content/Images/Front/@(Model.filetechnical.Split('.')[1].ToString()).png' title='@(Model.filetechnical.Split('.')[1].ToString())' width='32' height='32' /></a>
+                                </div>
+                                <div class="dosya"><a target="_blank" href='@Model.filetechnical' title="@ProductRess.ProductStrings.productinfo">@ProductRess.ProductStrings.productinfo<span>@(Model.filetechnical.Split('.')[1].ToUpper().ToString())</span></a></div>
+                            </li>
+                        }
+
+                        @if (Model.filetraining != null)
+                        {
+                            <li class="fl100">
+                                <div class="icon">
+                                    <a target="_blank" href='@Model.filetraining' title="@ProductRess.ProductStrings.techspecs">
+                                        <img src='/Content/Images/Front/@(Model.filetraining.Split('.')[1].ToString()).png' title='@(Model.filetraining.Split('.')[1].ToString())' width='32' height='32' /></a>
+                                </div>
+                                <div class="dosya"><a target="_blank" href='@Model.filetraining' title="@ProductRess.ProductStrings.techspecs">@ProductRess.ProductStrings.techspecs<span>@(Model.filetraining.Split('.')[1].ToUpper().ToString())</span></a></div>
+                            </li>
+                        }
+
+                        @if (Model.filexperiment != null)
+                        {
+                            <li class="fl100">
+                                <div class="icon">
+                                    <a target="_blank" href='@Model.filexperiment' title="@ProductRess.ProductStrings.sampleexp">
+                                        <img src='/Content/Images/Front/@(Model.filexperiment.Split('.')[1].ToString()).png' title='@(Model.filexperiment.Split('.')[1].ToString())' width='32' height='32' /></a>
+                                </div>
+                                <div class="dosya"><a target="_blank" href='@Model.filexperiment' title="@ProductRess.ProductStrings.sampleexp">@ProductRess.ProductStrings.sampleexp<span>@(Model.filexperiment.Split('.')[1].ToUpper().ToString())</span></a></div>
+                            </li>
+                        }
+
+                        @if (Model.filevideo != null)
+                        {
+                            <li class="fl100">
+                                <div class="icon">
+                                    <a target="_blank" href='@Model.filevideo' title="@ProductRess.ProductStrings.video">
+                                        <img src='/Content/Images/Front/@(Model.filevideo.Split('.')[1].ToString()).png' title='@(Model.filevideo.Split('.')[1].ToString())' width='32' height='32' /></a>
+                                </div>
+                                <div class="dosya"><a target="_blank" href='@Model.filevideo' title="@ProductRess.ProductStrings.video">@ProductRess.ProductStrings.video<span>@(Model.filevideo.Split('.')[1].ToUpper().ToString())</span></a></div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="clear"></div>
+                <script>
+                    $(document).ready(function () {
+                        $("a[rel^='prettyPhoto']").prettyPhoto({ social_tools: false });
+                    });                </script>
+            </div>
+            <div class="wrap_content grid_7">
+                <span id="contentmain_lblcontentmenu">
+                    <p>
+                        @Html.Raw(Model.Content)
+                    </p>
+                </span>
+            </div>
+            
+            <div class="wrap_content grid_4" style=" float: right">
+                     <div class="addbtn">
+                         <span style="margin-left:20px; line-height:45px;">
+                            <a id="addToList" href="javascript:void(0); return false;">
+                                TEKLİF LİSTEME EKLE
+                            </a>
+                         </span>
+                     </div>
+                     <div class="sharebtn">
+                         <span style="margin-left:20px; line-height:45px;">
+                            <a href="#" onclick="javascript: facewindow('@sharelink')" >
+                                FACEBOOK'TA PAYLAŞ
+                            </a>
+                         </span>
+                     </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+    </div>
+</div>
+<script>
+
+    function facewindow(url) {
+        yenipencere = window.open(url,
+        "face","location=1,status=1,scrollbars=1,width=600,height=400");
+        yenipencere.moveTo(0, 0);
+    }
+    $(function () {
+        var status = $("#ProcessMessage").val();
+        $("#imgloader").css("display", "none");
+        if (status == "True" || status == "true")
+            MessageBox("İşlem Başarıyla Tamamlandı", "info");
+        else if (status == "False" || status == "false")
+            MessageBox("İşlem Sırasında Bir Hata Oluştu.", "alert");
+
+        $("#addToList").click(function () {
+            var val = '@(Model.ProductId)';
+            if (val != "")
+            {
+                $.ajax({
+                    type: 'POST',
+                    url: '/FProducts/AddToList',
+                    data: '{id:"' + val + '"}',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: 'json',
+                    success: function (result) {
+                        $("#teklifAdedi").text(result);
+                        $.gritter.add({
+                            title: 'Listenize bir adet ürün eklendi!',
+                            text: 'Teklif Listem linkine tıklayarak eklediğiniz ürün ya da ürünleri görebilir, teklif formunu doldurarak talebinizi bize ulaştırabilirsiniz.'
+                        });                        $("#teklifdiv").fadeOut(200).fadeIn(200);                        $("#offerlisttext").css("color", "#F00");
+                        $("#offertextparantez1").css("color", "#F00");
+                        $("#offertextparantez2").css("color", "#F00");
+                        $("#teklifAdedi").css("color", "#F00");                    },
+                    error: function () {
+
+                    }
+                });
+            }
+        });
+    });
+</script>
