@@ -16,6 +16,21 @@ namespace deneysan_DAL.Context
             AutomaticMigrationDataLossAllowed = true;
         }
 
-       
+
+        protected override void Seed(DeneysanContext context)
+        {
+          context.Languages.AddOrUpdate(x => x.LanguageId,
+              new Languages() { LanguageId = 1, Language = "Türkçe",Culture="tr" },
+              new Languages() { LanguageId = 2, Language = "İngilizce",Culture="en" }
+              );
+
+          context.AdminUser.AddOrUpdate(x => x.AdminUserId,
+             new AdminUser() { AdminUserId = 1,FullName= "admin", Password = "123456",Email="admin@admin.com" }
+           
+             );
+
+        
+        }
+
     }
 }
