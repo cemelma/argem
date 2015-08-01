@@ -20,13 +20,13 @@
     <![endif]-->
     <link rel="icon" type="image/png" href="images/fevicon.png">
     <link rel="stylesheet" type="text/css" href="/css/slides.css" />
-    <link rel="stylesheet" type="text/css" href="css/inline.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/inline.min.css" />
 
     @*<script src="/Content/Scripts/modernizr-2.5.3.js"></script>
     <script src="~/Content/Scripts/modernizr-2.0.4.min.js"></script>*@
 </head>
 <body>
-    <div id="loader-overlay"><img src="images/loader.gif" alt="Loading" /></div>
+    <div id="loader-overlay"><img src="/images/loader.gif" alt="Loading" /></div>
     <header>
 
         <div class="header-bg">
@@ -76,7 +76,7 @@
                                     <button type="button" class="navbar-toggle icon-rocket" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
                                         <span class="sr-only">Toggle navigation</span>
                                     </button>
-                                    <a href="index.html"><div class="logo"></div></a>
+                                    <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_homepage"><div class="logo"></div></a>
                                 </div>
 
                                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -84,18 +84,19 @@
 
 
                                     <ul class="nav navbar-nav navbar-right">
-                                        <li class="active"><a href="index.html"><i class="icon-home"></i>Anasayfa</a></li>
+                                        <li class="active"><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_homepage"><i class="icon-home"></i>@SharedRess.SharedStrings.homepage</a></li>
                                         <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog"></i>Kurumsal<b class="icon-angle-down"></b></a>
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog"></i>@SharedRess.SharedStrings.institutional<b class="icon-angle-down"></b></a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="#">Hakkımızda</a></li>
-                                                <li><a href="#">Misyon / Vizyon</a></li>
+                                                <li><a href='/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_institutional'>@SharedRess.SharedStrings.aboutus</a></li>
+                                                <li><a href='/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_visionmision'>@SharedRess.SharedStrings.visionmision</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">Projeler</a></li>
-                                        <li><a href="#">Haberler</a></li>
-                                        <li><a href="#">Referanslar</a></li>
-                                        <li><a href="#">İletişim</a></li>
+                                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.projects">@SharedRess.SharedStrings.projects</a></li>
+                                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_allnews">@SharedRess.SharedStrings.news</a></li>
+                                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_references">@SharedRess.SharedStrings.references</a></li>
+                                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_links">@SharedRess.SharedStrings.links</a></li>
+                                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_contactdetails">@SharedRess.SharedStrings.contact</a></li>
 
                                     </ul>
                                 </div><!-- /.navbar-collapse -->
@@ -150,24 +151,7 @@
     
         @RenderBody()
 
-        <div class="cl-wrap icl-wrap">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-left client-logo-flex wow fadeInUp" data-wow-delay="0.5s" data-wow-offset="100">
-                        <ul id="clients-carousel" class="icl-carousel">
-                            <li><a href="#"><img src="/images/nlogo1.png" alt="" class="img-responsive client-logo-img" /></a></li>
-                            <li><a href="#"><img src="/images/nlogo2.png" alt="" class="img-responsive client-logo-img" /></a></li>
-                            <li><a href="#"><img src="/images/nlogo3.png" alt="" class="img-responsive client-logo-img" /></a></li>
-                            <li><a href="#"><img src="/images/nlogo4.png" alt="" class="img-responsive client-logo-img" /></a></li>
-                            <li><a href="#"><img src="/images/nlogo5.png" alt="" class="img-responsive client-logo-img" /></a></li>
-                            <li><a href="#"><img src="/images/nlogo6.png" alt="" class="img-responsive client-logo-img" /></a></li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div>
     <div class="complete-footer">
         <div class="bottom-footer">

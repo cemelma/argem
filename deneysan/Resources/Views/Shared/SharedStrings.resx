@@ -127,7 +127,7 @@
     <value>Banka Bilgileri</value>
   </data>
   <data name="contact" xml:space="preserve">
-    <value>İLETİŞİM</value>
+    <value>İletişim</value>
   </data>
   <data name="contactdetails" xml:space="preserve">
     <value>İletişim Bilgileri</value>
@@ -142,7 +142,7 @@
     <value>English</value>
   </data>
   <data name="documents" xml:space="preserve">
-    <value>DÖKÜMANLAR</value>
+    <value>Dökümanlar</value>
   </data>
   <data name="email" xml:space="preserve">
     <value>E-posta</value>
@@ -154,13 +154,13 @@
     <value>Geri Dön</value>
   </data>
   <data name="homepage" xml:space="preserve">
-    <value>ANASAYFA</value>
+    <value>Anasayfa</value>
   </data>
   <data name="institutional" xml:space="preserve">
-    <value>KURUMSAL</value>
+    <value>Kurumsal</value>
   </data>
   <data name="links" xml:space="preserve">
-    <value>BAĞLANTILAR</value>
+    <value>Bağlantılar</value>
   </data>
   <data name="map" xml:space="preserve">
     <value>Harita</value>
@@ -207,6 +207,9 @@
   <data name="menu_products" xml:space="preserve">
     <value>urunler</value>
   </data>
+  <data name="menu_project" xml:space="preserve">
+    <value>projeler</value>
+  </data>
   <data name="menu_projects" xml:space="preserve">
     <value>projeler</value>
   </data>
@@ -219,6 +222,9 @@
   <data name="myofferlist" xml:space="preserve">
     <value>Teklif Listem</value>
   </data>
+  <data name="news" xml:space="preserve">
+    <value>Haberler</value>
+  </data>
   <data name="pagetitle" xml:space="preserve">
     <value>DENEYSAN - Eğitim Cihazları</value>
   </data>
@@ -227,6 +233,12 @@
   </data>
   <data name="products" xml:space="preserve">
     <value>ÜRÜNLER</value>
+  </data>
+  <data name="projects" xml:space="preserve">
+    <value>Projeler</value>
+  </data>
+  <data name="references" xml:space="preserve">
+    <value>Referanslar</value>
   </data>
   <data name="requiredfields" xml:space="preserve">
     <value>Lütfen gerekli alanları eksiksiz ve doğru bir şekilde doldurunuz</value>

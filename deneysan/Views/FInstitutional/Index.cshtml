@@ -1,0 +1,34 @@
+﻿@model deneysan_DAL.Entities.Institutional
+@{
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+
+<div class="about-intro-wrap pull-left">
+    <div class="bread-crumb-wrap ibc-wrap-2">
+        <div class="container">
+            <!--Title / Beadcrumb-->
+            <div class="inner-page-title-wrap col-xs-12 col-md-12 col-sm-12">
+                <div class="bread-heading"><h1>@InstitutionalRess.InstitutionalStrings.aboutus</h1></div>
+                <div class="bread-crumb pull-right">
+                    <ul>
+                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_homepage">@SharedRess.SharedStrings.homepage</a></li>
+                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_institutional">@SharedRess.SharedStrings.aboutus</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12 col-sm-12 pull-left full-content wow fadeInLeft animated" data-wow-delay="0.3s" data-wow-offset="130">
+                <div class="full-content-title">@InstitutionalRess.InstitutionalStrings.aboutus</div>
+                @Html.Raw(Model.Content)
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

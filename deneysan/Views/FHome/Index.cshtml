@@ -14,7 +14,7 @@
             <li data-transition="papercut" data-slotamount="7">
 
                 <!-- MAIN IMAGE -->
-                <img src="images/new-slider/s1-bg.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                <img src="/images/new-slider/s1-bg.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
                 <!-- LAYERS -->
                 <!-- LAYER NR. 1 -->
                 <div class="tp-caption lfb skewtoright imed-sl1"
@@ -26,7 +26,7 @@
                      data-easing="Power4.easeOut"
                      data-endspeed="400"
                      data-endeasing="Power1.easeIn">
-                    <img src="images/new-slider/s1-img4.png" alt="" class="img-responsive">
+                    <img src="/images/new-slider/s1-img4.png" alt="" class="img-responsive">
                 </div>
                 <!-- LAYER NR. 2 -->
                 <div class="tp-caption lft skewtoright imed-sl1"
@@ -38,7 +38,7 @@
                      data-easing="Power4.easeOut"
                      data-endspeed="400"
                      data-endeasing="Power1.easeIn">
-                    <img src="images/new-slider/s1-img3.png" alt="" class="img-responsive">
+                    <img src="/images/new-slider/s1-img3.png" alt="" class="img-responsive">
                 </div>
                 <!-- LAYER NR. 3 -->
                 <div class="tp-caption lft skewtoright imed-sl1"
@@ -50,7 +50,7 @@
                      data-easing="Power4.easeOut"
                      data-endspeed="400"
                      data-endeasing="Power1.easeIn">
-                    <img src="images/new-slider/s1-img2.png" alt="" class="img-responsive">
+                    <img src="/images/new-slider/s1-img2.png" alt="" class="img-responsive">
                 </div>
                 <!-- LAYER NR. 4 -->
                 <div class="tp-caption lft skewtoright imed-sl1"
@@ -62,7 +62,7 @@
                      data-easing="Power4.easeOut"
                      data-endspeed="400"
                      data-endeasing="Power1.easeIn">
-                    <img src="images/new-slider/s1-img1.png" alt="" class="img-responsive">
+                    <img src="/images/new-slider/s1-img1.png" alt="" class="img-responsive">
                 </div>
 
                 <!-- LAYER NR. 5 -->
@@ -124,7 +124,7 @@
             <li data-transition="papercut" data-slotamount="7">
 
                 <!-- MAIN IMAGE -->
-                <img src="images/new-slider/s3-bg.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                <img src="/images/new-slider/s3-bg.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
                 <!-- LAYERS -->
                 <!-- LAYER NR. 1 -->
                 <div class="tp-caption sfb skewtoright imed-sl1 rs-parallaxlevel-1"
@@ -136,7 +136,7 @@
                      data-easing="Power4.easeOut"
                      data-endspeed="400"
                      data-endeasing="Power1.easeIn">
-                    <img src="images/new-slider/s3-img1.png" alt="" class="img-responsive">
+                    <img src="/images/new-slider/s3-img1.png" alt="" class="img-responsive">
                 </div>
                 <!-- LAYER NR. 2 -->
                 <div class="tp-caption lfb skewtoright imed-sl1 rs-parallaxlevel-2"
@@ -148,7 +148,7 @@
                      data-easing="Power4.easeOut"
                      data-endspeed="400"
                      data-endeasing="Power1.easeIn">
-                    <img src="images/new-slider/s3-img2.png" alt="" class="img-responsive">
+                    <img src="/images/new-slider/s3-img2.png" alt="" class="img-responsive">
                 </div>
 
                 <!-- LAYER NR. 5 -->
@@ -292,62 +292,48 @@
 
 <div class="container">
     <div class="row">
-
-
-        <!--Latest Post Start-->
-
         <div class="col-xs-12 col-sm-12 col-md-12 pull-left">
 
             <div class="latest-post-wrap pull-left wow fadeInLeft" data-wow-delay="0.5s" data-wow-offset="100">
                 <div class="subtitle col-xs-12 no-pad col-sm-11 col-md-12 pull-left news-sub">Haberler / Duyurular</div>
-
-                <!--Post item-->
-                <div class="post-item-wrap pull-left col-sm-6 col-md-12 col-xs-12">
-                    <img src="images/news-1.png" class="img-responsive post-author-img" alt="" />
-                    <div class="post-content1 pull-left col-md-9 col-sm-9 col-xs-8">
-                        <div class="post-title pull-left"><a href="#">Etiam tristique sagittis pulvinar</a></div>
-                        <div class="post-meta-top pull-left">
-                            <ul>
-                                <li><i class="icon-calendar"></i>25 DEC 2013</li>
-                            </ul>
+                @foreach (var newsitem in Model.news)
+                {
+                    <div class="post-item-wrap pull-left col-sm-6 col-md-12 col-xs-12">
+                        <img src="@newsitem.NewsImage" class="img-responsive post-author-img" alt="@newsitem.Header" style="max-width:88px;" />
+                        <div class="post-content1 pull-left col-md-9 col-sm-9 col-xs-8">
+                            <div class="post-title pull-left"><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_news/@newsitem.PageSlug/@newsitem.NewsId">@newsitem.Header</a></div>
+                            <div class="post-meta-top pull-left">
+                                <ul>
+                                    <li><i class="icon-calendar"></i>@newsitem.TimeCreated.ToString("dd.MM.yyyy")</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="post-content2 pull-left">
+                            <p>@newsitem.Spot
+                                <span class="post-meta-bottom"><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_news/@newsitem.PageSlug/@newsitem.NewsId">Devamı »</a></span>
+                            </p>
                         </div>
                     </div>
-                    <div class="post-content2 pull-left">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam nibh, lobortis et augue et, semper faucibus dui. Sed consequat vulputate rutrum. Quisque rutrum, massa at fermentum semper, erat ex viverra ligula, eget sodales dolor justo ut sapien. Nunc lacus ante, lacinia in nisl quis, convallis vehicula elit. Suspendisse sit amet aliquet nunc. Nunc varius felis justo, sit amet auctor nisi malesuada sit amet. Curabitur maximus ultrices elit.
-
-                            Nulla facilisi. Aliquam imperdiet libero vitae leo hendrerit, et euismod mi maximus. Nulla egestas ligula a leo convallis, vel faucibus justo posuere. Pellentesque dignissim mauris a mi convallis commodo. Donec bibendum eu sem sit amet euismod. Suspendisse nec semper neque, nec commodo justo. Pellentesque iaculis eget quam et consectetur.<br />
-                            <span class="post-meta-bottom"><a href="">Devamı...</a></span>
-                        </p>
-                    </div>
-                </div>
-                <!--Post item-->
-                <div class="post-item-wrap pull-left col-sm-6 col-md-12 col-xs-12">
-                    <img src="images/news-1.png" class="img-responsive post-author-img" alt="" />
-                    <div class="post-content1 pull-left col-md-9 col-sm-9 col-xs-8">
-                        <div class="post-title pull-left"><a href="#">Etiam tristique sagittis pulvinar</a></div>
-                        <div class="post-meta-top pull-left">
-                            <ul>
-                                <li><i class="icon-calendar"></i>25 DEC 2013</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="post-content2 pull-left">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam nibh, lobortis et augue et, semper faucibus dui. Sed consequat vulputate rutrum. Quisque rutrum, massa at fermentum semper, erat ex viverra ligula, eget sodales dolor justo ut sapien. Nunc lacus ante, lacinia in nisl quis, convallis vehicula elit. Suspendisse sit amet aliquet nunc. Nunc varius felis justo, sit amet auctor nisi malesuada sit amet. Curabitur maximus ultrices elit.
-
-                            Nulla facilisi. Aliquam imperdiet libero vitae leo hendrerit, et euismod mi maximus. Nulla egestas ligula a leo convallis, vel faucibus justo posuere. Pellentesque dignissim mauris a mi convallis commodo. Donec bibendum eu sem sit amet euismod. Suspendisse nec semper neque, nec commodo justo. Pellentesque iaculis eget quam et consectetur.<br />
-                            <span class="post-meta-bottom"><a href="">Devamı...</a></span>
-                        </p>
-                    </div>
-                </div>
-
-
-
-                <a href="#" class="dept-details-butt posts-showall">Tümü</a>
+                }
+                <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_allnews" class="dept-details-butt posts-showall">» @HomeRess.HomeStrings.allnews</a>
 
             </div>
         </div>
 
+    </div>
+</div>
+
+<div class="cl-wrap icl-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-left client-logo-flex wow fadeInUp" data-wow-delay="0.5s" data-wow-offset="100">
+                <ul id="clients-carousel" class="icl-carousel">
+                    @foreach (var reference in Model.references)
+                    {
+                        <li><a href="@reference.Link" target="_blank" title="@reference.ReferenceName"><img src="@reference.Logo" width="147" height="86" alt="@reference.ReferenceName" title="@reference.ReferenceName" class="img-responsive client-logo-img"/></a></li>
+                    }
+                </ul>
+            </div>
+        </div>
     </div>
 </div>

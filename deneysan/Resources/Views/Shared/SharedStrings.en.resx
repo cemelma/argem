@@ -127,7 +127,7 @@
     <value>Bank Accounts</value>
   </data>
   <data name="contact" xml:space="preserve">
-    <value>CONTACT</value>
+    <value>Contact</value>
   </data>
   <data name="contactdetails" xml:space="preserve">
     <value>Contact Details</value>
@@ -142,7 +142,7 @@
     <value>Türkçe</value>
   </data>
   <data name="documents" xml:space="preserve">
-    <value>DOCUMENTS</value>
+    <value>Documents</value>
   </data>
   <data name="email" xml:space="preserve">
     <value>E-mail</value>
@@ -154,10 +154,10 @@
     <value>Go Back</value>
   </data>
   <data name="homepage" xml:space="preserve">
-    <value>HOMEPAGE</value>
+    <value>Homepage</value>
   </data>
   <data name="institutional" xml:space="preserve">
-    <value>INSTITUTIONAL</value>
+    <value>Institutional</value>
   </data>
   <data name="links" xml:space="preserve">
     <value>Links</value>
@@ -207,6 +207,9 @@
   <data name="menu_products" xml:space="preserve">
     <value>products</value>
   </data>
+  <data name="menu_project" xml:space="preserve">
+    <value>projects</value>
+  </data>
   <data name="menu_projects" xml:space="preserve">
     <value>projects</value>
   </data>
@@ -219,6 +222,9 @@
   <data name="myofferlist" xml:space="preserve">
     <value>Offer List</value>
   </data>
+  <data name="news" xml:space="preserve">
+    <value>News</value>
+  </data>
   <data name="pagetitle" xml:space="preserve">
     <value>DENEYSAN - Education Devices</value>
   </data>
@@ -227,6 +233,12 @@
   </data>
   <data name="products" xml:space="preserve">
     <value>PRODUCTS</value>
+  </data>
+  <data name="projects" xml:space="preserve">
+    <value>Projects</value>
+  </data>
+  <data name="references" xml:space="preserve">
+    <value>References</value>
   </data>
   <data name="requiredfields" xml:space="preserve">
     <value>Please fill the form completely</value>
