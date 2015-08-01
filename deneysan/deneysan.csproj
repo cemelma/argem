@@ -2545,6 +2545,7 @@
     <Content Include="Views\FInstitutional\Index.cshtml" />
     <Content Include="Views\FInstitutional\VisionMision.cshtml" />
     <Content Include="Views\FReferences\Index.cshtml" />
+    <Content Include="Views\FProjects\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
