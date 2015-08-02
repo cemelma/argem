@@ -120,6 +120,9 @@
   <data name="accountnumber" xml:space="preserve">
     <value>Account Number</value>
   </data>
+  <data name="ad" xml:space="preserve">
+    <value>Name*</value>
+  </data>
   <data name="bank" xml:space="preserve">
     <value>Bank</value>
   </data>
@@ -135,8 +138,20 @@
   <data name="email" xml:space="preserve">
     <value>Email</value>
   </data>
+  <data name="faks" xml:space="preserve">
+    <value>Fax:</value>
+  </data>
+  <data name="konu" xml:space="preserve">
+    <value>Subject*</value>
+  </data>
+  <data name="mail" xml:space="preserve">
+    <value>Email*</value>
+  </data>
   <data name="mapcoordinates" xml:space="preserve">
     <value>Map Coordinates</value>
+  </data>
+  <data name="mesaj" xml:space="preserve">
+    <value>Message*</value>
   </data>
   <data name="message" xml:space="preserve">
     <value>Message</value>
@@ -156,7 +171,13 @@
   <data name="send" xml:space="preserve">
     <value>Send</value>
   </data>
+  <data name="sosyalmedya" xml:space="preserve">
+    <value>Social Media</value>
+  </data>
   <data name="subject" xml:space="preserve">
     <value>Subject</value>
+  </data>
+  <data name="tel" xml:space="preserve">
+    <value>Phone:</value>
   </data>
 </root>

@@ -120,6 +120,9 @@
   <data name="accountnumber" xml:space="preserve">
     <value>Hesap Numarası</value>
   </data>
+  <data name="ad" xml:space="preserve">
+    <value>İsim*</value>
+  </data>
   <data name="bank" xml:space="preserve">
     <value>Banka</value>
   </data>
@@ -135,8 +138,20 @@
   <data name="email" xml:space="preserve">
     <value>Eposta</value>
   </data>
+  <data name="faks" xml:space="preserve">
+    <value>Faks:</value>
+  </data>
+  <data name="konu" xml:space="preserve">
+    <value>Konu*</value>
+  </data>
+  <data name="mail" xml:space="preserve">
+    <value>Email*</value>
+  </data>
   <data name="mapcoordinates" xml:space="preserve">
     <value>Harita Koordinatları</value>
+  </data>
+  <data name="mesaj" xml:space="preserve">
+    <value>Mesaj*</value>
   </data>
   <data name="message" xml:space="preserve">
     <value>Mesaj</value>
@@ -156,7 +171,13 @@
   <data name="send" xml:space="preserve">
     <value>Gönder</value>
   </data>
+  <data name="sosyalmedya" xml:space="preserve">
+    <value>Sosyal Medya</value>
+  </data>
   <data name="subject" xml:space="preserve">
     <value>Başlık</value>
+  </data>
+  <data name="tel" xml:space="preserve">
+    <value>Telefon:</value>
   </data>
 </root>

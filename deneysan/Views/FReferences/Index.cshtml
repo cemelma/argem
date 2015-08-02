@@ -2,29 +2,58 @@
 @{
     Layout = "~/Views/Shared/frontlayout.cshtml";
 }
-<style>
-    .refdiv:hover { background-color:#fafafa; }
-    .refdiv { display: block; float: left; border:1px solid #efefef; padding:5px; height:140px; width:160px; margin: 0 16px 15px 0; }
-</style>
-<div class="main_content mainpage pageheight" style="">
-    <div class="wrapper mainpage grid_12">
-        <div class="content_page page">
-            <h2>@ReferencesRess.ReferencesStrings.references</h2>
-            <hr class="wide" />
-            <div id="reflist">
-                @foreach (var reference in Model)
-                {
-                    <a href="@reference.Link" target="_blank">
-                        <div class="refdiv">
-                            <div style="height:100px; text-align:center">
-                                <img width="96" height="96" src="@reference.Logo" alt="@reference.ReferenceName" />
+                      <style>
+                          .refdiv:hover {
+                              background-color: #fafafa;
+                          }
+
+                          .refdiv {
+                              display: block;
+                              float: left;
+                              border: 1px solid #efefef;
+                              padding: 5px;
+                              height: 140px;
+                              width: 160px;
+                              margin: 0 16px 15px 0;
+                          }
+                      </style>
+<div class="about-intro-wrap pull-left">
+    <div class="bread-crumb-wrap ibc-wrap-2">
+        <div class="container">
+            <!--Title / Beadcrumb-->
+            <div class="inner-page-title-wrap col-xs-12 col-md-12 col-sm-12">
+                <div class="bread-heading"><h1>@ReferencesRess.ReferencesStrings.references</h1></div>
+                <div class="bread-crumb pull-right">
+                    <ul>
+                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_homepage">@SharedRess.SharedStrings.homepage</a></li>
+                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_references">@SharedRess.SharedStrings.references</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12 col-sm-12 pull-left full-content wow fadeInLeft animated" data-wow-delay="0.3s" data-wow-offset="130">
+                <div class="full-content-title">@ReferencesRess.ReferencesStrings.references</div>
+                <br />
+                <div id="reflist">
+                    @foreach (var reference in Model)
+                    {
+                        <a href="@reference.Link" target="_blank">
+                            <div class="refdiv">
+                                <div style="height:100px; text-align:center;">
+                                    <img width="96" height="96" src="@reference.Logo" alt="@reference.ReferenceName" />
+                                </div>
+                                <div style="text-align:center;font-size: 12px;">
+                                    @reference.ReferenceName
+                                </div>
                             </div>
-                            <div style="text-align:center">
-                                @reference.ReferenceName
-                            </div>
-                        </div>
-                    </a>
-                }
+                        </a>
+                    }
+                </div>
+
             </div>
         </div>
     </div>
