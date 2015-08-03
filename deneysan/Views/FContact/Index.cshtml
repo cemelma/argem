@@ -1,0 +1,252 @@
+﻿@model deneysan_DAL.Entities.Contact
+@{
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+
+<section class="complete-content content-footer-space">
+
+    <!--Mid Content Start-->
+
+
+    <div class="about-intro-wrap pull-left">
+
+        <div class="bread-crumb-wrap ibc-wrap-5">
+            <div class="container">
+                <!--Title / Beadcrumb-->
+                <div class="inner-page-title-wrap col-xs-12 col-md-12 col-sm-12">
+                    <div class="bread-heading"><h1>@ContactRess.ContactStrings.contact</h1></div>
+                    <div class="bread-crumb pull-right">
+                        <ul>
+                            <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_homepage">@SharedRess.SharedStrings.homepage</a></li>
+                            <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_contactdetails">@SharedRess.SharedStrings.contactdetails</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--map-->
+        <div class="pull-left map-full no-pad">
+            <div id="map-canvas-2"></div>
+            <div class="map-shadow"></div>
+        </div>
+
+        <div class="container">
+
+
+            <!--About-us top-content-->
+            <div class="row">
+
+
+                <div class="col-xs-12 col-lg-12  col-sm-12 col-md-12 pull-left contact2-wrap">
+
+
+
+
+
+                    <!--Contact form-->
+                    <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 no-pad wow fadeInLeft" data-wow-delay="0.5s" data-wow-offset="100">
+                        <form class="contact2-page-form col-lg-8 col-sm-12 col-md-8 col-xs-12 no-pad contact-v2" id="contactForm">
+
+
+                            <div class="form-title-text no-pad">@ContactRess.ContactStrings.contactform</div>
+
+
+                            <div class="alert alert-success hidden col-lg-12 col-sm-12 col-md-12 col-xs-12" id="contactSuccess">
+                                <strong>Success!</strong> Your message has been sent to us.
+                            </div>
+                            <div class="alert alert-error hidden col-lg-12 col-sm-12 col-md-12 col-xs-12" id="contactError">
+                                <strong>Error!</strong> There was an error sending your message.
+                            </div>
+
+
+
+                            <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                                <input type="text" class="contact2-textbox" placeholder="@ContactRess.ContactStrings.ad" name="name" id="name" />
+                            </div>
+
+                            <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                                <input type="email" class="contact2-textbox" placeholder="@ContactRess.ContactStrings.mail" name="email" id="email" />
+                            </div>
+
+                            <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                                <input type="text" placeholder="@ContactRess.ContactStrings.konu" class="contact2-textbox" name="subject" id="subject">
+                            </div>
+
+
+
+                            <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                                <textarea class="contact2-textarea" placeholder="@ContactRess.ContactStrings.mesaj" name="message" id="message"></textarea>
+                            </div>
+
+                            <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                                <section class="color-7" id="btn-click">
+                                    <button class="icon-mail btn2-st2 btn-7 btn-7b" data-loading-text="Loading..." type="submit">@ContactRess.ContactStrings.send</button>
+
+                                </section>
+                            </div>
+
+
+                        </form>
+
+
+                        <!--Contact Sidebar-->
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+
+
+                            <div class="side-bar-contact">
+                                <div class="form-title-text wow fadeInRight" data-wow-delay="0.5s" data-wow-offset="100">@ContactRess.ContactStrings.contact</div>
+                                <ul class="contact-page-list wow fadeInRight" data-wow-delay="0.5s" data-wow-offset="100">
+                                    <li>
+                                        <i class="icon-globe contact-side-icon iside-icon-contact"></i>
+                                        <span class="contact-side-txt">
+                                            @Model.Address
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <i class="icon-phone2 contact-side-icon"></i>
+                                        <span class="contact-side-txt">
+                                            @ContactRess.ContactStrings.tel <span class="iside-bar-cfont">
+                                                @Model.Phone
+                                            </span>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <i class="icon-file contact-side-icon"></i>
+                                        <span class="contact-side-txt">
+                                            @ContactRess.ContactStrings.faks <span class="iside-bar-cfont">
+                                                @Model.Fax
+                                            </span>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <i class="icon-mail contact-side-icon"></i>
+                                        <span class="contact-side-txt">Email: <a href="mailto:@Model.Email">@Model.Email</a></span>
+                                    </li>
+                                </ul>
+
+                                <div class="form-title-text wow fadeInRight" data-wow-delay="0.5s" data-wow-offset="120">@ContactRess.ContactStrings.sosyalmedya</div>
+                                <ul class="contact-page-social-list-bottom contact-page-social-list wow fadeInRight" data-wow-delay="0.5s" data-wow-offset="120">
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="contact-side-social-wrap">
+                                                <i class="icon-facebook contact-side-social-icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="contact-side-social-wrap"> <i class="icon-google-plus contact-side-social-icon"></i></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="contact-side-social-wrap"> <i class="icon-linkedin contact-side-social-icon"></i></div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div><!--Contact Sidebar end-->
+
+
+                    </div><!--Contact Form end-->
+
+
+
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+
+    <!--Mid Content End-->
+    <!--Footer Start-->
+
+</section>
+
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery.imedica.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+<script type="text/javascript">
+            $("#map-canvas-2").gMap({
+
+            styles:[{stylers:[
+        {
+            featureType: 'water', // set the water color
+            elementType: 'geometry.fill', // apply the color only to the fill
+            stylers: [
+                { color: '#adc9b8' }
+            ]
+        },{
+            featureType: 'landscape.natural', // set the natural landscape
+            elementType: 'all',
+            stylers: [
+                { hue: '#809f80' },
+                { lightness: -35 }
+            ]
+        }
+        ,{
+            featureType: 'poi', // set the point of interest
+            elementType: 'geometry',
+            stylers: [
+                { hue: '#f9e0b7' },
+                { lightness: 30 }
+            ]
+        },{
+            featureType: 'road', // set the road
+            elementType: 'geometry',
+            stylers: [
+                { hue: '#d5c18c' },
+                { lightness: 14 }
+            ]
+        },{
+            featureType: 'road.local', // set the local road
+            elementType: 'all',
+            stylers: [
+                { hue: '#ffd7a6' },
+                { saturation: 100 },
+                { lightness: -12 }
+            ]
+        }
+    ]}],
+            controls: false,
+            scrollwheel: false,
+            maptype: 'ROADMAP',
+            markers: [
+                {
+                    latitude: 39.674312, 
+                    longitude: 27.936736,
+                    icon: {
+                        image: "/images/location2.png",
+                        iconsize: [50, 50],
+                        iconanchor: [50,50]
+                    }
+                },
+
+            ],
+            icon: {
+                image: "/images/location2.png",
+                iconsize: [50, 50],
+                iconanchor: [50, 50]
+            },
+            latitude: 39.674312,
+            longitude: 27.936736,
+
+            zoom: 15,
+            mapTypeId: 'Styled'
+
+
+        });
+
+</script> 
