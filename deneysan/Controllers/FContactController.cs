@@ -37,16 +37,47 @@ namespace deneysan.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Form(string namesurname, string email, string subject, string body)
+        public JsonResult SendContact(string name, string email, string subject, string message)
         {
             try
             {
-                if (namesurname == String.Empty || email == String.Empty || subject == String.Empty || body == String.Empty)
+                var mset = MailManager.GetMailSettings();
+                var msend = MailManager.GetMailUsersList(0);
+
+                using (var client = new SmtpClient(mset.ServerHost, mset.Port))
                 {
-                    TempData["required"] = "true";
-                    return RedirectToAction("Form");
+                    client.EnableSsl = false;
+                    client.Credentials = new NetworkCredential(mset.ServerMail, mset.Password);
+                    var mail = new MailMessage();
+                    mail.From = new MailAddress(mset.ServerMail);
+                    foreach (var item in msend)
+                        mail.To.Add(item.MailAddress);
+                    mail.Subject = subject;
+                    mail.IsBodyHtml = true;
+                    mail.Body = "<h5><b>" + name + " - " + email + "</b></h5>" + "<p>" + message + "</p>";
+
+                    if (mail.To.Count > 0) client.Send(mail);
+                    return Json(new { response = "success" }, JsonRequestBehavior.AllowGet);
                 }
+            }
+            catch (Exception ex)
+            {
+                return Json(new { response = "fail" }, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new { response = "fail" }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult Form(string name, string email, string subject, string message)
+        {
+            try
+            {
+                //if (name == String.Empty || email == String.Empty || subject == String.Empty || message == String.Empty)
+                //{
+                //    TempData["required"] = "true";
+                //    return RedirectToAction("Form");
+                //}
 
                 var mset = MailManager.GetMailSettings();
                 var msend = MailManager.GetMailUsersList(0);
@@ -61,19 +92,19 @@ namespace deneysan.Controllers
                         mail.To.Add(item.MailAddress);
                     mail.Subject = subject;
                     mail.IsBodyHtml = true;
-                    mail.Body = "<h5><b>" + namesurname + " - " + email + "</b></h5>" + "<p>" + body + "</p>";
+                    mail.Body = "<h5><b>" + name + " - " + email + "</b></h5>" + "<p>" + message + "</p>";
                    
                     if(mail.To.Count > 0) client.Send(mail);
                 }
-                TempData["sent"] = "true";
-                return RedirectToAction("Form");
+                //TempData["sent"] = "true";
+                //return RedirectToAction("Form");
             }
             catch (Exception ex)
             {
                 TempData["sent"] = "false";
             }
 
-            return View();
+            return Json(new { state = "a"},JsonRequestBehavior.AllowGet);
         }
     }
 }

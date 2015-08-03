@@ -21,9 +21,14 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12 col-xs-12 col-sm-12 pull-left full-content wow fadeInLeft animated" data-wow-delay="0.3s" data-wow-offset="130">
-                <div class="full-content-title">@InstitutionalRess.InstitutionalStrings.aboutus</div>
-                @Html.Raw(Model.Content)
+            <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 dept-tabs-wrap wow fadeInUp animated" data-wow-delay="1s" data-wow-offset="200">
+                <div class="tabbable tabs-left">
+                    <div class="tab-content col-md-12 col-sm-12 col-xs-12 pull-right" style="min-height:450px">
+                        <div class="dept-title-tabs">@InstitutionalRess.InstitutionalStrings.aboutus</div>
+                        <br />
+                        @Html.Raw(Model.Content)
+                    </div>
+                </div>
             </div>
         </div>
     </div>
