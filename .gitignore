@@ -1,5 +1,8 @@
 bin/
+<<<<<<< HEAD
 obj/
+=======
+>>>>>>> cem
 
 # Windows image file caches
 Thumbs.db

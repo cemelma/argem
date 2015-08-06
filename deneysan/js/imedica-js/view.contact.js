@@ -35,9 +35,9 @@ var Contact = {
 		$("#contactForm").validate({
 			submitHandler: function(form) {
 
-				$.ajax({
+				$.post({
 					type: "POST",
-					url: "php/contact-form.php",
+					url: "FContact/Form",
 					data: {
 						"name": $("#contactForm #name").val(),
 						"email": $("#contactForm #email").val(),

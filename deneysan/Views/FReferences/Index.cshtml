@@ -35,25 +35,29 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12 col-xs-12 col-sm-12 pull-left full-content wow fadeInLeft animated" data-wow-delay="0.3s" data-wow-offset="130">
-                <div class="full-content-title">@ReferencesRess.ReferencesStrings.references</div>
-                <br />
-                <div id="reflist">
-                    @foreach (var reference in Model)
-                    {
-                        <a href="@reference.Link" target="_blank">
-                            <div class="refdiv">
-                                <div style="height:100px; text-align:center;">
-                                    <img width="96" height="96" src="@reference.Logo" alt="@reference.ReferenceName" />
-                                </div>
-                                <div style="text-align:center;font-size: 12px;">
-                                    @reference.ReferenceName
-                                </div>
-                            </div>
-                        </a>
-                    }
-                </div>
+            <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 dept-tabs-wrap wow fadeInUp animated" data-wow-delay="1s" data-wow-offset="200">
+                <div class="tabbable tabs-left">
+                    <div class="tab-content col-md-12 col-sm-12 col-xs-12 pull-right" style="min-height:450px">
+                        <div class="dept-title-tabs">@ReferencesRess.ReferencesStrings.references</div>
+                        <br />
+                        <div id="reflist">
+                            @foreach (var reference in Model)
+                            {
+                                <a href="@reference.Link" target="_blank">
+                                    <div class="refdiv">
+                                        <div style="height:100px; text-align:center;">
+                                            <img width="96" height="96" src="@reference.Logo" alt="@reference.ReferenceName" />
+                                        </div>
+                                        <div style="text-align:center;font-size: 12px;">
+                                            @reference.ReferenceName
+                                        </div>
+                                    </div>
+                                </a>
+                            }
+                        </div>
 
+                    </div>
+                </div>
             </div>
         </div>
     </div>

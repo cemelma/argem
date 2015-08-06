@@ -19,51 +19,28 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 col-xs-12 col-sm-12 pull-left full-content wow fadeInLeft animated" data-wow-delay="0.3s" data-wow-offset="130">
-            <div class="full-content-title">@ReferencesRess.ReferencesStrings.references</div>
-            <br />
-            <div class="intro-content-wrap elemnts-wrap col-xs-12 col-sm-6 col-md-12 typopraphy-elements no-pad wow fadeInLeft animated" data-wow-delay="1s" data-wow-offset="200">
-                @*<h3>Arrow Icon List</h3>*@
-                <ul style="width:100%">
-                    @foreach (var links in Model)
-                    {
-                    <li>
-                        <a href="@links.LinkUrl" target="_blank">
-                            <i class="fa fa-angle-right about-list-arrows"></i>@links.LinkName
-                        </a>
-                    </li>
-                    }
-                </ul>
-
-            </div>    
-
-            
-        </div>
-    </div>
-</div>
-</div>
-
-                   
-
-@*<div class="main_content mainpage pageheight" style="">
-    <div class="wrapper mainpage grid_12">
-        <div class="content_page page">
-            <h2>@LinksRess.LinksStrings.importantlinks</h2>
-            <hr class="wide" />
-            <div class="ulListe">
-                <ul id="newslist">
-                    @foreach(var links in Model)
-                    {
-                    <li>
-                        <a href="@links.LinkUrl" target="_blank">
-                            <span class="Left">@links.LinkName</span>
-                        </a>
-                    </li>
-                    }
-                </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 dept-tabs-wrap wow fadeInUp animated" data-wow-delay="1s" data-wow-offset="200">
+                <div class="tabbable tabs-left">
+                    <div class="tab-content col-md-12 col-sm-12 col-xs-12 pull-right" style="min-height:450px">
+                        <div class="dept-title-tabs">@ReferencesRess.ReferencesStrings.references</div>
+                        <br />
+                        <div class="intro-content-wrap elemnts-wrap col-xs-12 col-sm-6 col-md-12 typopraphy-elements no-pad wow fadeInLeft animated" data-wow-delay="1s" data-wow-offset="200">
+                            <ul style="width:100%">
+                                @foreach (var links in Model)
+                                {
+                                    <li>
+                                        <a href="@links.LinkUrl" target="_blank">
+                                            <i class="fa fa-angle-right about-list-arrows"></i>@links.LinkName
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>    
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>*@
+</div>
