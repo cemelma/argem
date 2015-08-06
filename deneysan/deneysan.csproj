@@ -2086,7 +2086,7 @@
     <Content Include="fonts\icomoon.ttf" />
     <Content Include="fonts\icomoon.woff" />
     <None Include="Properties\PublishProfiles\deneme.pubxml" />
-    <None Include="Properties\PublishProfiles\dnysn.pubxml" />
+    <None Include="Properties\PublishProfiles\argemsan.pubxml" />
     <Content Include="js\jquery-1.7.2.min.js" />
     <Content Include="js\jquery-ui.js" />
     <Content Include="js\jquery.validationEngine-en.js" />
