@@ -371,6 +371,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SharedStrings.resx</DependentUpon>
     </Compile>
+    <Compile Include="utilities\EnumProjectStatus.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Content\CKEditor\ckeditor\adapters\jquery.js" />
@@ -2006,8 +2007,6 @@
     <Content Include="Areas\Admin\Views\Link\link_leftbar.cshtml" />
     <Content Include="Areas\Admin\Views\Link\AddLink.cshtml" />
     <Content Include="Areas\Admin\Views\Link\EditLink.cshtml" />
-    <Content Include="Areas\Admin\Views\Project\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Project\AddProject.cshtml" />
     <Content Include="Areas\Admin\Views\Project\EditProject.cshtml" />
     <Content Include="Areas\Admin\Views\Project\project_leftbar.cshtml" />
     <Content Include="Areas\Admin\Views\Gallery\AddImage.cshtml" />
@@ -2123,6 +2122,8 @@
     <Content Include="Content1\Scripts\uploadify\check-exists.php" />
     <Content Include="Content1\Scripts\uploadify\index.php" />
     <Content Include="Content1\Scripts\uploadify\uploadify.php" />
+    <Content Include="Areas\Admin\Views\Project\OnaylananProjeler.cshtml" />
+    <Content Include="Areas\Admin\Views\Project\BekleyenProjeler.cshtml" />
     <None Include="Properties\PublishProfiles\deneme.pubxml" />
     <None Include="Properties\PublishProfiles\argemsan.pubxml" />
     <Content Include="js\jquery-1.7.2.min.js" />

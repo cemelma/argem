@@ -10,6 +10,8 @@ using deneysan_BLL.LanguageBL;
 //using deneysan_BLL.Project;
 using deneysan_DAL.Entities;
 using deneysan.Areas.Admin.Filters;
+using deneysan_DAL.Context;
+using deneysan.utilities;
 
 namespace deneysan.Areas.Admin.Controllers
 {
@@ -19,13 +21,35 @@ namespace deneysan.Areas.Admin.Controllers
         //
         // GET: /Admin/Project/
 
-        //public ActionResult Index()
-        //{
-        //    string sellang = FillLanguagesList();
+        public ActionResult OnaylananProjeler()
+        {
+          string sellang = FillLanguagesList();
 
-        //    var list = ProjectManager.GetProjectList(sellang);
-        //    return View(list);
-        //}
+          using (DeneysanContext db = new DeneysanContext())
+          {
+
+            List<Projects> projeler = db.Projects.Where(x=>x.Status==(int)EnumProjectStatus.Confirmed && x.Language==sellang).ToList();
+            return View(projeler);
+           
+          }
+         
+         
+        }
+
+        public ActionResult BekleyenProjeler()
+        {
+          string sellang = FillLanguagesList();
+
+          using (DeneysanContext db = new DeneysanContext())
+          {
+
+            List<Projects> projeler = db.Projects.Where(x => x.Status == (int)EnumProjectStatus.Wait && x.Language == sellang).ToList();
+            return View(projeler);
+
+          }
+
+
+        }
 
         //public ActionResult AddProject()
         //{
@@ -133,18 +157,18 @@ namespace deneysan.Areas.Admin.Controllers
         //}
 
 
-        //string FillLanguagesList()
-        //{
-        //    string lang = "";
-        //    if (RouteData.Values["lang"] == null)
-        //        lang = "tr";
-        //    else lang = RouteData.Values["lang"].ToString();
+        string FillLanguagesList()
+        {
+          string lang = "";
+          if (RouteData.Values["lang"] == null)
+            lang = "tr";
+          else lang = RouteData.Values["lang"].ToString();
 
-        //    var languages = LanguageManager.GetLanguages();
-        //    var list = new SelectList(languages, "Culture", "Language", lang);
-        //    ViewBag.LanguageList = list;
-        //    return lang;
-        //}
+          var languages = LanguageManager.GetLanguages();
+          var list = new SelectList(languages, "Culture", "Language", lang);
+          ViewBag.LanguageList = list;
+          return lang;
+        }
 
 
         //public JsonResult EditStatus(int id)
