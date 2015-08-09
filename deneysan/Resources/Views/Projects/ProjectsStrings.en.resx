@@ -117,10 +117,76 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="adisoyadi" xml:space="preserve">
+    <value>SURNAME NAME</value>
+  </data>
+  <data name="amac" xml:space="preserve">
+    <value>PROJENİN ÖZEL AMACI</value>
+  </data>
+  <data name="butce" xml:space="preserve">
+    <value>PROJENİN TOPLAM BÜTÇESİ</value>
+  </data>
+  <data name="cizim" xml:space="preserve">
+    <value>PROJE ÇİZİMİ</value>
+  </data>
+  <data name="dokuman" xml:space="preserve">
+    <value>PROJE DÖKÜMANI</value>
+  </data>
+  <data name="eposta" xml:space="preserve">
+    <value>E-MAIL</value>
+  </data>
+  <data name="faksno" xml:space="preserve">
+    <value>FAX NUMBER</value>
+  </data>
+  <data name="finanseeden" xml:space="preserve">
+    <value>PROJEYİ FİNANSE EDEN KURULUŞ</value>
+  </data>
+  <data name="hedef" xml:space="preserve">
+    <value>PROJENİN GENEL HEDEFİ</value>
+  </data>
+  <data name="ozet" xml:space="preserve">
+    <value>PROJENİN KISA ÖZETİ VE İÇERİĞİ</value>
+  </data>
+  <data name="postaadresi" xml:space="preserve">
+    <value>ADDRESS</value>
+  </data>
+  <data name="projeadi" xml:space="preserve">
+    <value>PROJE ADI</value>
+  </data>
+  <data name="projebasvuruformu" xml:space="preserve">
+    <value>Project Application Form</value>
+  </data>
   <data name="projectdetailfile" xml:space="preserve">
     <value>Click to download document of related current project</value>
   </data>
   <data name="projects" xml:space="preserve">
     <value>Projects</value>
+  </data>
+  <data name="projedetay" xml:space="preserve">
+    <value>PROJE DETAYLARI</value>
+  </data>
+  <data name="projesahibiadi" xml:space="preserve">
+    <value>NAME SURNAME</value>
+  </data>
+  <data name="projesahibibaslik" xml:space="preserve">
+    <value>CONTACT INFORMATION OF PROJECT OWNER</value>
+  </data>
+  <data name="projesahibikurum" xml:space="preserve">
+    <value>CORPORATION OF PROJECT OWNER</value>
+  </data>
+  <data name="resim" xml:space="preserve">
+    <value>PROJE RESİMLERİ(en fazla 5 resim ekleyebilirsiniz.)</value>
+  </data>
+  <data name="sonuclar" xml:space="preserve">
+    <value>PROJENİN BEKLENEN SONUÇLARI</value>
+  </data>
+  <data name="sure" xml:space="preserve">
+    <value>PROJENİN SÜRESİ</value>
+  </data>
+  <data name="telefonno" xml:space="preserve">
+    <value>PHONE NUMBER</value>
+  </data>
+  <data name="uygulanacagiyer" xml:space="preserve">
+    <value>PROJENİN UYGULANACAĞI YER</value>
   </data>
 </root>

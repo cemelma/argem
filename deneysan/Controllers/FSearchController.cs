@@ -23,11 +23,11 @@ namespace deneysan.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Index(string SearchText)
-        {
-            var result = SearchManager.Search(SearchText);
-            return View(result);
-        }
+        //[HttpPost]
+        //public ActionResult Index(string SearchText)
+        //{
+        //    var result = SearchManager.Search(SearchText);
+        //    return View(result);
+        //}
     }
 }

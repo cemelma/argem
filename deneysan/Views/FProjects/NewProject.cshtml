@@ -1,0 +1,187 @@
+﻿@{
+    ViewBag.Title = "Proje Başvuru Sayfası";
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+@model deneysan_DAL.Entities.Projects
+
+<link href="~/css/fileuploader/jquery.fileupload.css" rel="stylesheet" />
+<link href="~/css/fileuploader/jquery.fileupload-ui.css" rel="stylesheet" />
+<div class="about-intro-wrap pull-left">
+    <div class="bread-crumb-wrap ibc-wrap-6">
+        <div class="container">
+            <!--Title / Beadcrumb-->
+            <div class="inner-page-title-wrap col-xs-12 col-md-12 col-sm-12">
+                <div class="bread-heading"><h1>@SharedRess.SharedStrings.projebasvurusu</h1></div>
+                <div class="bread-crumb pull-right">
+                    <ul>
+                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_homepage">@SharedRess.SharedStrings.homepage</a></li>
+                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_visionmision">@SharedRess.SharedStrings.projebasvurusu</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 dept-tabs-wrap wow fadeInUp animated" data-wow-delay="1s" data-wow-offset="200">
+                <div class="tabbable tabs-left ">
+                    @using (Ajax.BeginForm("ProjeKaydet", new AjaxOptions() { HttpMethod = "POST", OnSuccess = "Success" }))
+                    {
+
+                        @*@using (Html.BeginForm("NewProject", "FProjects",FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {*@
+                        @Html.ValidationSummary(true)
+                        <div class="tab-content col-md-12 col-sm-12 col-xs-12 pull-right" style="min-height:450px">
+                            <div class="dept-title-tabs">@ProjectsRess.ProjectsStrings.projebasvuruformu</div>
+                            <br />
+                            <fieldset>
+                                <legend>
+                                    @ProjectsRess.ProjectsStrings.projesahibibaslik
+                                </legend>
+                                <div class="row">
+                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.projesahibiadi</label></div>
+                                    <div class="col-lg-5">@Html.TextBoxFor(x => x.ProjeSahibi, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.projesahibiadi.ToLower() })</div>
+                                    <div class="col-lg-4">@Html.ValidationMessageFor(model => model.ProjeSahibi)</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.projesahibikurum</label></div>
+                                    <div class="col-lg-5">@Html.TextBoxFor(x => x.ProjeSahibiKurumu, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.projesahibikurum.ToLower() })</div>
+                                    <div class="col-lg-4">@Html.ValidationMessageFor(model => model.ProjeSahibiKurumu)</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.telefonno</label></div>
+                                    <div class="col-lg-5">@Html.TextBoxFor(x => x.Telefon, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.telefonno.ToLower() })</div>
+                                    <div class="col-lg-4">@Html.ValidationMessageFor(model => model.Telefon)</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.faksno</label></div>
+                                    <div class="col-lg-5">@Html.TextBoxFor(x => x.Faks, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.faksno.ToLower() })</div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.postaadresi</label></div>
+                                    <div class="col-lg-5">@Html.TextAreaFor(x => x.PostaAdresi, new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.postaadresi.ToLower() })</div>
+                                    <div class="col-lg-4">@Html.ValidationMessageFor(model => model.PostaAdresi)</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.eposta</label></div>
+                                    <div class="col-lg-5">@Html.TextBoxFor(x => x.Email, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.eposta.ToLower() })</div>
+                                    <div class="col-lg-4">@Html.ValidationMessageFor(model => model.Email)</div>
+                                </div>
+
+
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>
+                                    @ProjectsRess.ProjectsStrings.projedetay
+                                </legend>
+                                <div class="row">
+                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.projeadi</label></div>
+                                    <div class="col-lg-5">@Html.TextBoxFor(x => x.ProjeAdi, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.projeadi.ToLower() })</div>
+                                    <div class="col-lg-4">@Html.ValidationMessageFor(model => model.Email)</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.hedef</label></div>
+                                    <div class="col-lg-5">@Html.TextBoxFor(x => x.ProjeHedefi, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.hedef.ToLower() })</div>
+                                    <div class="col-lg-4">@Html.ValidationMessageFor(model => model.ProjeHedefi)</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.amac</label></div>
+                                    <div class="col-lg-5">@Html.TextBoxFor(x => x.ProjeAmac, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.amac.ToLower() })</div>
+                                    <div class="col-lg-4">@Html.ValidationMessageFor(model => model.ProjeAmac)</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.sure</label></div>
+                                    <div class="col-lg-5">@Html.TextBoxFor(x => x.ProjeSuresi, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.sure.ToLower() })</div>
+                                    <div class="col-lg-4">@Html.ValidationMessageFor(model => model.ProjeSuresi)</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.butce</label></div>
+                                    <div class="col-lg-5">@Html.TextBoxFor(x => x.ProjeButcesi, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.butce.ToLower() })</div>
+                                    <div class="col-lg-4">@Html.ValidationMessageFor(model => model.ProjeButcesi)</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.finanseeden</label></div>
+                                    <div class="col-lg-5">@Html.TextBoxFor(x => x.FinanseEdenKurum, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.finanseeden.ToLower() })</div>
+                                    <div class="col-lg-4">@Html.ValidationMessageFor(model => model.FinanseEdenKurum)</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.uygulanacagiyer</label></div>
+                                    <div class="col-lg-5">@Html.TextBoxFor(x => x.UygulanacagiYer, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.uygulanacagiyer.ToLower() })</div>
+                                    <div class="col-lg-4">@Html.ValidationMessageFor(model => model.UygulanacagiYer)</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.sonuclar</label></div>
+                                    <div class="col-lg-5">@Html.TextAreaFor(x => x.BeklenenSonuclar, new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.sonuclar.ToLower() })</div>
+                                    <div class="col-lg-4">@Html.ValidationMessageFor(model => model.BeklenenSonuclar)</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.ozet</label></div>
+                                    <div class="col-lg-5">@Html.TextAreaFor(x => x.ProjeOzeti, new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.ozet.ToLower() })</div>
+                                    <div class="col-lg-4">@Html.ValidationMessageFor(model => model.ProjeOzeti)</div>
+                                </div>
+                                @*<div class="row">
+                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.dokuman</label></div>
+                                    <div class="col-lg-5">
+                                        <input id="projedokumanfile" name="file" type="file" multiple>
+                                        <span id="uploadedfilename"></span>
+                                        @Html.Hidden("hdndokumanfile")
+                                        <span class="btn btn-success fileinput-button">
+                                            <i class="glyphicon glyphicon-plus"></i>
+                                            <span>Add files...</span>
+                                            <input type="file" name="files[]" multiple="">
+                                        </span>
+                                    </div>
+
+                                </div>*@
+                                @*<div class="row">
+                                        <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.cizim</label></div>
+                                        <div class="col-lg-5">
+                                            <input id="file_input" type="file" name="projecizim[]">
+                                        </div>
+                                        <div class="col-lg-4"></div>
+                                    </div>*@
+
+                                <div class="row">
+                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.resim</label></div>
+                                    <div class="col-lg-5">
+
+                                        <input type="file" class="multi" maxlength="2" id="fileinput_projeresim" />
+                                    </div>
+                                    <div class="col-lg-4"></div>
+                                </div>
+
+                            </fieldset>
+                            <div class="appointment-form col-lg-8">
+                                <section class="color-7" id="btn-click">
+                                    <button class="icon-mail btn2-st2 btn-7 btn-7b" data-loading-text="Loading..." type="submit">Gönder</button>
+                                </section>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+<script src="~/js/fileuploader/vendor/jquery.ui.widget.js"></script>
+<script src="~/js/fileuploader/jquery.fileupload.js"></script>
+<script src="~/js/fileuploader/jquery.iframe-transport.js"></script>
+<script src="~/js/pagescirpts/projectadd.js"></script>

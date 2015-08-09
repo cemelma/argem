@@ -21,7 +21,7 @@
     <link rel="icon" type="image/png" href="images/fevicon.png">
     <link rel="stylesheet" type="text/css" href="/css/slides.css" />
     <link rel="stylesheet" type="text/css" href="/css/inline.min.css" />
-
+    <link href="~/css/style.css" rel="stylesheet" />
     @*<script src="/Content/Scripts/modernizr-2.5.3.js"></script>
     <script src="~/Content/Scripts/modernizr-2.0.4.min.js"></script>*@
 </head>
@@ -207,4 +207,6 @@
 			$("html").css("overflow","visible");
 		});
 </script>
+
+@RenderSection("scripts",false)
 

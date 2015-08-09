@@ -1,0 +1,31 @@
+﻿.btn-7, .form-widget .btn2-st2, .contact2-page-form .btn2-st2 {
+    background: #107fc9;
+    color: #fff;
+    border-radius: 0px;
+    box-shadow: 0 2px #0d6aa8;
+    padding: 9px 7px 8px 35px;
+    font-size: 12px;
+    font-weight: normal;
+    width: auto;
+}
+.btn2-st2, .form-widget .btn2-st2, .contact2-page-form .btn2-st2 {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    margin: 0 0 0px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    /* transition: all 0.3s; */
+    float: right;
+    height: 28px;
+    width: 45%;
+}

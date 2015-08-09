@@ -234,6 +234,12 @@
   <data name="products" xml:space="preserve">
     <value>PRODUCTS</value>
   </data>
+  <data name="projebasvurulinki" xml:space="preserve">
+    <value>/en/projectappointment</value>
+  </data>
+  <data name="projebasvurusu" xml:space="preserve">
+    <value>Project Application</value>
+  </data>
   <data name="projects" xml:space="preserve">
     <value>Projects</value>
   </data>

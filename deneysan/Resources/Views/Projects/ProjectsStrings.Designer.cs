@@ -61,6 +61,114 @@ namespace ProjectsRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to PROJENİN ÖZEL AMACI.
+        /// </summary>
+        public static string amac {
+            get {
+                return ResourceManager.GetString("amac", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PROJENİN TOPLAM BÜTÇESİ.
+        /// </summary>
+        public static string butce {
+            get {
+                return ResourceManager.GetString("butce", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PROJE ÇİZİMİ.
+        /// </summary>
+        public static string cizim {
+            get {
+                return ResourceManager.GetString("cizim", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PROJE DÖKÜMANI.
+        /// </summary>
+        public static string dokuman {
+            get {
+                return ResourceManager.GetString("dokuman", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E-POSTA ADRESİ.
+        /// </summary>
+        public static string eposta {
+            get {
+                return ResourceManager.GetString("eposta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FAKS NUMARASI.
+        /// </summary>
+        public static string faksno {
+            get {
+                return ResourceManager.GetString("faksno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PROJEYİ FİNANSE EDEN KURULUŞ.
+        /// </summary>
+        public static string finanseeden {
+            get {
+                return ResourceManager.GetString("finanseeden", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PROJENİN GENEL HEDEFİ.
+        /// </summary>
+        public static string hedef {
+            get {
+                return ResourceManager.GetString("hedef", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PROJENİN KISA ÖZETİ VE İÇERİĞİ.
+        /// </summary>
+        public static string ozet {
+            get {
+                return ResourceManager.GetString("ozet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to POSTA ADRESİ.
+        /// </summary>
+        public static string postaadresi {
+            get {
+                return ResourceManager.GetString("postaadresi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PROJE ADI.
+        /// </summary>
+        public static string projeadi {
+            get {
+                return ResourceManager.GetString("projeadi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proje Başvuru Formu.
+        /// </summary>
+        public static string projebasvuruformu {
+            get {
+                return ResourceManager.GetString("projebasvuruformu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Proje ile ilgili dosyayı indirmek için tıklayınız.
         /// </summary>
         public static string projectdetailfile {
@@ -75,6 +183,87 @@ namespace ProjectsRess {
         public static string projects {
             get {
                 return ResourceManager.GetString("projects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PROJE DETAYLARI.
+        /// </summary>
+        public static string projedetay {
+            get {
+                return ResourceManager.GetString("projedetay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ADI SOYADI.
+        /// </summary>
+        public static string projesahibiadi {
+            get {
+                return ResourceManager.GetString("projesahibiadi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PROJE BAŞVURU SAHİBİNİN İLETİŞİM BİLGİLERİ.
+        /// </summary>
+        public static string projesahibibaslik {
+            get {
+                return ResourceManager.GetString("projesahibibaslik", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BAĞLI BULUNDUĞU KURUM/KURULUŞ.
+        /// </summary>
+        public static string projesahibikurum {
+            get {
+                return ResourceManager.GetString("projesahibikurum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PROJE RESİMLERİ(en fazla 5 resim ekleyebilirsiniz.).
+        /// </summary>
+        public static string resim {
+            get {
+                return ResourceManager.GetString("resim", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PROJENİN BEKLENEN SONUÇLARI.
+        /// </summary>
+        public static string sonuclar {
+            get {
+                return ResourceManager.GetString("sonuclar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PROJENİN SÜRESİ.
+        /// </summary>
+        public static string sure {
+            get {
+                return ResourceManager.GetString("sure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TELEFON NUMARASI (SABİT HAT – CEP).
+        /// </summary>
+        public static string telefonno {
+            get {
+                return ResourceManager.GetString("telefonno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PROJENİN UYGULANACAĞI YER.
+        /// </summary>
+        public static string uygulanacagiyer {
+            get {
+                return ResourceManager.GetString("uygulanacagiyer", resourceCulture);
             }
         }
     }
