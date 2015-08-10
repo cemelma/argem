@@ -98,6 +98,7 @@ namespace deneysan_DAL.Entities
         public DateTime? TimeCreated{ get; set; }
         public DateTime? TimeUpdated { get; set; }
         public bool Online { get; set; }
+        public bool Deleted { get; set; }
         public int Status { get; set; }
     }
 }

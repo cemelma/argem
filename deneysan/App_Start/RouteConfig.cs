@@ -12,6 +12,7 @@ namespace deneysan
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("{resource}.swf/{*pathInfo}");
             ControllerBuilder.Current.DefaultNamespaces.Add("deneysan.Controllers");
 
          //   routes.MapRoute("home_default", "/", new { action = "Index", Controller = "Home" });

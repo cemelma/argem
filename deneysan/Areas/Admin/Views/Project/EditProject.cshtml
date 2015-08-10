@@ -12,61 +12,131 @@
 
 <div id="page-content" class="container_12">
     <div id="page-header">
-       <h2>PROJE BİLGİLERİ</h2>
-    </div> 
-    
-<section class="grid_12 form">
-    @Html.Hidden("ProcessMessage",(object)@ViewBag.ProcessMessage) 
-    @using(Html.BeginForm("EditProject", "Project", FormMethod.Post, new { enctype = "multipart/form-data"}))
-    {
-         @Html.Hidden("hdfieldcategory")
-         @Html.Hidden("hdfieldtaglist")
-        @Html.ValidationSummary(true)
-        <fieldset>
-        <legend>Proje Düzenle</legend>
+        <h2>PROJE BİLGİLERİ</h2>
+    </div>
+
+    <section class="grid_12 form">
+        @Html.Hidden("ProcessMessage", (object)@ViewBag.ProcessMessage)
+        @using (Html.BeginForm("EditProject", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.Hidden("hdfieldcategory")
+            @Html.Hidden("hdfieldtaglist")
+            @Html.ValidationSummary(true)
+            <fieldset>
+                <legend>Proje Sahibi Bilgileri</legend>
+                <p>
+                    @Html.LabelFor(m => m.Language)
+                    @Html.DropDownListFor(m => m.Language, (IEnumerable<SelectListItem>)ViewBag.LanguageList, "Dil Seçiniz...")
+                    @Html.ValidationMessageFor(m => m.Language)
+
+                </p>
+                <p>
+                    @Html.LabelFor(m => m.ProjeSahibi)
+                    @Html.TextBoxFor(m => m.ProjeSahibi, new { @class = "textwidth50" })
+                    @Html.ValidationMessageFor(m => m.ProjeSahibi)
+                </p>
+                <p>
+                    @Html.LabelFor(m => m.ProjeSahibiKurumu)
+                    @Html.TextBoxFor(m => m.ProjeSahibiKurumu, new { @class = "textwidth50" })
+                    @Html.ValidationMessageFor(m => m.ProjeSahibiKurumu)
+                </p>
+                <p>
+                    @Html.LabelFor(m => m.Telefon)
+                    @Html.TextBoxFor(m => m.Telefon, new { @class = "textwidth50" })
+                    @Html.ValidationMessageFor(m => m.Telefon)
+                </p>
+                <p>
+                    @Html.LabelFor(m => m.Faks)
+                    @Html.TextBoxFor(m => m.Faks, new { @class = "textwidth50" })
+                    @Html.ValidationMessageFor(m => m.Faks)
+                </p>
+                <p>
+                    @Html.LabelFor(m => m.PostaAdresi)
+                    @Html.TextBoxFor(m => m.PostaAdresi, new { @class = "textwidth50" })
+                    @Html.ValidationMessageFor(m => m.PostaAdresi)
+                </p>
+                <p>
+                    @Html.LabelFor(m => m.Email)
+                    @Html.TextBoxFor(m => m.Email, new { @class = "textwidth50" })
+                    @Html.ValidationMessageFor(m => m.Email)
+                </p>
+              
+
+            </fieldset>
+    <fieldset>
+        <legend>Proje  Bilgileri</legend>
         <p>
-            @Html.LabelFor(m=>m.Language)
-            @Html.DropDownListFor(m=>m.Language,(IEnumerable<SelectListItem>)ViewBag.LanguageList,"Dil Seçiniz...")
-            @Html.ValidationMessageFor(m=>m.Language)
-           
+            @Html.LabelFor(m => m.ProjeAdi)
+            @Html.TextBoxFor(m => m.ProjeAdi, new { @class = "textwidth50" })
+            @Html.ValidationMessageFor(m => m.ProjeAdi)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.ProjeHedefi)
+            @Html.TextBoxFor(m => m.ProjeHedefi, new { @class = "textwidth50" })
+            @Html.ValidationMessageFor(m => m.ProjeHedefi)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.ProjeAmac)
+            @Html.TextBoxFor(m => m.ProjeAmac, new { @class = "textwidth50" })
+            @Html.ValidationMessageFor(m => m.ProjeAmac)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.ProjeSuresi)
+            @Html.TextBoxFor(m => m.ProjeSuresi, new { @class = "textwidth50" })
+            @Html.ValidationMessageFor(m => m.ProjeSuresi)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.ProjeButcesi)
+            @Html.TextBoxFor(m => m.ProjeButcesi, new { @class = "textwidth50" })
+            @Html.ValidationMessageFor(m => m.ProjeButcesi)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.FinanseEdenKurum)
+            @Html.TextBoxFor(m => m.FinanseEdenKurum, new { @class = "textwidth50" })
+            @Html.ValidationMessageFor(m => m.FinanseEdenKurum)
         </p>
 
         <p>
-            @Html.LabelFor(m=>m.Name)
-            @Html.TextBoxFor(m=>m.Name, new { @class="textwidth50"})
-            @Html.ValidationMessageFor(m => m.Name)
+            @Html.LabelFor(m => m.UygulanacagiYer)
+            @Html.TextBoxFor(m => m.UygulanacagiYer, new { @class = "textwidth50" })
+            @Html.ValidationMessageFor(m => m.UygulanacagiYer)
         </p>
-        
+
         <p>
-            <label for="txtname">Dosya</label>
-            
-            <input type="file" name="uploadfile" id="uploadfile" />
+            @Html.LabelFor(m => m.BeklenenSonuclar)
+            @Html.TextBoxFor(m => m.BeklenenSonuclar, new { @class = "textwidth50" })
+            @Html.ValidationMessageFor(m => m.BeklenenSonuclar)
         </p>
-       
+
         <p>
-            @Html.LabelFor(m=>m.Content)
-            @Html.TextAreaFor(m=>m.Content,5,0, new { id="txtcontent", @class="textwidth50"})
-            @Html.ValidationMessageFor(m=>m.Content,"", new { @class="verticalaligntop"})
-           
+            @Html.LabelFor(m => m.ProjeOzeti)
+            @Html.TextBoxFor(m => m.ProjeOzeti, new { @class = "textwidth50" })
+            @Html.ValidationMessageFor(m => m.ProjeOzeti)
         </p>
-        <p>
-            <input type="submit" value="Kaydet" id="btnsave" />
-        </p>
-       
+
+
     </fieldset>
-    }
-</section>
+
+    <p>
+        <input type="submit" value="Kaydet" id="btnsave" />
+    </p>
+
+
+        }
+    </section>
 </div>
 @section Scripts {
-<link href="~/Areas/Admin/Content/styles/pluginstyles/jquery.msgbox.css" rel="stylesheet" />
-<script src="~/Areas/Admin/Content/scripts/plugins/jquery.msgbox.min.js"></script>
-<script src="~/Areas/Admin/Content/scripts/myscripts/MessageBox.js"></script>
-<script src="~/Areas/Admin/Content/scripts/plugins/jquery.validate.js"></script>
-<script src="~/Areas/Admin/Content/scripts/plugins/jquery.validate.unobtrusive.js"></script>
-<script src="~/Areas/Admin/Content/scripts/plugins/jquery.ui.datepicker-tr.js"></script>
-<script src="~/Areas/Admin/Content/scripts/pagescripts/reference/addreference.js"></script>
+    <link href="~/Areas/Admin/Content/styles/pluginstyles/jquery.msgbox.css" rel="stylesheet" />
+    <script src="~/Areas/Admin/Content/scripts/plugins/jquery.msgbox.min.js"></script>
+    <script src="~/Areas/Admin/Content/scripts/myscripts/MessageBox.js"></script>
+    <script src="~/Areas/Admin/Content/scripts/plugins/jquery.validate.js"></script>
+    <script src="~/Areas/Admin/Content/scripts/plugins/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Areas/Admin/Content/scripts/plugins/jquery.ui.datepicker-tr.js"></script>
+    <script src="~/Areas/Admin/Content/scripts/pagescripts/reference/addreference.js"></script>
 
-<script src="~/Areas/Admin/Content/CKEditor/ckeditor/ckeditor.js"></script>
-<script src="~/Areas/Admin/Content/CKEditor/ckfinder/ckfinder.js"></script>
-<script src="~/Areas/Admin/Content/scripts/myscripts/CKEditorCreate.js"></script>
+    @*<script src="~/Areas/Admin/Content/CKEditor/ckeditor/ckeditor.js"></script>
+        <script src="~/Areas/Admin/Content/CKEditor/ckfinder/ckfinder.js"></script>
+        <script src="~/Areas/Admin/Content/scripts/myscripts/CKEditorCreate.js"></script>*@
+
+
 }

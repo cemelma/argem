@@ -1,24 +1,22 @@
 ﻿jQuery(function ($) {
-   
-    $('#projedokumanfile').fileupload({
-        dataType: 'json',
-        url: '../FProjects/SaveProjectDocumentFile',
-        done: function (e, data) {
-            $('#uploadedfilename').text(data.files[0].name);
-            $("#hdndokumanfile").val(data.files[0].name);
-        }
-
-        //done: function (e, data) {
-        //    $.each(data.result.files, function (index, file) {
-        //        $('#uploadedfilename').text(file.name);
-        //        $("#hdndokumanfile").val(file.name);
-        //    });
-        //}
-        //error: function () {
-        //    alert("dosya yüklemesi sırasında hata oluştu.");
-        //}
-    });
-
+    $('.multi').Multifile();
+    //$('#projedokumanfile').uploadify({
+    //    'preventCaching': false,
+    //    'swf': "http://localhost:1745/js/uploadify/uploadify.swf",
+    //    "uploader": '../FProjects/SaveProjectDocumentFile',
+    //    'folder': 'http://localhost:1745/Content/uploads',
+    //   "cancelImg": "http://localhost:1745/js/uploadify/uploadify-cancel.png",
+    //    "removeCompleted": false,
+    //    'buttonText': 'Dosya Seçin',
+       
+    //    'multi': false,
+    //    'onUploadSuccess': function (file, data, response) {
+    //        //$('.uploadify-queue').show();
+    //        $(".uploadify-queue-item").children(".cancel").children("a").attr("href", "#");
+    //        $(".uploadify-queue-item").children(".cancel").children("a").attr("onclick", "RemoveDocumentFile()");
+    //    }
+ 
+    //});
 
     //$('#projedokumanfile').fileupload({
     //    url: '../FProjects/SaveProjectDocumentFile',
@@ -40,6 +38,12 @@
     //  .parent().addClass($.support.fileInput ? undefined : 'disabled');
   
 });
+
+
+function RemoveDocumentFile() {
+    $('.uploadify-queue').css("display","none");
+    
+}
 
 function Success()
 {

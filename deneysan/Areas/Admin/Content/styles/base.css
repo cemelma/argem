@@ -919,3 +919,7 @@ ul.gallery img {
 ul.gallery a:hover > img {
 	border: 1px solid #333;
 }
+
+.width60{
+    width:60%;
+}

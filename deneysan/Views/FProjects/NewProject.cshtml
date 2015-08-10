@@ -4,8 +4,21 @@
 }
 @model deneysan_DAL.Entities.Projects
 
-<link href="~/css/fileuploader/jquery.fileupload.css" rel="stylesheet" />
-<link href="~/css/fileuploader/jquery.fileupload-ui.css" rel="stylesheet" />
+
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+
+
+
+<script src="~/js/jquery.multifile.js"></script>
+<script src="~/js/pagescirpts/projectadd.js"></script>
+
+
+
+<link href="~/js/uploadify/uploadify.css" rel="stylesheet" />
 <div class="about-intro-wrap pull-left">
     <div class="bread-crumb-wrap ibc-wrap-6">
         <div class="container">
@@ -129,20 +142,18 @@
                                     <div class="col-lg-5">@Html.TextAreaFor(x => x.ProjeOzeti, new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.ozet.ToLower() })</div>
                                     <div class="col-lg-4">@Html.ValidationMessageFor(model => model.ProjeOzeti)</div>
                                 </div>
-                                @*<div class="row">
+                                <div class="row">
                                     <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.dokuman</label></div>
                                     <div class="col-lg-5">
-                                        <input id="projedokumanfile" name="file" type="file" multiple>
+                                        @*<input id="projedokumanfile" name="projedokumanfile" type="file">*@
+                                        <input class="multi" maxlength="2" />
+                                        @*<input class="multifile" type="file"  id="projedokumanfile" maxlength="1">*@
                                         <span id="uploadedfilename"></span>
                                         @Html.Hidden("hdndokumanfile")
-                                        <span class="btn btn-success fileinput-button">
-                                            <i class="glyphicon glyphicon-plus"></i>
-                                            <span>Add files...</span>
-                                            <input type="file" name="files[]" multiple="">
-                                        </span>
+
                                     </div>
 
-                                </div>*@
+                                </div>
                                 @*<div class="row">
                                         <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.cizim</label></div>
                                         <div class="col-lg-5">
@@ -151,14 +162,14 @@
                                         <div class="col-lg-4"></div>
                                     </div>*@
 
-                                <div class="row">
-                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.resim</label></div>
-                                    <div class="col-lg-5">
+                                @*<div class="row">
+                                        <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.resim</label></div>
+                                        <div class="col-lg-5">
 
-                                        <input type="file" class="multi" maxlength="2" id="fileinput_projeresim" />
-                                    </div>
-                                    <div class="col-lg-4"></div>
-                                </div>
+                                            <input type="file" class="multi" maxlength="2" id="fileinput_projeresim" />
+                                        </div>
+                                        <div class="col-lg-4"></div>
+                                    </div>*@
 
                             </fieldset>
                             <div class="appointment-form col-lg-8">
@@ -176,12 +187,3 @@
 </div>
 
 
-<script src="~/Scripts/jquery-1.7.1.min.js"></script>
-<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
-
-<script src="~/js/fileuploader/vendor/jquery.ui.widget.js"></script>
-<script src="~/js/fileuploader/jquery.fileupload.js"></script>
-<script src="~/js/fileuploader/jquery.iframe-transport.js"></script>
-<script src="~/js/pagescirpts/projectadd.js"></script>

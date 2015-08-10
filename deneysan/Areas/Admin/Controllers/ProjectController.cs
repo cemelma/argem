@@ -170,36 +170,68 @@ namespace deneysan.Areas.Admin.Controllers
           return lang;
         }
 
+        public JsonResult DeleteRecord(int id)
+        {
+          using(DeneysanContext db = new DeneysanContext())
+          {
+            var record = db.Projects.FirstOrDefault(d => d.ProjeId == id);
+            record.Deleted = true;
 
-        //public JsonResult EditStatus(int id)
-        //{
-        //    string NowState;
-        //    bool isupdate = ProjectManager.UpdateStatus(id);
-        //    return Json(isupdate);
-        //}
-
-
-        //public JsonResult Delete(int id)
-        //{
-        //    bool isdelete = ProjectManager.Delete(id);
-        //    //if (isdelete)
-        //    return Json(isdelete);
-        //    //  else return false;
-        //}
-
-        //public JsonResult SortRecords(string list)
-        //{
-        //    JsonList psl = (new JavaScriptSerializer()).Deserialize<JsonList>(list);
-        //    string[] idsList = psl.list;
-        //    bool issorted = ProjectManager.SortRecords(idsList);
-        //    return Json(issorted);
+            db.SaveChanges();
+            return Json(true);
+          }
+          
+        }
 
 
-        //}
+        public JsonResult EditStatus(int id)
+        {
+          using (DeneysanContext db = new DeneysanContext())
+          {
+            var list = db.Projects.SingleOrDefault(d => d.ProjeId == id);
+            try
+            {
 
-        //public class JsonList
-        //{
-        //    public string[] list { get; set; }
-        //}
+              if (list != null)
+              {
+                list.Online = list.Online == true ? false : true;
+                db.SaveChanges();
+
+              }
+              return Json(list.Online);
+
+            }
+            catch (Exception)
+            {
+              return Json(list.Online);
+            }
+          }
+        }
+      
+        public ActionResult EditProject(int id)
+        {
+          using (DeneysanContext db = new DeneysanContext())
+          {
+            if (RouteData.Values["id"] != null)
+            {
+              int nid = 0;
+              bool isnumber = int.TryParse(RouteData.Values["id"].ToString(), out nid);
+              if (isnumber)
+              {
+                Projects record = db.Projects.Where(x=>x.ProjeId==id).FirstOrDefault();
+                var languages = LanguageManager.GetLanguages();
+                var list = new SelectList(languages, "Culture", "Language", record.Language);
+                ViewBag.LanguageList = list;
+                return View(record);
+              }
+              else
+                return View();
+            }
+            else
+              return View();
+          }
+        }
+
+        
     }
 }

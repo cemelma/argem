@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<deneysan_DAL.Entities.Projects>
 
 @{
-    ViewBag.Title = "BekleyenProjeler";
+    ViewBag.Title = "OnaylananProjeler";
     Layout = "~/Areas/Admin/Views/Shared/adminlayout.cshtml";
 }
 
@@ -14,7 +14,7 @@
 
 <div id="page-content" class="container_12">
     <div id="page-header">
-        <h2>ONAY BEKLYEN PROJELER</h2>
+        <h2>ONAY BEKLEYEN PROJELER</h2>
     </div>
     <section class="grid_12 form">
         <div class="box-header">
@@ -29,10 +29,10 @@
             <thead>
                 <tr>
                     <th class="center width5">Sırala</th>
-                    <th class="center widt5">Resim</th>
-                    <th class="width50">Ürün Adı</th>
-                    <th class="center witdh10">Durum</th>
-                    <th class="center witdh30">Döküman İşlemleri</th>
+                    @*<th class="center widt5">Resim</th>*@
+                    <th class="width20">Proje Adı</th>
+                    <th class="center width60">Proje Özeti</th>
+                    <th class="center witdh5">Durum</th>
                     <th class="center witdh10">İşlem</th>
                 </tr>
             </thead>
@@ -43,65 +43,27 @@
                         <td class="center">
                             <img src="/Areas/Admin/Content/images/icons/tablesorter/arrow2.png" alt="move" border="0" class="handle sortimg" align="middle" />
                         </td>
-
                         <td>
                             <span id="spanitem_@item.ProjeId">@item.ProjeAdi</span>
                             <input type="text" id="textitem_@item.ProjeId" value="" class="displaynone textwidth90" />
                         </td>
+                        <td>
+                            <span id="spanitem_@item.ProjeId">@item.ProjeOzeti</span>
+                            <input type="text" id="textitem_@item.ProjeId" value="" class="displaynone textwidth90" />
+                        </td>
                         <td class="center">
                             @if (item.Online == true)
-                            {<img id="img_online_@item.ProjeId" src="/Areas/Admin/Content/images/icons/online.png" class="cursorpointer" title="Offline yap" onclick="SetOnlineStatus('/Product/EditStatus',@item.ProjeId)" />}
+                            {<img id="img_online_@item.ProjeId" src="/Areas/Admin/Content/images/icons/online.png" class="cursorpointer" title="Offline yap" onclick="SetOnlineStatus('/Project/EditStatus',@item.ProjeId)" />}
                             else
-                            {<img id="img_online_@item.ProjeId" src="/Areas/Admin/Content/images/icons/offline.png" class="cursorpointer" title="Online yap" onclick="SetOnlineStatus('/Product/EditStatus',@item.ProjeId)" />}
+                            {<img id="img_online_@item.ProjeId" src="/Areas/Admin/Content/images/icons/offline.png" class="cursorpointer" title="Online yap" onclick="SetOnlineStatus('/Project/EditStatus',@item.ProjeId)" />}
                         </td>
+                      
+                          
                         <td class="center">
-                            @*@if (@item.filetechnical != null)
-                                {
-                                    <div id="divtechnical" style="float:left;">
-                                        <img id="btntechnic_@item.ProjeId" src="/Areas/Admin/Content/images/icons/technic.png" title="Teknik Döküman Kaldır" class="cursorpointer" width="16" height="16" onclick="RemoveTechnic(@item.ProjeId)">
-                                        <a href="@item.filetechnical" target="blank">
-                                            <img id="btn_save_@item.ProjeId" src="/Areas/Admin/Content/images/icons/lookup.png" title="Teknik Döküman Gör" class="cursorpointer" width="16" height="16">
-                                        </a>
-                                    </div>
-                                }
-
-                                @if (@item.filetraining != null)
-                                {
-                                    <div id="divtraining" style="float:left;">
-                                        &nbsp;&nbsp;&nbsp;
-                                        <img id="btnmanual_@item.ProjeId" src="/Areas/Admin/Content/images/icons/usermanual.png" title="Eğitim Dökümanı Kaldır" class="cursorpointer" width="16" height="16" onclick="RemoveTraining(@item.ProjeId)">
-                                        <a href="@item.filetraining" target="blank">
-                                            <img id="btn_save_@item.ProjeId" src="/Areas/Admin/Content/images/icons/lookup.png" title="Eğitim Dökümanını Gör" class="cursorpointer" width="16" height="16">
-                                        </a>
-
-                                    </div>
-                                }
-
-                                @if (@item.filexperiment != null)
-                                {
-                                    <div id="divexperimental" style="float:left;">
-                                        &nbsp;&nbsp;&nbsp;
-                                        <img id="btnexerimental_@item.ProjeId" src="/Areas/Admin/Content/images/icons/experimental.png" title="Deney Dökümanı Kaldır" class="cursorpointer" width="16" height="16" onclick="RemoveExperimental(@item.ProjeId)">
-                                        <a href="@item.filexperiment" target="blank">
-                                            <img id="btn_save_@item.ProjeId" src="/Areas/Admin/Content/images/icons/lookup.png" title="Deney Dökümanını Gör" class="cursorpointer" width="16" height="16">
-                                        </a>
-                                    </div>
-
-                                }
-
-                                @if (@item.filevideo != null)
-                                {
-                                    <div id="divvideo" style="float:left;width:40px;float:left;">
-                                        &nbsp;&nbsp;&nbsp;
-                                        <img id="btnvideo_@item.ProjeId" src="/Areas/Admin/Content/images/icons/video.png" title="Video Kaldır" class="cursorpointer" width="16" height="16" onclick="RemoveVideo(@item.ProjeId)">
-                                    </div>
-                                }*@
-                        </td>
-                        <td class="center">
-                            <a href="/yonetim/urunduzenle/@item.ProjeId">
+                            <a href="/yonetim/projeduzenle/@item.ProjeId">
                                 <img id="btn_update_@item.ProjeId" src="/Areas/Admin/Content/images/icons/16/edit.png" title="Güncelle" class="cursorpointer">
                             </a>
-                            <img id="DeleteImage_@item.ProjeId" src="/Areas/Admin/Content/images/icons/16/delete.png" class="cursorpointer" title="Sil" onclick="DeleteRecord('/Product/DeleteRecord',@item.ProjeId)">
+                            <img id="DeleteImage_@item.ProjeId" src="/Areas/Admin/Content/images/icons/16/delete.png" class="cursorpointer" title="Sil" onclick="DeleteRecord('/Project/DeleteRecord',@item.ProjeId)">
                         </td>
                     </tr>
                 }
@@ -127,4 +89,5 @@
 <script src="~/Areas/Admin/Content/scripts/myscripts/SetOnlineStatusRecord.js"></script>
 <script src="~/Areas/Admin/Content/scripts/myscripts/DeleteRecordTable.js"></script>
 
-<script src="~/Areas/Admin/Content/scripts/pagescripts/product/productlist.js"></script>
+<script src="~/Areas/Admin/Content/scripts/pagescripts/proje/projelist.js"></script>
+

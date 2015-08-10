@@ -1514,11 +1514,11 @@
     <Content Include="Areas\Admin\Content\scripts\pagescripts\news\addnews.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\news\editnews.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\news\newslist.js" />
-    <Content Include="Areas\Admin\Content\scripts\pagescripts\product\addproduct.js" />
-    <Content Include="Areas\Admin\Content\scripts\pagescripts\product\editproduct.js" />
-    <Content Include="Areas\Admin\Content\scripts\pagescripts\product\productgroup.js" />
-    <Content Include="Areas\Admin\Content\scripts\pagescripts\product\productlist.js" />
-    <Content Include="Areas\Admin\Content\scripts\pagescripts\projects\projectlist.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\proje\addproduct.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\proje\editproduct.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\proje\productgroup.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\proje\onaylananprojeler.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\proje\projelist.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\reference\addreference.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\reference\referencelist.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\teklif\teklif.js" />
@@ -1891,8 +1891,13 @@
     <Content Include="js\fileuploader\jquery.iframe-transport.js" />
     <Content Include="js\fileuploader\main.js" />
     <Content Include="js\fileuploader\vendor\jquery.ui.widget.js" />
+    <Content Include="js\jquery.blockUI.js" />
+    <Content Include="js\jquery.form.js" />
+    <Content Include="js\jquery.MetaData.js" />
     <Content Include="js\jquery.multifile.js" />
+    <Content Include="js\jquery.MultiFile.pack.js" />
     <Content Include="js\jquery.multifile.preview.js" />
+    <Content Include="js\jquery.validate.js" />
     <Content Include="js\pagescirpts\projectadd.js" />
     <Content Include="Content1\Scripts\jquery-ui.js" />
     <Content Include="Content1\Scripts\jquery.gritter.min.js" />
@@ -2124,6 +2129,9 @@
     <Content Include="Content1\Scripts\uploadify\uploadify.php" />
     <Content Include="Areas\Admin\Views\Project\OnaylananProjeler.cshtml" />
     <Content Include="Areas\Admin\Views\Project\BekleyenProjeler.cshtml" />
+    <Content Include="js\uploadify\check-exists.php" />
+    <Content Include="js\uploadify\index.php" />
+    <Content Include="js\uploadify\uploadify.php" />
     <None Include="Properties\PublishProfiles\deneme.pubxml" />
     <None Include="Properties\PublishProfiles\argemsan.pubxml" />
     <Content Include="js\jquery-1.7.2.min.js" />
@@ -2131,6 +2139,11 @@
     <Content Include="js\jquery.validationEngine-en.js" />
     <Content Include="js\jquery.validationEngine-tr.js" />
     <Content Include="js\jquery.validationEngine.js" />
+    <Content Include="js\uploadify\jquery.uploadify.js" />
+    <Content Include="js\uploadify\jquery.uploadify.min.js" />
+    <Content Include="js\uploadify\uploadify-cancel.png" />
+    <Content Include="js\uploadify\uploadify.css" />
+    <Content Include="js\uploadify\uploadify.swf" />
     <Content Include="rs-plugin\assets\arrows.psd" />
     <Content Include="rs-plugin\assets\bullets.psd" />
     <Content Include="rs-plugin\assets\small_arrows.psd" />
@@ -2528,6 +2541,11 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\uploadify\jquery.uploadify.js" />
+    <Content Include="Scripts\uploadify\jquery.uploadify.min.js" />
+    <Content Include="Scripts\uploadify\uploadify-cancel.png" />
+    <Content Include="Scripts\uploadify\uploadify.css" />
+    <Content Include="Scripts\uploadify\uploadify.swf" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -2594,6 +2612,9 @@
     <Content Include="Views\FContact\Form.cshtml" />
     <Content Include="Views\FContact\Index.cshtml" />
     <Content Include="Views\FProjects\NewProject.cshtml" />
+    <Content Include="Scripts\uploadify\check-exists.php" />
+    <Content Include="Scripts\uploadify\index.php" />
+    <Content Include="Scripts\uploadify\uploadify.php" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

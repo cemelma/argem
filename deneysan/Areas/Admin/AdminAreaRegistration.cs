@@ -36,8 +36,9 @@ namespace deneysan.Areas.Admin
             //PROJECTS
             context.MapRoute("project_default", "yonetim/onaylananprojeler", new { action = "OnaylananProjeler", Controller = "Project" });
             context.MapRoute("project", "yonetim/onaylananprojeler/{lang}", new { action = "OnaylananProjeler", Controller = "Project" });
-            context.MapRoute("projectadd", "yonetim/bekleyenprojeler", new { action = "BekleyenProjeler", Controller = "Project" });
-            context.MapRoute("projectedit", "yonetim/bekleyenprojeler/{lang}", new { action = "BekleyenProjeler", Controller = "Project" });
+            context.MapRoute("projebekletyentr", "yonetim/bekleyenprojeler", new { action = "BekleyenProjeler", Controller = "Project" });
+            context.MapRoute("projebekletyen", "yonetim/bekleyenprojeler/{lang}", new { action = "BekleyenProjeler", Controller = "Project" });
+            context.MapRoute("projectedit", "yonetim/projeduzenle/{id}", new { action = "EditProject", Controller = "Project" });
 
 
             //TEKLİFLER
