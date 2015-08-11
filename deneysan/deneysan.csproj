@@ -1935,7 +1935,7 @@
     <Content Include="Content1\Styles\prettyPhoto.css" />
     <Content Include="Content1\Styles\site.css" />
     <Content Include="Content1\Styles\validationEngine.jquery.css" />
-    <Content Include="Content\Images\front\noimage.jpeg" />
+    <Content Include="Content\images\front\noimage.jpeg" />
     <Content Include="css\animate.css" />
     <Content Include="css\blue.css" />
     <Content Include="css\doc.css" />
@@ -2636,7 +2636,7 @@
     <Folder Include="Content1\Images\projects\" />
     <Folder Include="Content1\Images\references\" />
     <Folder Include="Content\dokumanlar\" />
-    <Folder Include="Content\Images\references\" />
+    <Folder Include="Content\images\references\" />
     <Folder Include="Content\Scripts\" />
     <Folder Include="Content\Styles\" />
     <Folder Include="Content\temp\" />

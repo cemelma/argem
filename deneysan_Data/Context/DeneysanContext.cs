@@ -36,7 +36,7 @@ namespace deneysan_DAL.Context
         public DbSet<MailSetting> MailSetting { get; set; }
         public DbSet<MailUsers> MailUsers { get; set; }
         public DbSet<OfferNumber> OfferNumber { get; set; }
-        
+        public DbSet<ProjectsGallery> ProjectsGallery { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
@@ -65,7 +65,9 @@ namespace deneysan_DAL.Context
             modelBuilder.Entity<MailUsers>().ToTable("MailUsers");
             modelBuilder.Entity<MailSetting>().ToTable("MailSetting");
             modelBuilder.Entity<OfferNumber>().ToTable("OfferNumber");
+            modelBuilder.Entity<ProjectsGallery>().ToTable("ProjectsGallery");
             
+          
         }
     }
 }

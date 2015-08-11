@@ -18,12 +18,12 @@ namespace deneysan.Controllers
 
     public ActionResult NewProject()
     {
-      var str = Server.MapPath("~/Content/upload/1739476707_deneme.docx");
+      var str = Server.MapPath("");
       return View();
     }
 
     [HttpPost]
-    public JsonResult ProjeKaydet(Projects model, string hdndokumanfile)
+    public JsonResult ProjeKaydet(Projects model, string hdndokumanfile, string hdnimagefile)
     {
       using (DeneysanContext db = new DeneysanContext())
       {
@@ -34,17 +34,37 @@ namespace deneysan.Controllers
         model.TimeCreated = DateTime.Now;
         model.Status = 0;
         model.Language = lang;
-        
 
-        
-        if(System.IO.File.Exists(Server.MapPath("/Content/temp/"+hdndokumanfile)))
+
+
+        if (!string.IsNullOrEmpty(hdnimagefile))
         {
-          model.ProjeDokümani = Server.MapPath("/Content/upload/" + hdndokumanfile);
-         // System.IO.File.Copy(Server.MapPath("~/Content/temp/" + hdndokumanfile), Server.MapPath("~/Content/upload/" + hdndokumanfile));
-          System.IO.File.Delete(Server.MapPath("/Content/temp/" + hdndokumanfile));
+            model.ProjeDokümani = "/Content/upload/" + hdndokumanfile;
         }
+
         db.Projects.Add(model);
         db.SaveChanges();
+
+        if (!string.IsNullOrEmpty(hdnimagefile))
+        {
+
+          string[] imagesArray = hdnimagefile.Split(',');
+
+          if (imagesArray != null && imagesArray.Length > 0)
+          {
+            for (int i = 0; i < imagesArray.Length; i++)
+            {
+              ProjectsGallery g = new ProjectsGallery();
+              g.ProjeId = model.ProjeId;
+              g.Image = "/Content/images/" + imagesArray[i];
+              db.ProjectsGallery.Add(g);
+            }
+          }
+
+          db.SaveChanges();
+         // model.ProjeResimleri = hdndokumanfile;
+        }
+
       }
       return Json(true);
     }
@@ -60,13 +80,32 @@ namespace deneysan.Controllers
          {
            fileName = rndfilename + "_" + hpf.FileName;
           
-            hpf.SaveAs(Path.Combine(Server.MapPath("~/Content/temp/"+fileName)));
+            hpf.SaveAs(Path.Combine(Server.MapPath("/Content/upload/"+fileName)));
+         }
+
+         return fileName;
+    }
+
+    [HttpPost]
+     public string SaveProjectImages()
+    {
+      Random rnd = new Random();
+      int rndfilename = rnd.Next();
+        HttpPostedFileBase hpf = Request.Files[0] as HttpPostedFileBase;
+        string fileName = "";
+         if (hpf.ContentLength != 0)
+         {
+           fileName = rndfilename + "_" + hpf.FileName;
+
+           hpf.SaveAs(Path.Combine(Server.MapPath("/Content/images/"+fileName)));
          }
 
          return fileName;
     }
 
   
+
+    
     //public ActionResult ProjectContent(int id)
     //{
     //    var project = ProjectManager.GetProjectById(id);

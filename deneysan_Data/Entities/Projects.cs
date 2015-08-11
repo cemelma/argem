@@ -85,8 +85,12 @@ namespace deneysan_DAL.Entities
         public string ProjeDokümani { get; set; }
 
         [Display(Name = "Proje Çizimi")]
-        public string ProjeCizimi { get; set; } 
+        public string ProjeCizimi { get; set; }
 
+
+
+        [Display(Name = "Proje Resmi")]
+        public string ProjeResimleri { get; set; } 
 
         [Display(Name = "Dil")]
         [Required(ErrorMessage = "Dili Seçiniz.")]
