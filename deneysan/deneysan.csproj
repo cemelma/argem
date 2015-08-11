@@ -2639,6 +2639,7 @@
     <Folder Include="Content\Images\references\" />
     <Folder Include="Content\Scripts\" />
     <Folder Include="Content\Styles\" />
+    <Folder Include="Content\temp\" />
     <Folder Include="Content\uploads\" />
   </ItemGroup>
   <ItemGroup>

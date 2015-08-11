@@ -1,22 +1,48 @@
 ﻿jQuery(function ($) {
-    $('.multi').Multifile();
-    //$('#projedokumanfile').uploadify({
-    //    'preventCaching': false,
-    //    'swf': "http://localhost:1745/js/uploadify/uploadify.swf",
-    //    "uploader": '../FProjects/SaveProjectDocumentFile',
-    //    'folder': 'http://localhost:1745/Content/uploads',
-    //   "cancelImg": "http://localhost:1745/js/uploadify/uploadify-cancel.png",
-    //    "removeCompleted": false,
-    //    'buttonText': 'Dosya Seçin',
-       
-    //    'multi': false,
-    //    'onUploadSuccess': function (file, data, response) {
-    //        //$('.uploadify-queue').show();
-    //        $(".uploadify-queue-item").children(".cancel").children("a").attr("href", "#");
-    //        $(".uploadify-queue-item").children(".cancel").children("a").attr("onclick", "RemoveDocumentFile()");
-    //    }
+  
+    var docSize = 0;
+
+    $('#projedokumanfile').uploadify({
+        'preventCaching': false,
+        'swf': "http://localhost:1745/js/uploadify/uploadify.swf",
+        "uploader": '../FProjects/SaveProjectDocumentFile',
+        'folder': 'http://localhost:1745/Content/uploads',
+       "cancelImg": "http://localhost:1745/js/uploadify/uploadify-cancel.png",
+        "removeCompleted": false,
+        'buttonText': 'Dosya Seçin',
+        'queueSizeLimit': 1,
+        'multi': false,
+        'onUploadSuccess': function (file, data, response) {
+            $('#projedokumanfile').uploadify('disable', true);
+            $("#hdndokumanfile").val(data);
+            $('.uploadify-queue').css("display", "block");
+            //$('.uploadify-queue').show();
+            $(".uploadify-queue-item").children(".cancel").children("a").attr("href", "#");
+            $(".uploadify-queue-item").children(".cancel").children("a").remove();
+            $(".uploadify-queue-item").children(".cancel").append("<span onclick='RemoveDocumentFile();return false;' style='float:right;cursor:pointer;'>X</span>");
+          //  $(".uploadify-queue-item").children(".cancel").children("a").attr("onclick", "RemoveDocumentFile()");
+        }
  
-    //});
+    });
+
+
+    $('#projeresimfile').uploadify({
+        'preventCaching': false,
+        'swf': "http://localhost:1745/js/uploadify/uploadify.swf",
+        "uploader": '../FProjects/SaveProjectDocumentFile',
+        'folder': 'http://localhost:1745/Content/uploads',
+        "cancelImg": "http://localhost:1745/js/uploadify/uploadify-cancel.png",
+        "removeCompleted": false,
+        'buttonText': 'Dosya Seçin',
+
+        'multi': false,
+        'onUploadSuccess': function (file, data, response) {
+            //$('.uploadify-queue').show();
+            //         $(".uploadify-queue-item").children(".cancel").children("a").attr("href", "#");
+            //         $(".uploadify-queue-item").children(".cancel").children("a").attr("onclick", "RemoveDocumentFile()");
+        }
+
+    });
 
     //$('#projedokumanfile').fileupload({
     //    url: '../FProjects/SaveProjectDocumentFile',
@@ -42,7 +68,8 @@
 
 function RemoveDocumentFile() {
     $('.uploadify-queue').css("display","none");
-    
+    $('#projedokumanfile-button').removeClass('disabled');
+    $("#hdndokumanfile").val("");
 }
 
 function Success()

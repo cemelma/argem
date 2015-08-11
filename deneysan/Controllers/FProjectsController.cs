@@ -18,6 +18,7 @@ namespace deneysan.Controllers
 
     public ActionResult NewProject()
     {
+      var str = Server.MapPath("~/Content/upload/1739476707_deneme.docx");
       return View();
     }
 
@@ -33,6 +34,15 @@ namespace deneysan.Controllers
         model.TimeCreated = DateTime.Now;
         model.Status = 0;
         model.Language = lang;
+        
+
+        
+        if(System.IO.File.Exists(Server.MapPath("/Content/temp/"+hdndokumanfile)))
+        {
+          model.ProjeDokümani = Server.MapPath("/Content/upload/" + hdndokumanfile);
+         // System.IO.File.Copy(Server.MapPath("~/Content/temp/" + hdndokumanfile), Server.MapPath("~/Content/upload/" + hdndokumanfile));
+          System.IO.File.Delete(Server.MapPath("/Content/temp/" + hdndokumanfile));
+        }
         db.Projects.Add(model);
         db.SaveChanges();
       }
@@ -40,7 +50,7 @@ namespace deneysan.Controllers
     }
 
      [HttpPost]
-    public JsonResult SaveProjectDocumentFile()
+    public string SaveProjectDocumentFile()
     {
       Random rnd = new Random();
       int rndfilename = rnd.Next();
@@ -50,10 +60,10 @@ namespace deneysan.Controllers
          {
            fileName = rndfilename + "_" + hpf.FileName;
           
-            hpf.SaveAs(Path.Combine(Server.MapPath("~/Content/uploads/"+fileName)));
+            hpf.SaveAs(Path.Combine(Server.MapPath("~/Content/temp/"+fileName)));
          }
 
-         return Json(fileName);
+         return fileName;
     }
 
   

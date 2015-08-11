@@ -13,7 +13,7 @@
 
 
 
-<script src="~/js/jquery.multifile.js"></script>
+<script src="~/Scripts/uploadify/jquery.uploadify.min.js"></script>
 <script src="~/js/pagescirpts/projectadd.js"></script>
 
 
@@ -145,8 +145,8 @@
                                 <div class="row">
                                     <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.dokuman</label></div>
                                     <div class="col-lg-5">
-                                        @*<input id="projedokumanfile" name="projedokumanfile" type="file">*@
-                                        <input class="multi" maxlength="2" />
+                                        <input id="projedokumanfile" name="projedokumanfile" type="file">
+                                      
                                         @*<input class="multifile" type="file"  id="projedokumanfile" maxlength="1">*@
                                         <span id="uploadedfilename"></span>
                                         @Html.Hidden("hdndokumanfile")
@@ -157,7 +157,7 @@
                                 @*<div class="row">
                                         <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.cizim</label></div>
                                         <div class="col-lg-5">
-                                            <input id="file_input" type="file" name="projecizim[]">
+                                            <input id="projeresimfile" name="projeresimfile">
                                         </div>
                                         <div class="col-lg-4"></div>
                                     </div>*@
