@@ -223,7 +223,7 @@ namespace ProjectsRess {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PROJE RESİMLERİ(en fazla 5 resim ekleyebilirsiniz.).
+        ///   Looks up a localized string similar to PROJE RESİMLERİ.
         /// </summary>
         public static string resim {
             get {

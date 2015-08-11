@@ -34,12 +34,15 @@
         "cancelImg": "http://localhost:1745/js/uploadify/uploadify-cancel.png",
         "removeCompleted": false,
         'buttonText': 'Dosya Seçin',
-
+        'uploadLimit': 5,
         'multi': false,
         'onUploadSuccess': function (file, data, response) {
+            $("#hdndokumanfile").val(data);
+            $('.uploadify-queue').css("display", "block");
             //$('.uploadify-queue').show();
-            //         $(".uploadify-queue-item").children(".cancel").children("a").attr("href", "#");
-            //         $(".uploadify-queue-item").children(".cancel").children("a").attr("onclick", "RemoveDocumentFile()");
+            $(".uploadify-queue-item").children(".cancel").children("a").attr("href", "#");
+            $(".uploadify-queue-item").children(".cancel").children("a").remove();
+            $(".uploadify-queue-item").children(".cancel").append("<span onclick='RemoveDocumentFile();return false;' style='float:right;cursor:pointer;'>X</span>");
         }
 
     });
