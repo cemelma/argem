@@ -1876,6 +1876,7 @@
     <Content Include="css\fileuploader\jquery.fileupload-ui.css" />
     <Content Include="css\fileuploader\jquery.fileupload.css" />
     <Content Include="css\fileuploader\style.css" />
+    <Content Include="Images\argemlogo.png" />
     <Content Include="js\fileuploader\app.js" />
     <Content Include="js\fileuploader\cors\jquery.postmessage-transport.js" />
     <Content Include="js\fileuploader\cors\jquery.xdr-transport.js" />
