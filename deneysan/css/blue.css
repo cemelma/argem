@@ -8546,12 +8546,31 @@ label.error {
     width: 100%;
 }
 
-.logo {
+/*.logo {
     height: 41px;
     width: 140px;
     float: left;
     background: url('../images/logo.png') no-repeat;
     margin: 10px 0;
+}*/
+
+.logo {
+    height: 60px;
+    width: 250px !important;
+    /* float: left; */
+    /* background: url('../images/logo.png') no-repeat; */
+    /* margin: 10px 0; */
+    /*border: solid 1px red;*/
+    position:relative;
+    margin:0 !important;
+}
+
+.logo img{
+    width: 250px;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
