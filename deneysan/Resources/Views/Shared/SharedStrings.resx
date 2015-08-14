@@ -165,6 +165,9 @@
   <data name="map" xml:space="preserve">
     <value>Harita</value>
   </data>
+  <data name="menuprojects_link" xml:space="preserve">
+    <value>projelistesi</value>
+  </data>
   <data name="menu_allnews" xml:space="preserve">
     <value>tum-haberler</value>
   </data>
@@ -239,6 +242,9 @@
   </data>
   <data name="projebasvurusu" xml:space="preserve">
     <value>Proje Başvurusu</value>
+  </data>
+  <data name="projectlist_header" xml:space="preserve">
+    <value>Proje Listesi</value>
   </data>
   <data name="projects" xml:space="preserve">
     <value>Projeler</value>

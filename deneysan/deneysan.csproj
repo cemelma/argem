@@ -2616,6 +2616,8 @@
     <Content Include="Scripts\uploadify\check-exists.php" />
     <Content Include="Scripts\uploadify\index.php" />
     <Content Include="Scripts\uploadify\uploadify.php" />
+    <Content Include="Views\FProjects\ProjectList.cshtml" />
+    <Content Include="Views\FProjects\ProjectDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2637,7 +2639,9 @@
     <Folder Include="Content1\Images\projects\" />
     <Folder Include="Content1\Images\references\" />
     <Folder Include="Content\dokumanlar\" />
+    <Folder Include="Content\images\projects\" />
     <Folder Include="Content\images\references\" />
+    <Folder Include="Content\projectfiles\" />
     <Folder Include="Content\Scripts\" />
     <Folder Include="Content\Styles\" />
     <Folder Include="Content\temp\" />

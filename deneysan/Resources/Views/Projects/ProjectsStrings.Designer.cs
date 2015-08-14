@@ -196,6 +196,24 @@ namespace ProjectsRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Proje Detayı.
+        /// </summary>
+        public static string projedetaysayfasibutontext {
+            get {
+                return ResourceManager.GetString("projedetaysayfasibutontext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to projedetay.
+        /// </summary>
+        public static string projedetaysayfasilink {
+            get {
+                return ResourceManager.GetString("projedetaysayfasilink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ADI SOYADI.
         /// </summary>
         public static string projesahibiadi {
@@ -255,6 +273,24 @@ namespace ProjectsRess {
         public static string telefonno {
             get {
                 return ResourceManager.GetString("telefonno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proje Bütçesi : .
+        /// </summary>
+        public static string txtprojeButcesi {
+            get {
+                return ResourceManager.GetString("txtprojeButcesi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proje Süresi :.
+        /// </summary>
+        public static string txtprojeSuresi {
+            get {
+                return ResourceManager.GetString("txtprojeSuresi", resourceCulture);
             }
         }
         

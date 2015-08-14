@@ -162,6 +162,12 @@
   <data name="projedetay" xml:space="preserve">
     <value>PROJE DETAYLARI</value>
   </data>
+  <data name="projedetaysayfasibutontext" xml:space="preserve">
+    <value>Proje Detayı</value>
+  </data>
+  <data name="projedetaysayfasilink" xml:space="preserve">
+    <value>projedetay</value>
+  </data>
   <data name="projesahibiadi" xml:space="preserve">
     <value>ADI SOYADI</value>
   </data>
@@ -182,6 +188,12 @@
   </data>
   <data name="telefonno" xml:space="preserve">
     <value>TELEFON NUMARASI (SABİT HAT – CEP)</value>
+  </data>
+  <data name="txtprojeButcesi" xml:space="preserve">
+    <value>Proje Bütçesi : </value>
+  </data>
+  <data name="txtprojeSuresi" xml:space="preserve">
+    <value>Proje Süresi :</value>
   </data>
   <data name="uygulanacagiyer" xml:space="preserve">
     <value>PROJENİN UYGULANACAĞI YER</value>

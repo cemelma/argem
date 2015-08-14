@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "ProjectList";
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+@model List<deneysan_DAL.Entities.Projects>
+
+<div class="about-intro-wrap pull-left">
+    <div class="bread-crumb-wrap ibc-wrap-6">
+        <div class="container">
+            <!--Title / Beadcrumb-->
+            <div class="inner-page-title-wrap col-xs-12 col-md-12 col-sm-12">
+                <div class="bread-heading"><h1>@SharedRess.SharedStrings.projectlist_header</h1></div>
+                <div class="bread-crumb pull-right">
+                    <ul>
+                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_homepage">@SharedRess.SharedStrings.homepage</a></li>
+                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menuprojects_link">@SharedRess.SharedStrings.projectlist_header</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="panel panel-default panel-primary">
+                    <div class="panel-heading clearfix" style="padding:5px 15px;">
+                        <div class="pull-left"><i class="glyphicon glyphicon-book dept-icon" style="color:white;"></i></div>
+                        <div class="pull-left" style="width:90%;"><span class="dep-txt" style="margin-left:20px;font-weight:bold;">@item.ProjeAdi.ToUpper()</span></div>
+                    </div>
+                    <div class="panel-body">
+                        <h4 style="font-weight:bold;">Proje Özeti</h4>
+                        <p>
+                            @item.ProjeOzeti
+                        </p>
+                        <ul class="list-unstyled profileInputs">
+                            <li style="line-height:40px"><i class="fa fa-money fa-fw fa-lg" style="font-size:24px;"></i><span style="font-weight:bold;font-size:14px">@ProjectsRess.ProjectsStrings.txtprojeButcesi</span> @item.ProjeButcesi</li>
+                            <li style="line-height:40px"><i class="fa fa-calendar fa-fw fa-lg" style="font-size:24px;"></i><span style="font-weight:bold;font-size:14px">@ProjectsRess.ProjectsStrings.txtprojeSuresi</span> @item.ProjeSuresi</li>
+                            
+                        </ul>
+                        <div class="purchase-strip-blue dept-apponit-butt" style="margin-top:20px;">
+                            <section class="color-4">
+                                <p class="ipurchase-paragraph">
+                                    <a class="fa-calendar fa-eye btn btn-4 btn-4a notViewed" href="/@SharedRess.SharedStrings.menu_culture/@ProjectsRess.ProjectsStrings.projedetaysayfasilink/@item.ProjeId">@ProjectsRess.ProjectsStrings.projedetaysayfasibutontext</a>
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                
+                @*<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 ">
+                    <div id="accodion">
+                       
+                        <div>
+                            
+                            <div class="dept-content pull-left col-md-7 col-lg-8">
+                                <p>
+                                    @item.ProjeOzeti
+                                </p>
+
+
+                                <a href="#" class="dept-details-butt">Details</a>
+
+                                <div class="purchase-strip-blue dept-apponit-butt">
+                                    <section class="color-4">
+                                        <p class="ipurchase-paragraph">
+                                            <button class="icon-calendar btn btn-4 btn-4a notViewed">Appointment</button>
+                                        </p>
+                                    </section>
+                                </div>
+
+                                <div class="vspacer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+
+            }
+
+        </div>
+    </div>
+</div>

@@ -367,6 +367,15 @@ namespace SharedRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to projelistesi.
+        /// </summary>
+        public static string menuprojects_link {
+            get {
+                return ResourceManager.GetString("menuprojects_link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Teklif Listem.
         /// </summary>
         public static string myofferlist {
@@ -426,6 +435,15 @@ namespace SharedRess {
         public static string projebasvurusu {
             get {
                 return ResourceManager.GetString("projebasvurusu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proje Listesi.
+        /// </summary>
+        public static string projectlist_header {
+            get {
+                return ResourceManager.GetString("projectlist_header", resourceCulture);
             }
         }
         
