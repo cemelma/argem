@@ -127,14 +127,38 @@ namespace deneysan.Controllers
 
     public ActionResult ProjectDetail(int id)
     {
+      ProjectDetailModel model = new ProjectDetailModel();
       using (DeneysanContext db = new DeneysanContext())
       {
-       var project = db.Projects.Where(x => x.ProjeId == id).FirstOrDefault();
+       Projects project = db.Projects.Where(x => x.ProjeId == id).FirstOrDefault();
+        if(project!=null)
+        {
+          model.Project = project;
 
-        return View(project);
+          List<ProjectsGallery> gallery = db.ProjectsGallery.Where(x=>x.ProjeId==id).ToList();
+          if(gallery!=null && gallery.Count()>0 )
+            model.ProjectImages = gallery;
+        }
+
+        return View(model);
       }
 
     }
+
+    public FileResult Download(string fileName)
+    {
+   
+      return File(Server.MapPath("~/Content/projectfiles/"+fileName), "text/plain", "text/plain");
+    }
+
+
+    public class ProjectDetailModel
+    {
+      public Projects Project { get;set;}
+      public List<ProjectsGallery> ProjectImages { get;set;}
+    }
+
+ 
     
     //public ActionResult ProjectContent(int id)
     //{

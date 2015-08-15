@@ -97,6 +97,15 @@ namespace ProjectsRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Proje Dökümanını İndir.
+        /// </summary>
+        public static string download {
+            get {
+                return ResourceManager.GetString("download", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to E-POSTA ADRESİ.
         /// </summary>
         public static string eposta {
@@ -210,6 +219,15 @@ namespace ProjectsRess {
         public static string projedetaysayfasilink {
             get {
                 return ResourceManager.GetString("projedetaysayfasilink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Projeye ait döküman bulunmamaktadır.
+        /// </summary>
+        public static string projedokumaniyok {
+            get {
+                return ResourceManager.GetString("projedokumaniyok", resourceCulture);
             }
         }
         

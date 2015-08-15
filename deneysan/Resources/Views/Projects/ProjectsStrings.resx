@@ -129,6 +129,9 @@
   <data name="dokuman" xml:space="preserve">
     <value>PROJE DÖKÜMANI</value>
   </data>
+  <data name="download" xml:space="preserve">
+    <value>Proje Dökümanını İndir</value>
+  </data>
   <data name="eposta" xml:space="preserve">
     <value>E-POSTA ADRESİ</value>
   </data>
@@ -167,6 +170,9 @@
   </data>
   <data name="projedetaysayfasilink" xml:space="preserve">
     <value>projedetay</value>
+  </data>
+  <data name="projedokumaniyok" xml:space="preserve">
+    <value>Projeye ait döküman bulunmamaktadır</value>
   </data>
   <data name="projesahibiadi" xml:space="preserve">
     <value>ADI SOYADI</value>

@@ -132,6 +132,9 @@
   <data name="dokuman" xml:space="preserve">
     <value>PROJE DÖKÜMANI</value>
   </data>
+  <data name="download" xml:space="preserve">
+    <value>Download Project Document</value>
+  </data>
   <data name="eposta" xml:space="preserve">
     <value>E-MAIL</value>
   </data>
@@ -170,6 +173,9 @@
   </data>
   <data name="projedetaysayfasilink" xml:space="preserve">
     <value>projectdetail</value>
+  </data>
+  <data name="projedokumaniyok" xml:space="preserve">
+    <value>There is no file related to the project</value>
   </data>
   <data name="projesahibiadi" xml:space="preserve">
     <value>NAME SURNAME</value>
