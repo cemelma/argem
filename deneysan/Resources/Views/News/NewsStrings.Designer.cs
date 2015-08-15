@@ -61,7 +61,7 @@ namespace NewsRess {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DENEYSAN Haberler.
+        ///   Looks up a localized string similar to Argemsan Haberleri.
         /// </summary>
         public static string deneysannews {
             get {

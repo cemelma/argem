@@ -13,7 +13,7 @@ namespace deneysan_DAL.Context
         public Configration()
         {
             AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
+            AutomaticMigrationDataLossAllowed = false;
         }
 
 

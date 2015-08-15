@@ -29,13 +29,14 @@ namespace deneysan_DAL.Context
         public DbSet<ProductGroup> ProductGroup { get; set; }
         public DbSet<Product> Product { get; set; }
         public DbSet<ImportantLinks> ImportantLinks { get; set; }
-        public DbSet<Projects> Projects { get; set; }
+       
         public DbSet<HumanResource> HumanResource { get; set; }
         public DbSet<Teklif> Teklif { get; set; }
         public DbSet<TeklifUrun> TeklifUrun { get; set; }
         public DbSet<MailSetting> MailSetting { get; set; }
         public DbSet<MailUsers> MailUsers { get; set; }
         public DbSet<OfferNumber> OfferNumber { get; set; }
+        public DbSet<Projects> Projects { get; set; }
         public DbSet<ProjectsGallery> ProjectsGallery { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -58,13 +59,14 @@ namespace deneysan_DAL.Context
             modelBuilder.Entity<ProductGroup>().ToTable("ProductGroup");
             modelBuilder.Entity<Product>().ToTable("Product");
             modelBuilder.Entity<ImportantLinks>().ToTable("ImportantLinks");
-            modelBuilder.Entity<Projects>().ToTable("Projects");
+            
             modelBuilder.Entity<HumanResource>().ToTable("HumanResource");
             modelBuilder.Entity<Teklif>().ToTable("Teklif");
             modelBuilder.Entity<TeklifUrun>().ToTable("TeklifUrun");
             modelBuilder.Entity<MailUsers>().ToTable("MailUsers");
             modelBuilder.Entity<MailSetting>().ToTable("MailSetting");
             modelBuilder.Entity<OfferNumber>().ToTable("OfferNumber");
+            modelBuilder.Entity<Projects>().ToTable("Projects");
             modelBuilder.Entity<ProjectsGallery>().ToTable("ProjectsGallery");
             
           

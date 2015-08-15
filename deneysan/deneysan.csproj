@@ -2618,6 +2618,8 @@
     <Content Include="Scripts\uploadify\uploadify.php" />
     <Content Include="Views\FProjects\ProjectList.cshtml" />
     <Content Include="Views\FProjects\ProjectDetail.cshtml" />
+    <Content Include="Views\FNews\Index.cshtml" />
+    <Content Include="Views\FNews\NewsContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
