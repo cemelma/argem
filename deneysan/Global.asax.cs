@@ -29,24 +29,25 @@ namespace deneysan
         }
 
 
-     protected void Application_AcquireRequestState(object sender, EventArgs e)
-     {
+        protected void Application_AcquireRequestState(object sender, EventArgs e)
+        {
 
-            //CultureInfo ci = new CultureInfo("tr");
-            //System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
-            //System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(ci.Name);
+            HttpContext context = HttpContext.Current;
+            if (context != null && context.Session != null)
+            {
 
-            if (Session["culture"] == null)
-            {
-                CultureInfo ci = new CultureInfo("tr");
-                System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
-                System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(ci.Name);
-            }
-            else
-            {
-                CultureInfo ci = new CultureInfo(Session["culture"].ToString());
-                System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
-                System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(ci.Name);
+                if (System.Web.HttpContext.Current.Session["culture"] == null)
+                {
+                    CultureInfo ci = new CultureInfo("tr");
+                    System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
+                    System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(ci.Name);
+                }
+                else
+                {
+                    CultureInfo ci = new CultureInfo(Session["culture"].ToString());
+                    System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
+                    System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(ci.Name);
+                }
             }
 
         }
