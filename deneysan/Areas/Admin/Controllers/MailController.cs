@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using deneysan_BLL.MailBL;
 using deneysan_DAL.Entities;
 using deneysan.Areas.Admin.Filters;
+using deneysan.AccountBL;
 
 namespace deneysan.Areas.Admin.Controllers
 {
@@ -141,6 +142,37 @@ namespace deneysan.Areas.Admin.Controllers
             //ViewBag.ProcessMessage = MailManager.AddMailUsers(model);
             //ModelState.Clear();
             return View();
+        }
+
+        public ActionResult AdminSettings()
+        {
+            return View(AccountManager.GetAdminFirst());
+        }
+
+        [HttpPost]
+        public ActionResult AdminSettings(AdminUser model, string txtpassword)
+        {
+            var record = AccountManager.GetAdminFirst();
+            if (record == null)
+            {
+                ViewBag.nullsetting = true;
+                model.Password = txtpassword;
+                ViewBag.ProcessMessage = AccountManager.EditAdminFirst(model);
+                return View(model);
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(txtpassword))
+                    model.Password = txtpassword;
+                else
+                    model.Password = record.Password;
+
+                ViewBag.nullsetting = false;
+                model.AdminUserId = record.AdminUserId;
+                ViewBag.ProcessMessage = AccountManager.EditAdminFirst(model);
+            }
+
+            return View(AccountManager.GetAdminFirst());
         }
 
     }

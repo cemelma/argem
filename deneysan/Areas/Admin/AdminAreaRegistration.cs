@@ -68,6 +68,7 @@ namespace deneysan.Areas.Admin
             context.MapRoute("mailuser_add", "yonetim/ekle", new { action = "Add", Controller = "Mail" });
             context.MapRoute("mailuser_edit", "yonetim/duzenle/{id}", new { action = "Edit", Controller = "Mail" });
             context.MapRoute("mail_setting", "yonetim/mailayarlari", new { action = "MailSetting", Controller = "Mail" });
+            context.MapRoute("mail_setting_admin", "yonetim/yoneticiayarlari", new { action = "AdminSettings", Controller = "Mail" });
 
 
             //DÖKÜMANLAR

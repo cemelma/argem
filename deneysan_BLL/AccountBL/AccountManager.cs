@@ -27,14 +27,39 @@ namespace deneysan.AccountBL
                     HttpContext.Current.Response.Cookies.Add(cookie);
                     return true;
                 }
-                else
-                    return false;
-
+                else return false;
             }
-
         }
 
-      
-       
+        public static AdminUser GetAdminFirst()
+        {
+            using (DeneysanContext db = new DeneysanContext())
+            {
+                return db.AdminUser.FirstOrDefault();
+            }
+        }
+
+        public static bool EditAdminFirst(AdminUser model)
+        {
+            using (DeneysanContext db = new DeneysanContext())
+            {
+                try
+                {
+                    AdminUser record = db.AdminUser.Where(d => d.AdminUserId == model.AdminUserId).SingleOrDefault();
+                    if (record != null)
+                    {
+                        record.Email = model.Email;
+                        record.Password = model.Password;
+                        db.SaveChanges();
+                        return true;
+                    } else return false;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+            }
+        }
+
     }
 }

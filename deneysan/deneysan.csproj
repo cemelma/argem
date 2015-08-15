@@ -1962,6 +1962,7 @@
     <Content Include="js\uploadify\check-exists.php" />
     <Content Include="js\uploadify\index.php" />
     <Content Include="js\uploadify\uploadify.php" />
+    <Content Include="Areas\Admin\Views\Mail\AdminSettings.cshtml" />
     <None Include="Properties\PublishProfiles\deneme.pubxml" />
     <None Include="Properties\PublishProfiles\argemsan.pubxml" />
     <Content Include="js\jquery-1.7.2.min.js" />
