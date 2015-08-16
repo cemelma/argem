@@ -94,4 +94,36 @@ namespace deneysan.Models
         public string ProviderDisplayName { get; set; }
         public string ProviderUserId { get; set; }
     }
+
+    public class RegisterLoginViewModel
+    {
+        [Required(ErrorMessage = "Mail Alanı Boş Geçilemez")]
+        [Display(Name = "Mail Adresi")]
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "Şifre Alanı Boş Geçilemez")]
+        [DataType(DataType.Password)]
+        [Display(Name = "Şifre")]
+        public string Password { get; set; }
+
+        [Display(Name = "Beni hatırla?")]
+        public bool RememberMe { get; set; }
+    }
+
+    public class ForgetPasswordViewModel
+    {
+        [Required(ErrorMessage = "Mail Alanı Boş Geçilemez")]
+        [Display(Name = "Mail Adresi")]
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
+    }
+
+    public class ChangePasswordViewModel
+    {
+        [Required(ErrorMessage = "Şifre Alanı Boş Geçilemez")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+    }
+
 }

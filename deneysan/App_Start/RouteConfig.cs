@@ -85,6 +85,15 @@ namespace deneysan
             routes.MapRoute("reference_tr", "tr/referanslar", new { action = "Index", Controller = "FReferences" });
             routes.MapRoute("reference_en", "en/references", new { action = "Index", Controller = "FReferences" });
 
+            routes.MapRoute("login_tr", "tr/giris", new { action = "Index", Controller = "FAccount" });
+            routes.MapRoute("login_en", "en/login", new { action = "Index", Controller = "FAccount" });
+
+            routes.MapRoute("pass_tr", "tr/sifremiunuttum", new { action = "ForgetPassword", Controller = "FAccount" });
+            routes.MapRoute("pass_en", "en/forgetpassword", new { action = "ForgetPassword", Controller = "FAccount" });
+
+            routes.MapRoute("passchange_tr", "tr/sifremidegistir", new { action = "ChangePassword", Controller = "FAccount" });
+            routes.MapRoute("passchange_en", "en/changepassword", new { action = "ChangePassword", Controller = "FAccount" });
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

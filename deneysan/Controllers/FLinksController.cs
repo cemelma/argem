@@ -1,4 +1,5 @@
-﻿using deneysan_BLL.LinkBL;
+﻿using deneysan.Models;
+using deneysan_BLL.LinkBL;
 using System;
 using System.Collections.Generic;
 using System.Linq;

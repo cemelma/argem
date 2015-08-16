@@ -117,169 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="aboutus" xml:space="preserve">
-    <value>Hakkımızda</value>
-  </data>
-  <data name="address" xml:space="preserve">
-    <value>Adres</value>
-  </data>
-  <data name="bankaccounts" xml:space="preserve">
-    <value>Banka Bilgileri</value>
-  </data>
-  <data name="contact" xml:space="preserve">
-    <value>İletişim</value>
-  </data>
-  <data name="contactdetails" xml:space="preserve">
-    <value>İletişim Bilgileri</value>
-  </data>
-  <data name="contactform" xml:space="preserve">
-    <value>İletişim Formu</value>
-  </data>
-  <data name="culture" xml:space="preserve">
-    <value>en</value>
-  </data>
-  <data name="culturename" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="documents" xml:space="preserve">
-    <value>Dökümanlar</value>
-  </data>
-  <data name="email" xml:space="preserve">
-    <value>E-posta</value>
-  </data>
-  <data name="fax" xml:space="preserve">
-    <value>Fax</value>
-  </data>
-  <data name="goback" xml:space="preserve">
-    <value>Geri Dön</value>
-  </data>
-  <data name="homepage" xml:space="preserve">
-    <value>Anasayfa</value>
-  </data>
-  <data name="institutional" xml:space="preserve">
-    <value>Kurumsal</value>
-  </data>
-  <data name="links" xml:space="preserve">
-    <value>Bağlantılar</value>
-  </data>
-  <data name="map" xml:space="preserve">
-    <value>Harita</value>
-  </data>
-  <data name="menuprojects_link" xml:space="preserve">
-    <value>projelistesi</value>
-  </data>
-  <data name="menu_allnews" xml:space="preserve">
-    <value>tum-haberler</value>
-  </data>
-  <data name="menu_application" xml:space="preserve">
-    <value>basvuru</value>
-  </data>
-  <data name="menu_bankaccounts" xml:space="preserve">
-    <value>banka-hesaplari</value>
-  </data>
-  <data name="menu_career" xml:space="preserve">
-    <value>kariyer</value>
-  </data>
-  <data name="menu_contactdetails" xml:space="preserve">
-    <value>iletisim-bilgileri</value>
-  </data>
-  <data name="menu_contactform" xml:space="preserve">
-    <value>iletisim-formu</value>
-  </data>
-  <data name="menu_culture" xml:space="preserve">
-    <value>tr</value>
-  </data>
-  <data name="menu_documents" xml:space="preserve">
-    <value>dokumanlar</value>
-  </data>
-  <data name="menu_homepage" xml:space="preserve">
-    <value>anasayfa</value>
-  </data>
-  <data name="menu_institutional" xml:space="preserve">
-    <value>hakkimizda</value>
-  </data>
-  <data name="menu_links" xml:space="preserve">
-    <value>linkler</value>
-  </data>
-  <data name="menu_news" xml:space="preserve">
-    <value>haberler</value>
-  </data>
-  <data name="menu_offer" xml:space="preserve">
-    <value>teklif</value>
-  </data>
-  <data name="menu_products" xml:space="preserve">
-    <value>urunler</value>
-  </data>
-  <data name="menu_project" xml:space="preserve">
-    <value>projeler</value>
-  </data>
-  <data name="menu_projects" xml:space="preserve">
-    <value>projeler</value>
-  </data>
-  <data name="menu_references" xml:space="preserve">
-    <value>referanslar</value>
-  </data>
-  <data name="menu_visionmision" xml:space="preserve">
-    <value>vizyon-misyon</value>
-  </data>
-  <data name="myofferlist" xml:space="preserve">
-    <value>Teklif Listem</value>
-  </data>
-  <data name="news" xml:space="preserve">
-    <value>Haberler</value>
-  </data>
-  <data name="pagetitle" xml:space="preserve">
-    <value>DENEYSAN - Eğitim Cihazları</value>
-  </data>
-  <data name="phone" xml:space="preserve">
-    <value>Telefon</value>
-  </data>
-  <data name="products" xml:space="preserve">
-    <value>ÜRÜNLER</value>
-  </data>
-  <data name="projebasvurulinki" xml:space="preserve">
-    <value>/tr/projebasvuru</value>
-  </data>
-  <data name="projebasvurusu" xml:space="preserve">
-    <value>Proje Başvurusu</value>
-  </data>
-  <data name="projectlist_header" xml:space="preserve">
-    <value>Proje Listesi</value>
-  </data>
-  <data name="projects" xml:space="preserve">
-    <value>Projeler</value>
-  </data>
-  <data name="references" xml:space="preserve">
-    <value>Referanslar</value>
-  </data>
-  <data name="requiredfields" xml:space="preserve">
-    <value>Lütfen gerekli alanları eksiksiz ve doğru bir şekilde doldurunuz</value>
-  </data>
-  <data name="searchinsite" xml:space="preserve">
-    <value>Site içi arama</value>
-  </data>
-  <data name="taxoffice" xml:space="preserve">
-    <value>Vergi D.</value>
-  </data>
-  <data name="visionmision" xml:space="preserve">
-    <value>Vizyon&amp;Misyon</value>
-  </data>
-  <data name="login" xml:space="preserve">
+  <data name="giris" xml:space="preserve">
     <value>Giriş</value>
   </data>
-  <data name="menu_login" xml:space="preserve">
-    <value>/tr/giris</value>
+  <data name="girisyap" xml:space="preserve">
+    <value>Giriş Yapın</value>
   </data>
-  <data name="changepass" xml:space="preserve">
-    <value>Şifremi Değiştir</value>
+  <data name="hatirlat" xml:space="preserve">
+    <value>Hatırlat</value>
   </data>
-  <data name="menu_changepass" xml:space="preserve">
-    <value>sifremidegistir</value>
+  <data name="kaydet" xml:space="preserve">
+    <value>Kaydet</value>
   </data>
-  <data name="cikis" xml:space="preserve">
-    <value>Çıkış Yap</value>
+  <data name="mail" xml:space="preserve">
+    <value>Mail Adresi</value>
   </data>
-  <data name="sifremidegis" xml:space="preserve">
+  <data name="sifre" xml:space="preserve">
+    <value>Şifre</value>
+  </data>
+  <data name="sifremidegistir" xml:space="preserve">
     <value>Şifre Değiştir</value>
+  </data>
+  <data name="sifremidegistirh1" xml:space="preserve">
+    <value>ŞİFREMİ DEĞİŞTİR</value>
+  </data>
+  <data name="sifremiunuttum" xml:space="preserve">
+    <value>ŞİFREMİ HATIRLAT</value>
+  </data>
+  <data name="sifremiunuttumlink" xml:space="preserve">
+    <value>/tr/sifremiunuttum</value>
+  </data>
+  <data name="sifremiunuttumtext" xml:space="preserve">
+    <value>Şifremi Unuttum?</value>
+  </data>
+  <data name="sistemegiris" xml:space="preserve">
+    <value>SİSTEM GİRİŞİ</value>
   </data>
 </root>

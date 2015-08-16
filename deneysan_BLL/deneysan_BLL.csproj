@@ -83,6 +83,7 @@
     <Compile Include="TeklifBL\TeklifUrun_Urun.cs" />
     <Compile Include="TeklifBL\EnumTeklifTip.cs" />
     <Compile Include="TeklifBL\TeklifManager.cs" />
+    <Compile Include="UserBL\UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\deneysan_Data\deneysan_DAL.csproj">

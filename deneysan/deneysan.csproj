@@ -85,7 +85,10 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -214,6 +217,7 @@
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Areas\Admin\Models\TeklifModel.cs" />
     <Compile Include="Controllers\FCareerController.cs" />
+    <Compile Include="Controllers\FAccountController.cs" />
     <Compile Include="Controllers\FContactController.cs" />
     <Compile Include="Controllers\FDocumentsController.cs" />
     <Compile Include="Controllers\FHomeController.cs" />
@@ -232,6 +236,7 @@
     <Compile Include="Helpers\Enums\EnumMailUser.cs" />
     <Compile Include="Helpers\Enums\InstituionalTypes.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Helpers\CyriptoClass.cs" />
     <Compile Include="Models\OfferWrapperModel.cs" />
     <Compile Include="Models\HomePageWrapperModel.cs" />
     <Compile Include="Models\ProductWrapperModel.cs" />
@@ -255,6 +260,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ContactStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\Account\AccountStrings.Designer.cs">
+      <DependentUpon>AccountStrings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Account\AccountStrings.en.Designer.cs">
+      <DependentUpon>AccountStrings.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Resources\Views\References\ReferencesStrings.Designer.cs">
       <DependentUpon>ReferencesStrings.resx</DependentUpon>
@@ -2405,6 +2420,9 @@
     <Content Include="Scripts\uploadify\uploadify.php" />
     <Content Include="Views\FProjects\ProjectList.cshtml" />
     <Content Include="Views\FProjects\ProjectDetail.cshtml" />
+    <Content Include="Views\FAccount\Index.cshtml" />
+    <Content Include="Views\FAccount\ForgetPassword.cshtml" />
+    <Content Include="Views\FAccount\ChangePassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2460,6 +2478,16 @@
       <LastGenOutput>ContactStrings1.Designer.cs</LastGenOutput>
       <CustomToolNamespace>ContactRess</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Account\AccountStrings.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountStrings.en.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>AccountRess</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Account\AccountStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountStrings.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>AccountRess</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\References\ReferencesStrings.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>

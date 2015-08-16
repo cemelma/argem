@@ -55,6 +55,7 @@ E:\CEM\GitWorks\argem\deneysan_BLL\bin\Debug\deneysan_Data.dll
 E:\CEM\GitWorks\argem\deneysan_BLL\bin\Debug\EntityFramework.dll
 E:\CEM\GitWorks\argem\deneysan_BLL\bin\Debug\itextsharp.dll
 E:\CEM\GitWorks\argem\deneysan_BLL\bin\Debug\log4net.dll
+E:\CEM\GitWorks\argem\deneysan_BLL\bin\Debug\System.Web.Mvc.dll
 E:\CEM\GitWorks\argem\deneysan_BLL\bin\Debug\deneysan_Data.pdb
 E:\CEM\GitWorks\argem\deneysan_BLL\bin\Debug\EntityFramework.xml
 E:\CEM\GitWorks\argem\deneysan_BLL\bin\Debug\itextsharp.xml
@@ -62,4 +63,3 @@ E:\CEM\GitWorks\argem\deneysan_BLL\bin\Debug\log4net.xml
 E:\CEM\GitWorks\argem\deneysan_BLL\obj\Debug\deneysan_BLL.csprojResolveAssemblyReference.cache
 E:\CEM\GitWorks\argem\deneysan_BLL\obj\Debug\deneysan_BLL.dll
 E:\CEM\GitWorks\argem\deneysan_BLL\obj\Debug\deneysan_BLL.pdb
-E:\CEM\GitWorks\argem\deneysan_BLL\bin\Debug\System.Web.Mvc.dll

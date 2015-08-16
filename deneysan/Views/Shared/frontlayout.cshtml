@@ -54,19 +54,33 @@
                         </ul>
                     </div>
                     <div id="search" class="fa fa-search search-head"></div>
-                    <div class="top-info-contact pull-right col-md-6">
-                        @{ 
-
-                            string imgurl = "/Images/" + @SharedRess.SharedStrings.culture + ".png";
-                        }
-                        <img src="@imgurl" />
-                        @Html.ActionLink(SharedRess.SharedStrings.culturename, "ChangeCulture", "FHome", new { lang = SharedRess.SharedStrings.culture, returnUrl = this.Request.RawUrl }, null)
                         
+
+                        <div class="top-info-contact pull-right col-md-3">
+                            @{
+
+                                string imgurl = "/Images/" + @SharedRess.SharedStrings.culture + ".png";
+                            }
+                            <img src="@imgurl" />
+                            @Html.ActionLink(SharedRess.SharedStrings.culturename, "ChangeCulture", "FHome", new { lang = SharedRess.SharedStrings.culture, returnUrl = this.Request.RawUrl }, null)
+
+                        </div>
+
+                    @{
+                        <div class="top-info-contact pull-right col-md-3">
+                            @if (Request.Cookies["RegCookie"] != null)
+                            {
+                                <a href="@Url.Action("RegisterLogOut","FAccount")" style="font-size: 13px;">@SharedRess.SharedStrings.cikis</a>
+                                <text>|</text>
+                                <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_changepass" style="font-size: 13px;">@SharedRess.SharedStrings.sifremidegis</a>
+                            }
+                        </div>
+                    }
+
+                        @*<div class="top-info-contact pull-right col-md-6">
+                Yeni Sanayi Sitesi 60. Sok. No:2-1/A KARESİ BALIKESİR   |   0 266 246 2 274<div id="search" class="fa fa-search search-head"></div>
+            </div>*@
                     </div>
-                    @*<div class="top-info-contact pull-right col-md-6">
-                            Yeni Sanayi Sitesi 60. Sok. No:2-1/A KARESİ BALIKESİR   |   0 266 246 2 274<div id="search" class="fa fa-search search-head"></div>
-                        </div>*@
-                </div>
             </div><!--Topbar-info-close-->
 
 

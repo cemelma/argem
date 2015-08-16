@@ -264,4 +264,22 @@
   <data name="visionmision" xml:space="preserve">
     <value>Vision&amp;Mision</value>
   </data>
+  <data name="login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="menu_login" xml:space="preserve">
+    <value>/en/login</value>
+  </data>
+  <data name="changepass" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="menu_changepass" xml:space="preserve">
+    <value>changepassword</value>
+  </data>
+  <data name="cikis" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="sifremidegis" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
 </root>
