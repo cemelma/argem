@@ -282,4 +282,13 @@
   <data name="sifremidegis" xml:space="preserve">
     <value>Şifre Değiştir</value>
   </data>
+  <data name="menu_newrecord" xml:space="preserve">
+    <value>yeniuyelik</value>
+  </data>
+  <data name="newrecord" xml:space="preserve">
+    <value>Yeni Üyelik</value>
+  </data>
+  <data name="more" xml:space="preserve">
+    <value>Devamı »</value>
+  </data>
 </root>

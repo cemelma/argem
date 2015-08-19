@@ -126,4 +126,22 @@ namespace deneysan.Models
         public string Password { get; set; }
     }
 
+    public class NewRegister
+    {
+        [Required(ErrorMessage = "Ad Alanı Boş Geçilemez")]
+        [Display(Name = "Ad & Soyad")]
+        public string FullaName { get; set; }
+
+        [Required(ErrorMessage = "Mail Alanı Boş Geçilemez")]
+        [Display(Name = "Mail Adresi")]
+        [DataType(DataType.EmailAddress)]
+        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessage = "Must be a valid Email Address")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "Şifre Alanı Boş Geçilemez")]
+        [DataType(DataType.Password)]
+        [Display(Name = "Şifre")]
+        public string Password { get; set; }
+    }
+
 }

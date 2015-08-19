@@ -349,6 +349,15 @@ namespace SharedRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to yeniuyelik.
+        /// </summary>
+        public static string menu_newrecord {
+            get {
+                return ResourceManager.GetString("menu_newrecord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to haberler.
         /// </summary>
         public static string menu_news {
@@ -421,11 +430,29 @@ namespace SharedRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Devamı ».
+        /// </summary>
+        public static string more {
+            get {
+                return ResourceManager.GetString("more", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Teklif Listem.
         /// </summary>
         public static string myofferlist {
             get {
                 return ResourceManager.GetString("myofferlist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yeni Üyelik.
+        /// </summary>
+        public static string newrecord {
+            get {
+                return ResourceManager.GetString("newrecord", resourceCulture);
             }
         }
         

@@ -1759,6 +1759,7 @@
     <Content Include="css\fileuploader\style.css" />
     <Content Include="Images\argemlogo.png" />
     <Content Include="Images\en.png" />
+    <Content Include="Images\favicon.ico" />
     <Content Include="Images\tr.png" />
     <Content Include="js\fileuploader\app.js" />
     <Content Include="js\fileuploader\cors\jquery.postmessage-transport.js" />
@@ -2423,6 +2424,7 @@
     <Content Include="Views\FAccount\Index.cshtml" />
     <Content Include="Views\FAccount\ForgetPassword.cshtml" />
     <Content Include="Views\FAccount\ChangePassword.cshtml" />
+    <Content Include="Views\FAccount\NewRecord.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

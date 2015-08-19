@@ -61,6 +61,15 @@ namespace AccountRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ad &amp; Soyad.
+        /// </summary>
+        public static string fullname {
+            get {
+                return ResourceManager.GetString("fullname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Giriş.
         /// </summary>
         public static string giris {
@@ -165,6 +174,24 @@ namespace AccountRess {
         public static string sistemegiris {
             get {
                 return ResourceManager.GetString("sistemegiris", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /tr/yeniuyelik.
+        /// </summary>
+        public static string yeniuyeliklink {
+            get {
+                return ResourceManager.GetString("yeniuyeliklink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yeni Üyelik.
+        /// </summary>
+        public static string yeniuyeliktext {
+            get {
+                return ResourceManager.GetString("yeniuyeliktext", resourceCulture);
             }
         }
     }

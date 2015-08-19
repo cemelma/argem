@@ -94,6 +94,9 @@ namespace deneysan
             routes.MapRoute("passchange_tr", "tr/sifremidegistir", new { action = "ChangePassword", Controller = "FAccount" });
             routes.MapRoute("passchange_en", "en/changepassword", new { action = "ChangePassword", Controller = "FAccount" });
 
+            routes.MapRoute("newrecord_tr", "tr/yeniuyelik", new { action = "NewRecord", Controller = "FAccount" });
+            routes.MapRoute("newrecord_en", "en/register", new { action = "NewRecord", Controller = "FAccount" });
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
