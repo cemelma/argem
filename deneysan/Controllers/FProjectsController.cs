@@ -35,7 +35,7 @@ namespace deneysan.Controllers
         model.TimeCreated = DateTime.Now;
         model.Status = 0;
         model.Language = lang;
-
+        model.Online = true;
 
 
         if (!string.IsNullOrEmpty(hdnimagefile))

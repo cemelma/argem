@@ -51,6 +51,21 @@ namespace deneysan.Areas.Admin.Controllers
 
         }
 
+        public ActionResult IptalEdilenProjeler()
+        {
+          string sellang = FillLanguagesList();
+
+          using (DeneysanContext db = new DeneysanContext())
+          {
+
+            List<Projects> projeler = db.Projects.Where(x => x.Status == (int)EnumProjectStatus.Canceled && x.Language == sellang).ToList();
+            return View(projeler);
+
+          }
+
+
+        }
+
         //public ActionResult AddProject()
         //{
         //    var languages = LanguageManager.GetLanguages();
@@ -183,6 +198,25 @@ namespace deneysan.Areas.Admin.Controllers
           
         }
 
+        [HttpPost]
+        public bool ChangeProjectStatus(int id,int status)
+        {          bool returnValue = false;
+          using (DeneysanContext db = new DeneysanContext())
+          {
+            if(db.Projects.Any(d => d.ProjeId == id))
+            {
+              Projects record = db.Projects.FirstOrDefault(d => d.ProjeId == id);
+              record.Status = status;
+              db.SaveChanges();
+              return returnValue;
+            }
+            else
+            {
+              return returnValue;
+            }
+          
+          }
+        }
 
         public JsonResult EditStatus(int id)
         {

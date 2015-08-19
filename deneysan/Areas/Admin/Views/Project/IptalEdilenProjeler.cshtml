@@ -14,12 +14,12 @@
 
 <div id="page-content" class="container_12">
     <div id="page-header">
-        <h2>ONAYLANAN PROJELER</h2>
+        <h2>İPTAL EDİLEN PROJELER</h2>
     </div>
     <section class="grid_12 form">
         <div class="box-header">
             <h1>
-                Onaylanan Projeler Listesi
+                İptal Edilen Projeler Listesi
                 &nbsp;&nbsp;|&nbsp;&nbsp;
                 @Html.DropDownList("LanguageList")
 
@@ -41,7 +41,7 @@
                 {
                     <tr id="listItem_@item.ProjeId" class="handle">
                         <td class="center">
-                           @Html.DropDownList("selectProjeDurum", new SelectList(
+                            @Html.DropDownList("selectProjeDurum", new SelectList(
                   new List<Object>{
                        new { value = 0 , text = "Beklemede"  },
                        new { value = 1 , text = "Onaylanmış" },
@@ -49,12 +49,12 @@
                     },
                   "value",
                   "text",
-               @item.Status), new { @onchange = "ProjeDurumChanged(this,'"+@item.ProjeId+"')" })
+                @item.Status), new { @onchange = "ProjeDurumChanged(this,'" + @item.ProjeId + "')" })
                             @*<select id="selectProjeDurum" placeholder="Beklemede" onchange="ProjeDurumChanged(this,@item.ProjeId)">
-                                <option value="0">Beklemede</option>
-                                <option value="1">Onayla</option>
-                                <option value="2">İptal Et</option>
-                            </select>*@
+                                    <option value="0">Beklemede</option>
+                                    <option value="1">Onayla</option>
+                                    <option value="2">İptal Et</option>
+                                </select>*@
                         </td>
                         <td>
                             <span id="spanitem_@item.ProjeId">@item.ProjeAdi</span>
@@ -103,4 +103,4 @@
 <script src="~/Areas/Admin/Content/scripts/myscripts/DeleteRecordTable.js"></script>
 
 
-<script src="~/Areas/Admin/Content/scripts/pagescripts/proje/onaylananprojeler.js"></script>
+<script src="~/Areas/Admin/Content/scripts/pagescripts/proje/iptaledilenprojeler.js"></script>
