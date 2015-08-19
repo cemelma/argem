@@ -1,0 +1,46 @@
+﻿@model List<deneysan_DAL.Entities.News>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+
+<div class="about-intro-wrap pull-left">
+    <div class="bread-crumb-wrap ibc-wrap-6">
+        <div class="container">
+            <!--Title / Beadcrumb-->
+            <div class="inner-page-title-wrap col-xs-12 col-md-12 col-sm-12">
+                <div class="bread-heading"><h1>@NewsRess.NewsStrings.deneysannews</h1></div>
+                <div class="bread-crumb pull-right">
+                    <ul>
+                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_homepage">@SharedRess.SharedStrings.homepage</a></li>
+                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_allnews">@HomeRess.HomeStrings.allnews</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        @foreach (var newsitem in Model)
+        {
+            <div class="post-item-wrap pull-left col-sm-6 col-md-12 col-xs-12">
+                <img src="@newsitem.NewsImage" class="img-responsive post-author-img" alt="@newsitem.Header" style="max-width:88px;" />
+                <div class="post-content1 pull-left col-md-9 col-sm-9 col-xs-8">
+                    <div class="post-title pull-left"><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_news/@newsitem.PageSlug/@newsitem.NewsId">@newsitem.Header</a></div>
+                    <div class="post-meta-top pull-left">
+                        <ul>
+                            <li><i class="icon-calendar"></i>@newsitem.TimeCreated.Value.ToShortDateString()</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="post-content2 pull-left">
+                    <p>
+                        @newsitem.Spot
+                    <span class="post-meta-bottom"><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_news/@newsitem.PageSlug/@newsitem.NewsId">Devamı »</a></span>
+                </p>
+            </div>
+        </div>
+        }
+    </div>
+</div>

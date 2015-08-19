@@ -2420,9 +2420,14 @@
     <Content Include="Scripts\uploadify\uploadify.php" />
     <Content Include="Views\FProjects\ProjectList.cshtml" />
     <Content Include="Views\FProjects\ProjectDetail.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\FAccount\Index.cshtml" />
     <Content Include="Views\FAccount\ForgetPassword.cshtml" />
     <Content Include="Views\FAccount\ChangePassword.cshtml" />
+=======
+    <Content Include="Views\FNews\Index.cshtml" />
+    <Content Include="Views\FNews\NewsContent.cshtml" />
+>>>>>>> 22b7c8fb829db8ecb06b791038b3761cdc364460
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
