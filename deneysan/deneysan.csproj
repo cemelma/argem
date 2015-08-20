@@ -2426,12 +2426,9 @@
     <Content Include="Views\FAccount\Index.cshtml" />
     <Content Include="Views\FAccount\ForgetPassword.cshtml" />
     <Content Include="Views\FAccount\ChangePassword.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\FNews\Index.cshtml" />
     <Content Include="Views\FNews\NewsContent.cshtml" />
-=======
     <Content Include="Views\FAccount\NewRecord.cshtml" />
->>>>>>> cem
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
