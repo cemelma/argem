@@ -26,7 +26,7 @@ namespace deneysan_BLL.NewsBL
         {
             using (DeneysanContext db = new DeneysanContext())
             {
-                var news_list = db.News.Where(d => d.Deleted == false && d.Language == language && d.Online == true).OrderByDescending(d => d.TimeCreated).OrderBy(d => d.SortOrder).ToList();
+                var news_list = db.News.Where(d => d.Deleted == false && d.Language == language && d.Online == true).OrderByDescending(d => d.TimeCreated).OrderBy(d => d.SortOrder).Take(3).ToList();
                 return news_list;
             }
         }

@@ -1,7 +1,7 @@
-﻿@model deneysan.Models.RegisterLoginViewModel
+﻿@model deneysan.Models.NewRegister
 @{
+    ViewBag.Title = "Yeni Üyelik";
     Layout = "~/Views/Shared/frontlayout.cshtml";
-    ViewBag.Title = "Giriş Paneli";
 }
 
 <div class="about-intro-wrap pull-left">
@@ -9,11 +9,11 @@
         <div class="container">
             <!--Title / Beadcrumb-->
             <div class="inner-page-title-wrap col-xs-12 col-md-12 col-sm-12">
-                <div class="bread-heading"><h1>@AccountRess.AccountStrings.girisyap</h1></div>
+                <div class="bread-heading"><h1>@AccountRess.AccountStrings.yeniuyeliktext</h1></div>
                 <div class="bread-crumb pull-right">
                     <ul>
                         <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_homepage">@SharedRess.SharedStrings.homepage</a></li>
-                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_login">@SharedRess.SharedStrings.login</a></li>
+                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_newrecord">@SharedRess.SharedStrings.newrecord</a></li>
                     </ul>
                 </div>
             </div>
@@ -26,15 +26,20 @@
                 <div class="tabbable tabs-left">
                     
                         <div class="tab-content col-md-6 col-sm-6 col-xs-6 col-centered" style="min-height:450px;float: none;display: block;margin-left: auto;margin-right: auto;">
-                            <div class="dept-title-tabs">@AccountRess.AccountStrings.sistemegiris</div>
+                            <div class="dept-title-tabs">@AccountRess.AccountStrings.yeniuyeliktext</div>
                             <br />
 
-                            @using (Html.BeginForm("Index", "FAccount", FormMethod.Post, new { }))
+                            @using (Html.BeginForm("NewRecord", "FAccount", FormMethod.Post, new { }))
                             {
-                                @Html.AntiForgeryToken()
-
                                 <div class="form-horizontal">
                                     @Html.ValidationSummary(true)
+
+                                    <div class="form-group">
+                                        <div class="email controls">
+                                            @Html.TextBoxFor(model => model.FullaName, new { @placeholder = AccountRess.AccountStrings.fullname, @class = "form-control" })
+                                            @Html.ValidationMessageFor(d => d.FullaName)
+                                        </div>
+                                    </div>
 
                                     <div class="form-group">
                                         <div class="email controls">
@@ -44,23 +49,26 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <div class="pw controls">
-                                            @Html.PasswordFor(model => model.Password, new { @placeholder = @AccountRess.AccountStrings.sifre, @class = "form-control" })
+                                        <div class="email controls">
+                                            @Html.TextBoxFor(model => model.Password, new { @placeholder = AccountRess.AccountStrings.sifremidegistir, @class = "form-control" })
                                             @Html.ValidationMessageFor(d => d.Password)
                                         </div>
                                     </div>
 
+                                    <div class="submit form-group">
+                                        <input type="submit" value='@AccountRess.AccountStrings.kaydet' class="btn btn-primary">
+                                        &nbsp;&nbsp;&nbsp; <a href="@AccountRess.AccountStrings.sifremiunuttumlink">@AccountRess.AccountStrings.sifremiunuttumtext</a>,&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;<a href="@SharedRess.SharedStrings.menu_login">@SharedRess.SharedStrings.login</a>
+                                    </div>
                                     
-                                    <div class="submit form-group" style="margin-bottom:8px">
-                                        <input type="submit" value='@AccountRess.AccountStrings.giris' class="btn btn-primary">
+                                    <div class="submit form-group" style="font-size: 16px;color: green;font-weight: bold;">
+                                        @ViewBag.process 
                                     </div>
+
                                     <div class="submit form-group" style="margin-bottom:8px">
-                                        <a href="@AccountRess.AccountStrings.sifremiunuttumlink">@AccountRess.AccountStrings.sifremiunuttumtext</a>,&nbsp;&nbsp;
-                                        <a href="@AccountRess.AccountStrings.yeniuyeliklink">@AccountRess.AccountStrings.yeniuyeliktext</a>
+                                        
                                     </div>
-                                    @*<div class="form-group" style="margin-bottom:0px">
-                                        <a href="@AccountRess.AccountStrings.sifremiunuttumlink">@AccountRess.AccountStrings.sifremiunuttumtext</a>
-                                    </div>*@
+
                                 </div>
                             }
 

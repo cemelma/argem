@@ -155,5 +155,35 @@ namespace deneysan.Controllers
             return View(model);
         }
 
+        public ActionResult NewRecord()
+        {
+            return View();
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        [HttpPost]
+        public ActionResult NewRecord(NewRegister model)
+        {
+            if (ModelState.IsValid)
+            {
+                if(!UserManager.IsMailControlRecord(model.Email))
+                {
+                    if (UserManager.Record(model.FullaName, model.Email, model.Password))
+                    {
+                        ViewBag.process = "Üyeliğiniz gerçekleşmiştir, sisteme giriş yapabilirsiniz.";
+                        //return RedirectToRoute("login_" + lang, new { controller = "FAccount", action = "Index" });
+                        //return RedirectToAction("Index", "FHome");
+                    }
+                    else ViewBag.process = "Üyelik sırasında bir hata oluştu.";
+                }
+                else ViewBag.process = "Mail adresi kullanımda!";
+
+
+            }
+            else ModelState.AddModelError("", "Lütfen mail adresinizi ve şifrenizi kontrol ediniz.");
+
+            return View(model);
+        }
+
     }
 }

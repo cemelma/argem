@@ -282,4 +282,13 @@
   <data name="sifremidegis" xml:space="preserve">
     <value>Change Password</value>
   </data>
+  <data name="menu_newrecord" xml:space="preserve">
+    <value>newrecord</value>
+  </data>
+  <data name="newrecord" xml:space="preserve">
+    <value>New User</value>
+  </data>
+  <data name="more" xml:space="preserve">
+    <value>More »</value>
+  </data>
 </root>

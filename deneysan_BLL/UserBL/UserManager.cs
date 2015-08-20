@@ -55,7 +55,42 @@ namespace deneysan_BLL.UserBL
                 else return false;
             }
         }
+        public static bool Record(string fullname, string email, string password)
+        {
+            try
+            {
+                using (DeneysanContext db = new DeneysanContext())
+                {
+                    User record = new User();
+                    record.Email = email;
+                    record.FullName = fullname;
+                    record.Password = password;
+                    db.User.Add(record);
+                    db.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
+        public static bool IsMailControlRecord(string email)
+        {
+            try
+            {
+                using (DeneysanContext db = new DeneysanContext())
+                {
+                    User record = db.User.FirstOrDefault(d=> d.Email == email);
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         public static bool IsLogin()
         {
             //HttpCookie cookie = Request.Cookies["RegCookie"];
