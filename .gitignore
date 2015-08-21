@@ -3,6 +3,12 @@ obj/
 bin
 obj
 config
+deneysan.Tests/obj/Debug/
+deneysan/bin/
+deneysan/bin/en/deneysan.resources.dll
+deneysan/obj/Debug/
+deneysan_BLL/bin/Debug/
+deneysan_Data/bin/Debug/
 
 # Windows image file caches
 Thumbs.db
