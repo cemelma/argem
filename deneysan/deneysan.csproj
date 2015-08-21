@@ -1751,6 +1751,13 @@
     <Content Include="bootstrap-new\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="bootstrap-new\js\bootstrap.js" />
     <Content Include="bootstrap-new\js\bootstrap.min.js" />
+    <Content Include="Content\images\bankinfo\garanti-bankasi_33674820.png" />
+    <Content Include="Content\images\bankinfo\garanti1.jpg" />
+    <Content Include="Content\images\bankinfo\garanti2.jpg" />
+    <Content Include="Content\images\bankinfo\is1.jpg" />
+    <Content Include="Content\images\bankinfo\is2.jpg" />
+    <Content Include="Content\images\references\hacettepe-universitesi_8394554.png" />
+    <Content Include="Content\images\references\yildiz-teknik-universitesi_89722137.png" />
     <Content Include="css\fileuploader\demo-ie8.css" />
     <Content Include="css\fileuploader\demo.css" />
     <Content Include="css\fileuploader\jquery.fileupload-noscript.css" />
@@ -2443,7 +2450,6 @@
     <Folder Include="Areas\Admin\Content\images\icons\small\" />
     <Folder Include="Content\dokumanlar\" />
     <Folder Include="Content\images\projects\" />
-    <Folder Include="Content\images\references\" />
     <Folder Include="Content\projectfiles\" />
     <Folder Include="Content\Scripts\" />
     <Folder Include="Content\Styles\" />

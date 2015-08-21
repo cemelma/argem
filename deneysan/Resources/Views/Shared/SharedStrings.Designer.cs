@@ -385,6 +385,15 @@ namespace SharedRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to projebasvuru.
+        /// </summary>
+        public static string menu_projebasvuru {
+            get {
+                return ResourceManager.GetString("menu_projebasvuru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to projeler.
         /// </summary>
         public static string menu_project {
@@ -507,6 +516,15 @@ namespace SharedRess {
         public static string projebasvurusu {
             get {
                 return ResourceManager.GetString("projebasvurusu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yeni Proje Başvurusu.
+        /// </summary>
+        public static string projebasvurutext {
+            get {
+                return ResourceManager.GetString("projebasvurutext", resourceCulture);
             }
         }
         

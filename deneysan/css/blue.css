@@ -11570,7 +11570,7 @@ input[type="date"] {
 }
 
 .icon-cart:before {
-    content: "\e604";
+    /*content: "\e604";*/
 }
 
 .icon-image:before {

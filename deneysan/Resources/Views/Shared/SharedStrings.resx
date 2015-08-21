@@ -291,4 +291,10 @@
   <data name="more" xml:space="preserve">
     <value>Devamı »</value>
   </data>
+  <data name="menu_projebasvuru" xml:space="preserve">
+    <value>projebasvuru</value>
+  </data>
+  <data name="projebasvurutext" xml:space="preserve">
+    <value>Yeni Proje Başvurusu</value>
+  </data>
 </root>

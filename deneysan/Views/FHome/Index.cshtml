@@ -203,16 +203,16 @@
                 <div class="float-right col-lg-7 col-sm-7 col-md-7 col-xs-12">
 
                     <div class="iconlist-wrap">
-                        <div class="subtitle notViewed wow fadeInRight" data-wow-delay="0.5s" data-wow-offset="20">Neden <span class="iconlist-mid-title">Argemsan?</span></div>
+                        <div class="subtitle notViewed wow fadeInRight" data-wow-delay="0.5s" data-wow-offset="20">@HomeRess.HomeStrings.neden <span class="iconlist-mid-title">Argemsan?</span></div>
                         <br /><br />
                         <ul>
                             <li class="notViewed wow fadeInDown" data-wow-delay="0.5s" data-wow-offset="50">
                                 <i class="icon-hospital2 icon-list-icons"></i>
                                 <div class="iconlist-content">
 
-                                    <div class="iconlist-title">Projenizi destekliyoruz</div>
+                                    <div class="iconlist-title">@HomeRess.HomeStrings.projelerinizidestekliyoruz</div>
                                     <p class="iconlist-text">
-                                        ARGEMSAN PROJE ÜRETİM VE DANIŞMANLIK HİZMETLERİ A.Ş  Ülkemizin bilimsel ve teknolojik olarak ileri bir seviyeye taşınmasını sağlayacak fikirleri uygulanabilir hale getirmeyi ve bunun için gerekli olabilecek her türlü teknik destek ve hizmeti sağlamayı amaç edinmiştir. Bu sebeple henüz gerçekleştirilmemiş projelerinizi somut çıktılara dönüştürmek ve bunları endüstriyel sistemlerde de uygulanabilir hale getirmek adına bütün koşulları hazır hale getirmeye hazırdır. 
+                                        @HomeRess.HomeStrings.nedenargemsan
                                     </p>
                                 </div>
 
@@ -261,10 +261,10 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 pull-right">
                 <div class="purchase-strip-blue pull-right col-sm-12 col-md-12 col-xs-12 pull-left notViewed wow fadeInUp" data-wow-delay="0.5s" data-wow-offset="150">
-                    <div class="purchase-strip-text"><span class="ipurcahse-strip-text">ARGEMSAN</span> PROJE ÖN BAŞVURU FORMU İÇİN </div>
+                    <div class="purchase-strip-text"><span class="ipurcahse-strip-text">@HomeRess.HomeStrings.argemsan</span> @HomeRess.HomeStrings.projeonbasvuru </div>
                     <div class="color-4">
                         <p class="ipurchase-paragraph">
-                            <button class="icon-cart btn btn-4 btn-4a notViewed wow fadeInUp" data-wow-delay="0.5s" data-wow-offset="150">TIKLAYINIZ</button>
+                            <a class="fa-calendar fa-eye btn btn-4 btn-4a notViewed" href="@SharedRess.SharedStrings.projebasvurulinki">@HomeRess.HomeStrings.btntiklaniyiniz</a>
                         </p>
                     </div>
 
@@ -282,7 +282,10 @@
         <div class="col-xs-12 col-sm-12 col-md-12 pull-left">
 
             <div class="latest-post-wrap pull-left wow fadeInLeft" data-wow-delay="0.5s" data-wow-offset="100">
-                <div class="subtitle col-xs-12 no-pad col-sm-11 col-md-12 pull-left news-sub">Haberler / Duyurular</div>
+                <div class="subtitle col-xs-12 no-pad col-sm-11 col-md-12 pull-left news-sub">
+                    <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_allnews" class="dept-details-butt posts-showallx">» @HomeRess.HomeStrings.haberlerduyurular</a>
+                    
+                </div>
                 @foreach (var newsitem in Model.news)
                 {
                     <div class="post-item-wrap pull-left col-sm-6 col-md-12 col-xs-12">
@@ -302,7 +305,8 @@
                         </div>
                     </div>
                 }
-                <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_allnews" class="dept-details-butt posts-showall">» @HomeRess.HomeStrings.allnews</a>
+
+                <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_allnews" class="dept-details-butt posts-showallx">» @HomeRess.HomeStrings.allnews</a>
 
             </div>
         </div>
@@ -317,7 +321,7 @@
                 <ul id="clients-carousel" class="icl-carousel">
                     @foreach (var reference in Model.references)
                     {
-                        <li><a href="@reference.Link" target="_blank" title="@reference.ReferenceName"><img src="@reference.Logo" width="147" height="86" alt="@reference.ReferenceName" title="@reference.ReferenceName" class="img-responsive client-logo-img"/></a></li>
+                        <li><a href="@reference.Link" target="_blank" title="@reference.ReferenceName"><img src="@reference.Logo" width="96" height="96" alt="@reference.ReferenceName" title="@reference.ReferenceName" class="img-responsive client-logo-img"/></a></li>
                     }
                 </ul>
             </div>

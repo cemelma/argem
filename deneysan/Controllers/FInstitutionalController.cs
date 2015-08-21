@@ -19,12 +19,14 @@ namespace deneysan.Controllers
         {
 
             var aboutus = InstituionalManager.GetInstationalByLanguage(lang, Convert.ToInt32(EnumInstituionalTypes.Hakkimizda));
+            if (aboutus == null) aboutus = new deneysan_DAL.Entities.Institutional() { };
             return View(aboutus);
         }
 
         public ActionResult VisionMision()
         {
             var visionmision = InstituionalManager.GetInstationalByLanguage(lang, Convert.ToInt32(EnumInstituionalTypes.Misyon));
+            if (visionmision == null) visionmision = new deneysan_DAL.Entities.Institutional() { };
             return View(visionmision);
         }
     }

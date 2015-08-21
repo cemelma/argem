@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Linq;
 using System.Collections.Generic;
+using deneysan.Models;
+
 namespace deneysan.Controllers
 {
   public class FProjectsController : Controller
@@ -19,7 +21,18 @@ namespace deneysan.Controllers
 
     public ActionResult NewProject()
     {
-      var str = Server.MapPath("");
+        HttpCookie cookie = Request.Cookies["RegCookie"];
+        if (cookie != null)
+        {
+            cookie.Expires = DateTime.Now.AddHours(1);
+            cookie = CyriptoClass.DecodeCookie(cookie);
+            Request.Cookies.Set(cookie);
+        }
+        else
+        {
+            return RedirectToRoute("login_" + lang, new { controller = "FAccount", action = "Index" });
+        }
+        var str = Server.MapPath("");
       return View();
     }
 

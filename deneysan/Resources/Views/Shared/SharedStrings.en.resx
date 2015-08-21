@@ -291,4 +291,10 @@
   <data name="more" xml:space="preserve">
     <value>More »</value>
   </data>
+  <data name="menu_projebasvuru" xml:space="preserve">
+    <value>projectappointment</value>
+  </data>
+  <data name="projebasvurutext" xml:space="preserve">
+    <value>New Project</value>
+  </data>
 </root>

@@ -53,8 +53,8 @@ namespace deneysan.Controllers
 
                     #endregion
                     ///@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menuprojects_link
-                    
-                    return RedirectToAction("Index", "FHome");
+                    return RedirectToRoute("projects_" + lang, new { controller = "FProjects", action = "NewProject" });
+                    //return RedirectToAction("Index", "FHome");
                 }
 
                 ModelState.AddModelError("", "Mail veya Şifreniz Hatalı.");
