@@ -37,9 +37,17 @@
 
     <div class="container">
         <div class="row">
+            <div class="alert alert-info hide" id="successdiv">
+                <strong>@ProjectsRess.ProjectsStrings.kayitbasarili</strong>
+            </div>
+            <div class="alert alert-danger hide" id="errordiv">
+                <strong>@ProjectsRess.ProjectsStrings.kayiterror</strong>
+            </div>
             <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 dept-tabs-wrap wow fadeInUp animated" data-wow-delay="1s" data-wow-offset="200">
                 <div class="tabbable tabs-left ">
-                    @using (Ajax.BeginForm("ProjeKaydet", new AjaxOptions() { HttpMethod = "POST", OnSuccess = "Success", OnBegin="ShowLoader" }))
+                    
+
+                    @using (Ajax.BeginForm("ProjeKaydet", new AjaxOptions() { HttpMethod = "POST", OnSuccess = "Success", OnBegin="ShowLoader",OnFailure="Error" }))
                     {
 
                         @*@using (Html.BeginForm("NewProject", "FProjects",FormMethod.Post, new { enctype = "multipart/form-data" }))

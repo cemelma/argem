@@ -82,8 +82,10 @@ namespace deneysan_BLL.UserBL
             {
                 using (DeneysanContext db = new DeneysanContext())
                 {
-                    User record = db.User.FirstOrDefault(d=> d.Email == email);
+                    //User record = db.User.FirstOrDefault(d=> d.Email == email);
+                  if (db.User.Any(d => d.Email == email))
                     return true;
+                  else return false;
                 }
             }
             catch (Exception)

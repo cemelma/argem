@@ -147,6 +147,9 @@
   <data name="sistemegiris" xml:space="preserve">
     <value>LOGIN</value>
   </data>
+  <data name="uyelikinfo" xml:space="preserve">
+    <value>For making  a project application, please register.</value>
+  </data>
   <data name="yeniuyeliklink" xml:space="preserve">
     <value>en/register</value>
   </data>

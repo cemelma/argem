@@ -28,7 +28,7 @@ namespace deneysan.Areas.Admin.Controllers
           using (DeneysanContext db = new DeneysanContext())
           {
 
-            List<Projects> projeler = db.Projects.Where(x=>x.Status==(int)EnumProjectStatus.Confirmed && x.Language==sellang).ToList();
+            List<Projects> projeler = db.Projects.Where(x=>x.Status==(int)EnumProjectStatus.Confirmed && x.Language==sellang && x.Deleted==false).ToList();
             return View(projeler);
            
           }
@@ -43,7 +43,7 @@ namespace deneysan.Areas.Admin.Controllers
           using (DeneysanContext db = new DeneysanContext())
           {
 
-            List<Projects> projeler = db.Projects.Where(x => x.Status == (int)EnumProjectStatus.Wait && x.Language == sellang).ToList();
+            List<Projects> projeler = db.Projects.Where(x => x.Status == (int)EnumProjectStatus.Wait && x.Language == sellang && x.Deleted == false).ToList();
             return View(projeler);
 
           }
@@ -58,7 +58,7 @@ namespace deneysan.Areas.Admin.Controllers
           using (DeneysanContext db = new DeneysanContext())
           {
 
-            List<Projects> projeler = db.Projects.Where(x => x.Status == (int)EnumProjectStatus.Canceled && x.Language == sellang).ToList();
+            List<Projects> projeler = db.Projects.Where(x => x.Status == (int)EnumProjectStatus.Canceled && x.Language == sellang && x.Deleted == false).ToList();
             return View(projeler);
 
           }

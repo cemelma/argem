@@ -131,7 +131,7 @@ namespace deneysan.Controllers
     {
       using (DeneysanContext db = new DeneysanContext())
       {
-        List<Projects>  projects =db.Projects.Where(x => x.Language == lang).ToList();
+        List<Projects> projects = db.Projects.Where(x => x.Language == lang && x.Deleted == false).ToList();
 
         return View(projects);
       }

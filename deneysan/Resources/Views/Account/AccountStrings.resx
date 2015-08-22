@@ -156,6 +156,9 @@
   <data name="sistemegiris" xml:space="preserve">
     <value>SİSTEM GİRİŞİ</value>
   </data>
+  <data name="uyelikinfo" xml:space="preserve">
+    <value>Proje başvurusu yapabilmek için üye olmanız gerekmektedir. Üyelik formunu doldurarak üye olunuz.</value>
+  </data>
   <data name="yeniuyeliklink" xml:space="preserve">
     <value>/tr/yeniuyelik</value>
   </data>

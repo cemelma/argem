@@ -119,10 +119,26 @@ function Success() {
     $('#projedokumanfile-button').removeClass('disabled');
 
     $('.uploadify-queue').css("display", "none");
-    alert("Proje başarıyla kaydedildi");
+    //alert("Proje başarıyla kaydedildi");
+
+    $("#successdiv").removeClass("hide");
+    $("#errordiv").addClass("hide");
 }
 
 function ShowLoader() {
     $("#loader-overlay").fadeIn();
 }
 
+function Error() {
+    $("#loader-overlay").fadeOut();
+
+    $("#projectform input[type='text']").val("");
+    $("textarea").val("");
+    $('#projedokumanfile-button').removeClass('disabled');
+
+    $('.uploadify-queue').css("display", "none");
+    //alert("Proje başarıyla kaydedildi");
+
+    $("#errordiv").removeClass("hide");
+    $("#successdiv").addClass("hide");
+}

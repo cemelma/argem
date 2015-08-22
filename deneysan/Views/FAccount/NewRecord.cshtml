@@ -24,11 +24,13 @@
         <div class="row">
             <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 dept-tabs-wrap wow fadeInUp animated" data-wow-delay="1s" data-wow-offset="200">
                 <div class="tabbable tabs-left">
-                    
+                    <div class="alert alert-info">
+                        <strong>@AccountRess.AccountStrings.uyelikinfo</strong>
+                    </div>
                         <div class="tab-content col-md-6 col-sm-6 col-xs-6 col-centered" style="min-height:450px;float: none;display: block;margin-left: auto;margin-right: auto;">
                             <div class="dept-title-tabs">@AccountRess.AccountStrings.yeniuyeliktext</div>
                             <br />
-
+                           
                             @using (Html.BeginForm("NewRecord", "FAccount", FormMethod.Post, new { }))
                             {
                                 <div class="form-horizontal">

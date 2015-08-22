@@ -178,6 +178,15 @@ namespace AccountRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Proje başvurusu yapabilmek için üye olmanız gerekmektedir. Üyelik formunu doldurarak üye olunuz..
+        /// </summary>
+        public static string uyelikinfo {
+            get {
+                return ResourceManager.GetString("uyelikinfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to /tr/yeniuyelik.
         /// </summary>
         public static string yeniuyeliklink {

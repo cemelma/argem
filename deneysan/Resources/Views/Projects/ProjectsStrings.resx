@@ -144,6 +144,12 @@
   <data name="hedef" xml:space="preserve">
     <value>PROJENİN GENEL HEDEFİ</value>
   </data>
+  <data name="kayitbasarili" xml:space="preserve">
+    <value>Proje başvuru talebiniz tarafımıza ulaşmıştır. Projeniz ilgili birimlerimiz tarafından incelenerek, tarafınıza projenin durumu hakkında geriş dönüş sağlanacaktır.</value>
+  </data>
+  <data name="kayiterror" xml:space="preserve">
+    <value>Proje başvurusu sırasında hata oluştu. Lütfen tekrar deneyiniz.</value>
+  </data>
   <data name="ozet" xml:space="preserve">
     <value>PROJENİN KISA ÖZETİ VE İÇERİĞİ</value>
   </data>
