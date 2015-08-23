@@ -1524,6 +1524,7 @@
     <Content Include="Areas\Admin\Content\scripts\pagescripts\news\addnews.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\news\editnews.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\news\newslist.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\proje\editproject.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\proje\addproduct.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\proje\editproduct.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\proje\iptaledilenprojeler.js" />

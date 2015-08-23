@@ -47,7 +47,7 @@
                 <div class="tabbable tabs-left ">
                     
 
-                    @using (Ajax.BeginForm("ProjeKaydet", new AjaxOptions() { HttpMethod = "POST", OnSuccess = "Success", OnBegin="ShowLoader",OnFailure="Error" }))
+                    @using (Ajax.BeginForm("ProjeKaydet", new AjaxOptions() { HttpMethod = "POST", OnSuccess = "Success", OnBegin = "ShowLoader", OnFailure = "showError" }))
                     {
 
                         @*@using (Html.BeginForm("NewProject", "FProjects",FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -84,7 +84,7 @@
 
                                 <div class="row">
                                     <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.postaadresi</label></div>
-                                    <div class="col-lg-5">@Html.TextAreaFor(x => x.PostaAdresi, new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.postaadresi.ToLower() })</div>
+                                    <div class="col-lg-5">@Html.TextAreaFor(x => x.PostaAdresi, new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.postaadresi.ToLower(),@Rows="3" })</div>
                                     <div class="col-lg-4">@Html.ValidationMessageFor(model => model.PostaAdresi)</div>
                                 </div>
 
@@ -108,12 +108,12 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.hedef</label></div>
-                                    <div class="col-lg-5">@Html.TextBoxFor(x => x.ProjeHedefi, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.hedef.ToLower() })</div>
+                                    <div class="col-lg-5">@Html.TextAreaFor(x => x.ProjeHedefi,  new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.hedef.ToLower(),Rows="3" })</div>
                                     <div class="col-lg-4">@Html.ValidationMessageFor(model => model.ProjeHedefi)</div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.amac</label></div>
-                                    <div class="col-lg-5">@Html.TextBoxFor(x => x.ProjeAmac, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.amac.ToLower() })</div>
+                                    <div class="col-lg-5">@Html.TextAreaFor(x => x.ProjeAmac,  new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.amac.ToLower(),@Rows="3" })</div>
                                     <div class="col-lg-4">@Html.ValidationMessageFor(model => model.ProjeAmac)</div>
                                 </div>
 
@@ -142,12 +142,12 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.sonuclar</label></div>
-                                    <div class="col-lg-5">@Html.TextAreaFor(x => x.BeklenenSonuclar, new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.sonuclar.ToLower() })</div>
+                                    <div class="col-lg-5">@Html.TextAreaFor(x => x.BeklenenSonuclar, new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.sonuclar.ToLower(),@Rows="3" })</div>
                                     <div class="col-lg-4">@Html.ValidationMessageFor(model => model.BeklenenSonuclar)</div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.ozet</label></div>
-                                    <div class="col-lg-5">@Html.TextAreaFor(x => x.ProjeOzeti, new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.ozet.ToLower() })</div>
+                                    <div class="col-lg-5">@Html.TextAreaFor(x => x.ProjeOzeti, new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.ozet.ToLower(),@Rows="3" })</div>
                                     <div class="col-lg-4">@Html.ValidationMessageFor(model => model.ProjeOzeti)</div>
                                 </div>
                                 <div class="row">

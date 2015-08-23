@@ -9,6 +9,9 @@ using System.Web.Mvc;
 using System.Linq;
 using System.Collections.Generic;
 using deneysan.Models;
+using deneysan_BLL.MailBL;
+using System.Net.Mail;
+using System.Net;
 
 namespace deneysan.Controllers
 {
@@ -41,9 +44,6 @@ namespace deneysan.Controllers
     {
       using (DeneysanContext db = new DeneysanContext())
       {
-
-       
-
         model.PageSlug = Utility.SetPagePlug(model.ProjeAdi);
         model.TimeCreated = DateTime.Now;
         model.Status = 0;
@@ -53,7 +53,7 @@ namespace deneysan.Controllers
 
         if (!string.IsNullOrEmpty(hdnimagefile))
         {
-            model.ProjeDokümani = "/Content/upload/" + hdndokumanfile;
+          model.ProjeDokümani = "/Content/projectfiles/" + hdndokumanfile;
         }
 
         db.Projects.Add(model);
@@ -77,7 +77,28 @@ namespace deneysan.Controllers
           }
 
           db.SaveChanges();
-         // model.ProjeResimleri = hdndokumanfile;
+
+
+
+          var mset = MailManager.GetMailSettings();
+          var msend = MailManager.GetMailUsersList(1);
+
+          using (var client = new SmtpClient(mset.ServerHost, mset.Port))
+          {
+            client.EnableSsl = false;
+            client.Credentials = new NetworkCredential(mset.ServerMail, mset.Password);
+            var mail = new MailMessage();
+            mail.From = new MailAddress(mset.ServerMail);
+            foreach (var item in msend)
+              mail.To.Add(item.MailAddress);
+            mail.Subject = "Yeni Proje Başvuru Bildirimi";
+            mail.IsBodyHtml = true;
+            mail.Body = "<h5><b>" + model.ProjeSahibi + " isimli kişiden bir proje başvurusu sistemde kayıt altına alınmıştır</b></h5>";
+
+            if (mail.To.Count > 0) client.Send(mail);
+          }
+
+
         }
 
       }

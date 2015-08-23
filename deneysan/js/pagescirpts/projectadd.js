@@ -129,7 +129,7 @@ function ShowLoader() {
     $("#loader-overlay").fadeIn();
 }
 
-function Error() {
+function showError() {
     $("#loader-overlay").fadeOut();
 
     $("#projectform input[type='text']").val("");
