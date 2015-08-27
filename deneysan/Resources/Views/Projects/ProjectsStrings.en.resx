@@ -121,16 +121,16 @@
     <value>SURNAME NAME</value>
   </data>
   <data name="amac" xml:space="preserve">
-    <value>PROJENİN ÖZEL AMACI</value>
+    <value>AIM OF PROJECT</value>
   </data>
   <data name="butce" xml:space="preserve">
-    <value>PROJENİN TOPLAM BÜTÇESİ</value>
+    <value>BUDGET OF PROJECT</value>
   </data>
   <data name="cizim" xml:space="preserve">
-    <value>PROJE ÇİZİMİ</value>
+    <value>PROJECT GRAPH</value>
   </data>
   <data name="dokuman" xml:space="preserve">
-    <value>PROJE DÖKÜMANI</value>
+    <value>PROJECT DOCUMENT</value>
   </data>
   <data name="download" xml:space="preserve">
     <value>Download Project Document</value>
@@ -142,25 +142,25 @@
     <value>FAX NUMBER</value>
   </data>
   <data name="finanseeden" xml:space="preserve">
-    <value>PROJEYİ FİNANSE EDEN KURULUŞ</value>
+    <value>CORPORATES BE SUPPORT TO THE PROJECT</value>
   </data>
   <data name="hedef" xml:space="preserve">
-    <value>PROJENİN GENEL HEDEFİ</value>
+    <value>PURPOSE OF PROJECT</value>
   </data>
   <data name="kayitbasarili" xml:space="preserve">
-    <value>Proje başvuru talebiniz tarafımıza ulaşmıştır. Projeniz ilgili birimlerimiz tarafından incelenerek, tarafınıza projenin durumu hakkında geriş dönüş sağlanacaktır.</value>
+    <value>Your project application has achieved successfully. It will be surveyed by our team.</value>
   </data>
   <data name="kayiterror" xml:space="preserve">
-    <value>Proje başvurusu sırasında hata oluştu. Lütfen tekrar deneyiniz.</value>
+    <value>There is an error while processing. Please try again.</value>
   </data>
   <data name="ozet" xml:space="preserve">
-    <value>PROJENİN KISA ÖZETİ VE İÇERİĞİ</value>
+    <value>ABSTRACT OF PROJECT</value>
   </data>
   <data name="postaadresi" xml:space="preserve">
     <value>ADDRESS</value>
   </data>
   <data name="projeadi" xml:space="preserve">
-    <value>PROJE ADI</value>
+    <value>PROJECT NAME</value>
   </data>
   <data name="projebasvuruformu" xml:space="preserve">
     <value>Project Application Form</value>
@@ -172,7 +172,7 @@
     <value>Projects</value>
   </data>
   <data name="projedetay" xml:space="preserve">
-    <value>PROJE DETAYLARI</value>
+    <value>PROJECT DETAILS</value>
   </data>
   <data name="projedetaysayfasibutontext" xml:space="preserve">
     <value>Project Detail</value>
@@ -193,13 +193,13 @@
     <value>CORPORATION OF PROJECT OWNER</value>
   </data>
   <data name="resim" xml:space="preserve">
-    <value>PROJE RESİMLERİ(en fazla 5 resim ekleyebilirsiniz.)</value>
+    <value>PROJECT IMAGES(you are allowed to add maximum 5 images.)</value>
   </data>
   <data name="sonuclar" xml:space="preserve">
-    <value>PROJENİN BEKLENEN SONUÇLARI</value>
+    <value>RESULTS OF PROJECT</value>
   </data>
   <data name="sure" xml:space="preserve">
-    <value>PROJENİN SÜRESİ</value>
+    <value>PROJECT PERIOD</value>
   </data>
   <data name="telefonno" xml:space="preserve">
     <value>PHONE NUMBER</value>
@@ -208,9 +208,9 @@
     <value>Project Budget : </value>
   </data>
   <data name="txtprojeSuresi" xml:space="preserve">
-    <value>Proje Süresi :</value>
+    <value>Period of Project</value>
   </data>
   <data name="uygulanacagiyer" xml:space="preserve">
-    <value>PROJENİN UYGULANACAĞI YER</value>
+    <value>USED PLACES OF PROJECT</value>
   </data>
 </root>
