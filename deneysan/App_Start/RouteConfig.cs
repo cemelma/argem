@@ -17,6 +17,7 @@ namespace deneysan
 
          //   routes.MapRoute("home_default", "/", new { action = "Index", Controller = "Home" });
             routes.MapRoute("home_tr", "tr/anasayfa", new { action = "Index", Controller = "FHome" });
+            routes.MapRoute("home_tr2", "tr/anasayfa2", new { action = "Index2", Controller = "FHome" });
             routes.MapRoute("home_en", "en/homepage", new { action = "Index", Controller = "FHome" });
 
             routes.MapRoute("aboutus_tr", "tr/hakkimizda", new { action = "Index", Controller = "FInstitutional" });

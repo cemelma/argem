@@ -2437,6 +2437,7 @@
     <Content Include="Views\FNews\Index.cshtml" />
     <Content Include="Views\FNews\NewsContent.cshtml" />
     <Content Include="Views\FAccount\NewRecord.cshtml" />
+    <Content Include="Views\FHome\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

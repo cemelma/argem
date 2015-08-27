@@ -14,7 +14,7 @@
             <li data-transition="papercut" data-slotamount="7">
 
                 <!-- MAIN IMAGE -->
-                <img src="/images/new-slider/s1-bg.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat" >
+                <img src="/images/new-slider/s1-bg.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
                 <!-- LAYERS -->
                 <!-- LAYER NR. 1 -->
                 <div class="tp-caption lfb skewtoright imed-sl1"
@@ -30,7 +30,7 @@
                     <img src="/images/new-slider/s1-img4.png" alt="" class="img-responsive" style="opacity:0.2 !important">
                 </div>
                 <!-- LAYER NR. 2 -->
-                @*<div class="tp-caption lft skewtoright imed-sl1"
+                <div class="tp-caption lft skewtoright imed-sl1"
                      data-x="left"
                      data-y="85"
                      data-hoffset="83"
@@ -40,7 +40,7 @@
                      data-endspeed="400"
                      data-endeasing="Power1.easeIn">
                     <img src="/images/new-slider/s1-img3.png" alt="" class="img-responsive">
-                </div>*@
+                </div>
                 <!-- LAYER NR. 3 -->
                 <div class="tp-caption lft skewtoright imed-sl1"
                      data-x="86.5"
@@ -129,16 +129,16 @@
                 </div>
                 <!-- LAYER NR. 2 -->
                 @*<div class="tp-caption lfb skewtoright imed-sl1 rs-parallaxlevel-2"
-                     data-x="left"
-                     data-y="220"
-                     data-hoffset="203"
-                     data-speed="1200"
-                     data-start="1500"
-                     data-easing="Power4.easeOut"
-                     data-endspeed="400"
-                     data-endeasing="Power1.easeIn">
-                    <img src="/images/new-slider/s3-img2.png" alt="" class="img-responsive">
-                </div>*@
+                         data-x="left"
+                         data-y="220"
+                         data-hoffset="203"
+                         data-speed="1200"
+                         data-start="1500"
+                         data-easing="Power4.easeOut"
+                         data-endspeed="400"
+                         data-endeasing="Power1.easeIn">
+                        <img src="/images/new-slider/s3-img2.png" alt="" class="img-responsive">
+                    </div>*@
 
                 <!-- LAYER NR. 5 -->
                 <div class="tp-caption bluebg-t1 sfr skewtoright imed-sl1"
@@ -219,28 +219,28 @@
                             </li>
 
                             @*<li class="notViewed wow fadeInDown" data-wow-delay="0.5s" data-wow-offset="70">
-                                <i class="fa fa-ambulance icon-list-icons"></i>
-                                <div class="iconlist-content">
+                                    <i class="fa fa-ambulance icon-list-icons"></i>
+                                    <div class="iconlist-content">
 
-                                    <div class="iconlist-title">Sizi Bekletmiyoruz</div>
-                                    <p class="iconlist-text">
-                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                                        doloremque laudantium, totam rem aperiam.
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="notViewed wow fadeInDown" data-wow-delay="0.5s" data-wow-offset="60">
-                                <i class="fa fa-user-md icon-list-icons"></i>
-                                <div class="iconlist-content">
+                                        <div class="iconlist-title">Sizi Bekletmiyoruz</div>
+                                        <p class="iconlist-text">
+                                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                            doloremque laudantium, totam rem aperiam.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="notViewed wow fadeInDown" data-wow-delay="0.5s" data-wow-offset="60">
+                                    <i class="fa fa-user-md icon-list-icons"></i>
+                                    <div class="iconlist-content">
 
-                                    <div class="iconlist-title">Bizimle Çalışmak İster misiniz?</div>
-                                    <p class="iconlist-text">
-                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                                        doloremque laudantium, totam rem aperiam.
-                                    </p>
-                                </div>
+                                        <div class="iconlist-title">Bizimle Çalışmak İster misiniz?</div>
+                                        <p class="iconlist-text">
+                                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                            doloremque laudantium, totam rem aperiam.
+                                        </p>
+                                    </div>
 
-                            </li>*@
+                                </li>*@
                         </ul>
                     </div>
 
@@ -284,7 +284,7 @@
             <div class="latest-post-wrap pull-left wow fadeInLeft" data-wow-delay="0.5s" data-wow-offset="100">
                 <div class="subtitle col-xs-12 no-pad col-sm-11 col-md-12 pull-left news-sub">
                     <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_allnews" class="dept-details-butt posts-showallx">» @HomeRess.HomeStrings.haberlerduyurular</a>
-                    
+
                 </div>
                 @foreach (var newsitem in Model.news)
                 {
@@ -299,11 +299,12 @@
                             </div>
                         </div>
                         <div class="post-content2 pull-left">
-                            <p>@newsitem.Spot
-                                <span style="font-weight:bold"><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_news/@newsitem.PageSlug/@newsitem.NewsId">@SharedRess.SharedStrings.more</a></span>
-                            </p>
-                        </div>
+                            <p>
+                                @newsitem.Spot
+                            <span style="font-weight:bold"><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_news/@newsitem.PageSlug/@newsitem.NewsId">@SharedRess.SharedStrings.more</a></span>
+                        </p>
                     </div>
+                </div>
                 }
 
                 <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_allnews" class="dept-details-butt posts-showallx">» @HomeRess.HomeStrings.allnews</a>
@@ -321,7 +322,7 @@
                 <ul id="clients-carousel" class="icl-carousel">
                     @foreach (var reference in Model.references)
                     {
-                        <li><a href="@reference.Link" target="_blank" title="@reference.ReferenceName"><img src="@reference.Logo" width="96" height="96" alt="@reference.ReferenceName" title="@reference.ReferenceName" class="img-responsive client-logo-img"/></a></li>
+                        <li><a href="@reference.Link" target="_blank" title="@reference.ReferenceName"><img src="@reference.Logo" width="96" height="96" alt="@reference.ReferenceName" title="@reference.ReferenceName" class="img-responsive client-logo-img" /></a></li>
                     }
                 </ul>
             </div>

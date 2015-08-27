@@ -29,5 +29,14 @@ namespace deneysan.Controllers
                 return Redirect("/en/homepage");
             return Redirect("/tr/anasayfa");
         }
+
+
+        public ActionResult Index2()
+        {
+          var news = NewsManager.GetNewsListForFront(lang);
+          var references = ReferenceManager.GetReferenceListForFront(lang);
+          HomePageWrapperModel modelbind = new HomePageWrapperModel(news, references);
+          return View(modelbind);
+        }
     }
 }
