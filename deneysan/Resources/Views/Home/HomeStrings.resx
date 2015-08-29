@@ -123,6 +123,9 @@
   <data name="argemsan" xml:space="preserve">
     <value>ARGEMSAN</value>
   </data>
+  <data name="bizitakiptekalin" xml:space="preserve">
+    <value>Bizi takipte kalın</value>
+  </data>
   <data name="btntiklaniyiniz" xml:space="preserve">
     <value>TIKLAYINIZ</value>
   </data>
@@ -134,6 +137,9 @@
   </data>
   <data name="haberlerduyurular" xml:space="preserve">
     <value>HABERLER / DUYURULAR</value>
+  </data>
+  <data name="hemenbasvur" xml:space="preserve">
+    <value>Hemen Başvur</value>
   </data>
   <data name="linkBoxContent" xml:space="preserve">
     <value>Ulusal ve uluslararası alandaki çözüm ortaklarımıza, mesleki alandaki eğitim vakıfları, dernekler ve odalara buradan ulaşabilirsiniz.</value>
@@ -153,11 +159,17 @@
   <data name="ourprojects" xml:space="preserve">
     <value>PROJELERİMİZ</value>
   </data>
+  <data name="projebasvurusu" xml:space="preserve">
+    <value>Proje Başvurusu</value>
+  </data>
   <data name="projectBoxContent" xml:space="preserve">
     <value>Son olarak gerçekleştirdiğimiz projelerimizden birisi olan Soğutma eğitim setlerinde gerçek zamanlı log p-h diyagramı ve veri toplama sistemini gerçekleştirdik. Diğer tüm projelerimizi buradan takip edebilirsiniz.</value>
   </data>
   <data name="projelerinizidestekliyoruz" xml:space="preserve">
     <value>Projenizi destekliyoruz</value>
+  </data>
+  <data name="projelerinizihayatageciriyor" xml:space="preserve">
+    <value>projelerinizi &lt;br&gt; hayata geçiriyor.</value>
   </data>
   <data name="projeonbasvuru" xml:space="preserve">
     <value>PROJE ÖN BAŞVURU FORMU İÇİN</value>
@@ -167,6 +179,9 @@
   </data>
   <data name="takeofferimage" xml:space="preserve">
     <value>/Content/Images/Front/teklif-banner-tr.png</value>
+  </data>
+  <data name="verdigimizhizmetile" xml:space="preserve">
+    <value>Verdiğimiz hizmet ile projelerinizi hayata geçirmek artık çok kolay.</value>
   </data>
   <data name="workwithusimage" xml:space="preserve">
     <value>/Content/Images/Front/bizimle-calismak-istermisiniz2.png</value>

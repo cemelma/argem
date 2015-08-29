@@ -79,6 +79,15 @@ namespace HomeRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bizi takipte kalın.
+        /// </summary>
+        public static string bizitakiptekalin {
+            get {
+                return ResourceManager.GetString("bizitakiptekalin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TIKLAYINIZ.
         /// </summary>
         public static string btntiklaniyiniz {
@@ -111,6 +120,15 @@ namespace HomeRess {
         public static string haberlerduyurular {
             get {
                 return ResourceManager.GetString("haberlerduyurular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hemen Başvur.
+        /// </summary>
+        public static string hemenbasvur {
+            get {
+                return ResourceManager.GetString("hemenbasvur", resourceCulture);
             }
         }
         
@@ -169,6 +187,15 @@ namespace HomeRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Proje Başvurusu.
+        /// </summary>
+        public static string projebasvurusu {
+            get {
+                return ResourceManager.GetString("projebasvurusu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Son olarak gerçekleştirdiğimiz projelerimizden birisi olan Soğutma eğitim setlerinde gerçek zamanlı log p-h diyagramı ve veri toplama sistemini gerçekleştirdik. Diğer tüm projelerimizi buradan takip edebilirsiniz..
         /// </summary>
         public static string projectBoxContent {
@@ -183,6 +210,15 @@ namespace HomeRess {
         public static string projelerinizidestekliyoruz {
             get {
                 return ResourceManager.GetString("projelerinizidestekliyoruz", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to projelerinizi &lt;br&gt; hayata geçiriyor..
+        /// </summary>
+        public static string projelerinizihayatageciriyor {
+            get {
+                return ResourceManager.GetString("projelerinizihayatageciriyor", resourceCulture);
             }
         }
         
@@ -210,6 +246,15 @@ namespace HomeRess {
         public static string takeofferimage {
             get {
                 return ResourceManager.GetString("takeofferimage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Verdiğimiz hizmet ile projelerinizi hayata geçirmek artık çok kolay..
+        /// </summary>
+        public static string verdigimizhizmetile {
+            get {
+                return ResourceManager.GetString("verdigimizhizmetile", resourceCulture);
             }
         }
         

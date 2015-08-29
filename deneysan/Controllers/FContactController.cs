@@ -52,9 +52,15 @@ namespace deneysan.Controllers
                     mail.From = new MailAddress(mset.ServerMail);
                     foreach (var item in msend)
                         mail.To.Add(item.MailAddress);
-                    mail.Subject = subject;
+                    mail.Subject = "Argemsan.com iletişim maili - " + subject;
                     mail.IsBodyHtml = true;
-                    mail.Body = "<h5><b>" + name + " - " + email + "</b></h5>" + "<p>" + message + "</p>";
+                    mail.Body = "<table>"+
+                                    "<tr><td colspan=\"2\">Argemsan.com dan iletişim mail içeriği</td></tr>"+
+                                    "<tr><td><b>İsim</b></td><td>"+ name + "</td></tr>"+
+                                    "<tr><td><b>Email</b></td><td>" + email + "</td></tr>" +
+                                    "<tr><td><b>Konu</b></td><td>" + subject + "</td></tr>" +
+                                    "<tr><td><b>Konu</b></td><td>" + message + "</td></tr>" +
+                                    "</table>";// "<h5><b>" + name + " - " + email + "</b></h5>" + "<p>" + message + "</p>";
 
                     if (mail.To.Count > 0) client.Send(mail);
                     return Json(new { response = "success" }, JsonRequestBehavior.AllowGet);

@@ -198,7 +198,7 @@ namespace deneysan.Areas.Admin.Controllers
 
     }
 
-    [HttpPost]
+  
     public bool ChangeProjectStatus(int id, int status)
     {
       bool returnValue = false;
@@ -209,7 +209,7 @@ namespace deneysan.Areas.Admin.Controllers
           Projects record = db.Projects.FirstOrDefault(d => d.ProjeId == id);
           record.Status = status;
           db.SaveChanges();
-          return returnValue;
+            return true;
         }
         else
         {

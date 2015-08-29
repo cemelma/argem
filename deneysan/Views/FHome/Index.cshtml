@@ -1,6 +1,6 @@
 ﻿@*@model deneysan.Models.HomePageWrapperModel*@
 @{
-    ViewBag.Title = "Argemsan";
+    ViewBag.Title = "ARGEMSAN PROJE ÜRETİM VE DANIŞMANLIK HİZMETLERİ A.Ş";
     Layout = "/Views/Shared/frontlayout.cshtml";
 }
 
@@ -64,7 +64,7 @@
                      data-easing="Back.easeOut"
                      data-endspeed="400"
                      data-endeasing="Power1.easeIn">
-                    <b>ARGEMSAN</b> projelerinizi <br> hayata geçiriyor.
+                    <b>ARGEMSAN</b> @Html.Raw(HomeRess.HomeStrings.projelerinizihayatageciriyor)
                 </div>
 
                 <!-- LAYER NR. 6 -->
@@ -77,7 +77,7 @@
                      data-easing="Back.easeOut"
                      data-endspeed="400"
                      data-endeasing="Power1.easeIn">
-                    Hemen Başvur&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    @HomeRess.HomeStrings.hemenbasvur&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
 
                 <!-- LAYER NR. 7 -->
@@ -90,7 +90,7 @@
                      data-easing="Back.easeOut"
                      data-endspeed="400"
                      data-endeasing="Power1.easeIn">
-                    Verdiğimiz hizmet ile projelerinizi hayata geçirmek artık çok kolay.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    @HomeRess.HomeStrings.verdigimizhizmetile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
 
                 <!-- LAYER NR. 8 -->
@@ -103,7 +103,7 @@
                      data-start="3900"
                      data-easing="Back.easeOut"
                      data-endspeed="400"
-                     data-endeasing="Power1.easeIn"><a href="@SharedRess.SharedStrings.projebasvurulinki">Proje Başvurusu&nbsp;&nbsp;</a></div>
+                     data-endeasing="Power1.easeIn"><a href="@SharedRess.SharedStrings.projebasvurulinki">@HomeRess.HomeStrings.projebasvurusu&nbsp;&nbsp;</a></div>
 
 
 
@@ -150,7 +150,7 @@
                      data-easing="Back.easeOut"
                      data-endspeed="400"
                      data-endeasing="Power1.easeIn">
-                    Argemsan.com  yakında <br /> yayında!
+                    Argemsan.com
                 </div>
 
                 <!-- LAYER NR. 6 -->
@@ -163,11 +163,11 @@
                      data-easing="Back.easeOut"
                      data-endspeed="400"
                      data-endeasing="Power1.easeIn">
-                    Bizi takipte kalın &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    @HomeRess.HomeStrings.bizitakiptekalin &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
 
                 <!-- LAYER NR. 7 -->
-                <div class="tp-caption bluebg-t3 sfr skewtoright imed-sl1"
+                @*<div class="tp-caption bluebg-t3 sfr skewtoright imed-sl1"
                      data-x="right"
                      data-y="280"
                      data-hoffset="-60"
@@ -175,7 +175,8 @@
                      data-start="3400"
                      data-easing="Back.easeOut"
                      data-endspeed="400"
-                     data-endeasing="Power1.easeIn">Lorem Ipsum is simply dummy text of the printing and typesetting<br>industry, it has been the industry's standard.</div>
+                     data-endeasing="Power1.easeIn">Lorem Ipsum is simply dummy text of the printing and typesetting<br>industry, it has been the industry's standard.
+                </div>*@
 
             </li>
 
@@ -204,7 +205,7 @@
 
                     <div class="iconlist-wrap">
                         <div class="subtitle notViewed wow fadeInRight" data-wow-delay="0.5s" data-wow-offset="20">@HomeRess.HomeStrings.neden <span class="iconlist-mid-title">Argemsan?</span></div>
-                        <br /><br />
+                        @*<br /><br />*@
                         <ul>
                             <li class="notViewed wow fadeInDown" data-wow-delay="0.5s" data-wow-offset="50">
                                 <i class="icon-hospital2 icon-list-icons"></i>
@@ -218,29 +219,28 @@
 
                             </li>
 
-                            @*<li class="notViewed wow fadeInDown" data-wow-delay="0.5s" data-wow-offset="70">
-                                <i class="fa fa-ambulance icon-list-icons"></i>
+                            <li class="notViewed wow fadeInDown" data-wow-delay="0.5s" data-wow-offset="70">
+                                <i class="fa fa-heart icon-list-icons"></i>
                                 <div class="iconlist-content">
 
-                                    <div class="iconlist-title">Sizi Bekletmiyoruz</div>
+                                    <div class="iconlist-title">Bizimle çalışmak ister misiniz?</div>
                                     <p class="iconlist-text">
-                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                                        doloremque laudantium, totam rem aperiam.
+                                        Uzman kadromuzda sizde yer alabilirsiniz. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     </p>
                                 </div>
                             </li>
-                            <li class="notViewed wow fadeInDown" data-wow-delay="0.5s" data-wow-offset="60">
-                                <i class="fa fa-user-md icon-list-icons"></i>
-                                <div class="iconlist-content">
+                            @*<li class="notViewed wow fadeInDown" data-wow-delay="0.5s" data-wow-offset="60">
+        <i class="fa fa-user-md icon-list-icons"></i>
+        <div class="iconlist-content">
 
-                                    <div class="iconlist-title">Bizimle Çalışmak İster misiniz?</div>
-                                    <p class="iconlist-text">
-                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                                        doloremque laudantium, totam rem aperiam.
-                                    </p>
-                                </div>
+            <div class="iconlist-title">Bizimle Çalışmak İster misiniz?</div>
+            <p class="iconlist-text">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                doloremque laudantium, totam rem aperiam.
+            </p>
+        </div>
 
-                            </li>*@
+    </li>*@
                         </ul>
                     </div>
 

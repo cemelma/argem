@@ -1757,7 +1757,6 @@
     <Content Include="Content\images\bankinfo\garanti2.jpg" />
     <Content Include="Content\images\bankinfo\is1.jpg" />
     <Content Include="Content\images\bankinfo\is2.jpg" />
-    <Content Include="Content\images\references\hacettepe-universitesi_8394554.png" />
     <Content Include="Content\images\references\yildiz-teknik-universitesi_89722137.png" />
     <Content Include="css\fileuploader\demo-ie8.css" />
     <Content Include="css\fileuploader\demo.css" />

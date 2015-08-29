@@ -5,7 +5,7 @@
 @model List<deneysan_DAL.Entities.Projects>
 
 <div class="about-intro-wrap pull-left">
-    <div class="bread-crumb-wrap ibc-wrap-6">
+    <div class="breadcrumbcustom">
         <div class="container">
             <!--Title / Beadcrumb-->
             <div class="inner-page-title-wrap col-xs-12 col-md-12 col-sm-12">
@@ -20,7 +20,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" style="min-height:500px;">
         <div class="row">
             @foreach (var item in Model)
             {
@@ -34,11 +34,11 @@
                         <p>
                             @item.ProjeOzeti
                         </p>
-                        <ul class="list-unstyled profileInputs">
+                        @*<ul class="list-unstyled profileInputs">
                             <li style="line-height:40px"><i class="fa fa-money fa-fw fa-lg" style="font-size:24px;"></i><span style="font-weight:bold;font-size:14px">@ProjectsRess.ProjectsStrings.txtprojeButcesi</span> @item.ProjeButcesi</li>
                             <li style="line-height:40px"><i class="fa fa-calendar fa-fw fa-lg" style="font-size:24px;"></i><span style="font-weight:bold;font-size:14px">@ProjectsRess.ProjectsStrings.txtprojeSuresi</span> @item.ProjeSuresi</li>
                             
-                        </ul>
+                        </ul>*@
                         <div class="purchase-strip-blue dept-apponit-butt" style="margin-top:20px;">
                             <section class="color-4">
                                 <p class="ipurchase-paragraph">

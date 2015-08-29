@@ -9,7 +9,7 @@
 {
 
     <div class="about-intro-wrap pull-left">
-        <div class="bread-crumb-wrap ibc-wrap-6">
+        <div class="breadcrumbcustom">
             <div class="container">
                 <!--Title / Beadcrumb-->
                 <div class="inner-page-title-wrap col-xs-12 col-md-12 col-sm-12">
@@ -19,7 +19,7 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container" style="min-height:500px;">
             <div class="tab-content col-md-12 col-sm-12 col-xs-12 pull-right" style="min-height:450px" id="projectform">
                 <fieldset>
                     <legend>
@@ -28,51 +28,51 @@
 
                     <div class="row">
                         <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.hedef</label></div>
-                        <div class="col-lg-5">@Html.TextBoxFor(x => x.Project.ProjeHedefi, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.hedef.ToLower(), @readonly = "true" })</div>
+                        <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.ProjeHedefi, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.hedef.ToLower(), @readonly = "true" })</div>
 
                     </div>
                     <div class="row">
                         <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.amac</label></div>
-                        <div class="col-lg-5">@Html.TextBoxFor(x => x.Project.ProjeAmac, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.amac.ToLower(), @readonly = "true" })</div>
+                        <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.ProjeAmac, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.amac.ToLower(), @readonly = "true" })</div>
 
                     </div>
 
-                    <div class="row">
+                    @*<div class="row">
                         <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.sure</label></div>
-                        <div class="col-lg-5">@Html.TextBoxFor(x => x.Project.ProjeSuresi, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.sure.ToLower(), @readonly = "true" })</div>
+                        <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.ProjeSuresi, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.sure.ToLower(), @readonly = "true" })</div>
 
                     </div>
 
                     <div class="row">
                         <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.butce</label></div>
-                        <div class="col-lg-5">@Html.TextBoxFor(x => x.Project.ProjeButcesi, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.butce.ToLower(), @readonly = "true" })</div>
+                        <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.ProjeButcesi, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.butce.ToLower(), @readonly = "true" })</div>
 
-                    </div>
+                    </div>*@
 
-                    <div class="row">
+                    @*<div class="row">
                         <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.finanseeden</label></div>
-                        <div class="col-lg-5">@Html.TextBoxFor(x => x.Project.FinanseEdenKurum, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.finanseeden.ToLower(), @readonly = "true" })</div>
+                        <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.FinanseEdenKurum, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.finanseeden.ToLower(), @readonly = "true" })</div>
 
-                    </div>
+                    </div>*@
 
                     <div class="row">
                         <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.uygulanacagiyer</label></div>
-                        <div class="col-lg-5">@Html.TextBoxFor(x => x.Project.UygulanacagiYer, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.uygulanacagiyer.ToLower(), @readonly = "true" })</div>
+                        <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.UygulanacagiYer, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.uygulanacagiyer.ToLower(), @readonly = "true" })</div>
 
                     </div>
                     <div class="row">
                         <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.sonuclar</label></div>
-                        <div class="col-lg-5">@Html.TextAreaFor(x => x.Project.BeklenenSonuclar, new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.sonuclar.ToLower(), @readonly = "true" })</div>
+                        <div class="col-lg-9">@Html.TextAreaFor(x => x.Project.BeklenenSonuclar, new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.sonuclar.ToLower(), @readonly = "true" })</div>
 
                     </div>
                     <div class="row">
                         <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.ozet</label></div>
-                        <div class="col-lg-5">@Html.TextAreaFor(x => x.Project.ProjeOzeti, new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.ozet.ToLower(), @readonly = "true" })</div>
+                        <div class="col-lg-9">@Html.TextAreaFor(x => x.Project.ProjeOzeti, new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.ozet.ToLower(), @readonly = "true", @disabled = "true" })</div>
 
                     </div>
                     <div class="row">
                         <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.dokuman</label></div>
-                        <div class="col-lg-5">
+                        <div class="col-lg-9">
                             @if (!string.IsNullOrEmpty(Model.Project.ProjeDokümani))
                             {
                                 <div class="purchase-strip-blue dept-apponit-butt" style="margin-top:0px;">
@@ -94,14 +94,16 @@
                     </div>
 
 
-                    @*<div class="row">
+                        <div class="row" style="margin-top:25px;">
                             <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.resim</label></div>
-                            <div class="col-lg-5">
+                            <div class="col-lg-9">
 
-                                <input type="file" class="multi" maxlength="2" id="fileinput_projeresim" />
+                                @foreach (var itemimage in Model.ProjectImages)
+                                {
+                                    <img src="@itemimage.ImageThumb" width="140" height="120" />
+                                }
                             </div>
-                            <div class="col-lg-4"></div>
-                        </div>*@
+                        </div>
 
                 </fieldset>
 

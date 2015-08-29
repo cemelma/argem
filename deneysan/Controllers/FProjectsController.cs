@@ -152,7 +152,7 @@ namespace deneysan.Controllers
     {
       using (DeneysanContext db = new DeneysanContext())
       {
-        List<Projects> projects = db.Projects.Where(x => x.Language == lang && x.Deleted == false).ToList();
+        List<Projects> projects = db.Projects.Where(x => x.Language == lang && x.Deleted == false && x.Online == true && x.Status == 1).OrderByDescending(x => x.ProjeId).ToList();
 
         return View(projects);
       }

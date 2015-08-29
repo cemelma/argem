@@ -23,18 +23,17 @@ function ProjeDurumChanged(e, id) {
         url: '/Project/ChangeProjectStatus',
         data: '{id:"' + id + '",status:"' + status + '"}',
         contentType: "application/json; charset=utf-8",
-        dataType: 'json',
+        dataType: 'text',
         success: function (result) {
             if (result == "true" || result == "True") {
-                $(this).closest("tr").fadeOut();
-
+                $(e).closest("tr").fadeOut();
             }
             else {
                 alert("İşlem sırasında bir hata oluştu");
             }
         },
         error: function () {
-            alert("İşlem sırasında bir hata oluştu");
+            alert("İşlem sırasında bir hata oluştus");
         }
     });
 
