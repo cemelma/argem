@@ -71,5 +71,24 @@ namespace deneysan_BLL.ContactBL
                 }
             }
         }
+
+        public static bool AddApplication(Application record)
+        {
+            using (DeneysanContext db = new DeneysanContext())
+            {
+                try
+                {
+                    db.Application.Add(record);
+                    db.SaveChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+            }
+
+        }
+
     }
 }

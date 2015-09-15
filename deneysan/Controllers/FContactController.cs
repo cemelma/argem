@@ -9,6 +9,8 @@ using System.Web.Mvc;
 using System.Net.Mail;
 using System.Net;
 using deneysan_BLL.MailBL;
+using deneysan.Models;
+using System.IO;
 
 namespace deneysan.Controllers
 {
@@ -112,5 +114,53 @@ namespace deneysan.Controllers
 
             return Json(new { state = "a"},JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult Application()
+        {
+            return View();
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        [HttpPost]
+        public ActionResult Application(ApplicationModel model, HttpPostedFileBase CVFile)
+        {
+            if (ModelState.IsValid)
+            {
+                Random random = new Random();
+                int rand = random.Next(1000, 99999999);
+                var path = Path.Combine(Server.MapPath("~/Content/dokumanlar"), rand + "_" + CVFile.FileName);
+                CVFile.SaveAs(path);
+
+                deneysan_DAL.Entities.Application application = new deneysan_DAL.Entities.Application();
+                application.CVFile = "/Content/dokumanlar/" + rand + "_" + CVFile.FileName;
+                application.FullName = model.FullName;
+                application.Email = model.Email;
+
+               bool isrecord = ContactManager.AddApplication(application);
+                if (!isrecord)
+                {
+                    if (lang == "en")
+                    {
+                        ModelState.AddModelError("", "Bir hata oluştu.");
+                        ViewBag.process = "Lütfen daha sonra deneyiniz";
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Something went wrong.");
+                        ViewBag.process = "Please try again later";
+                    }
+
+                }
+                else
+                {
+                    if (lang == "en")
+                        ViewBag.process = "CV has been successfully saved";
+                    else ViewBag.process = "CV'niz başarıyla kaydedilmiştir.";
+                }
+
+            }
+            return View(model);
+        }
+
     }
 }

@@ -6381,6 +6381,7 @@ p {
         float: left;
         padding: 5px 0px;
         border-bottom: 3px solid;
+        font-weight:bold;
     }
 
 .bread-crumb {

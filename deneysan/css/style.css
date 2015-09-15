@@ -1,4 +1,17 @@
 .field-validation-error{
     color:maroon;
 }
-.breadcrumbcustom{background-color:#9D81DE; margin-bottom:20px}
+.breadcrumbcustom{
+    margin-bottom:20px;
+    background: url('/Images/bgimage.png') repeat 0 0;
+    background-position-y: -19px;
+    /* opacity: 0.5; */
+}
+
+.basvuru{
+    border-radius: 30px;width: 170px;opacity:0.8;
+}
+
+.basvuru:hover{
+    border-radius: 30px;width: 170px;opacity:1;
+}

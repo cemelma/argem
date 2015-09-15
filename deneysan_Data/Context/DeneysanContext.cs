@@ -39,6 +39,8 @@ namespace deneysan_DAL.Context
         public DbSet<Projects> Projects { get; set; }
         public DbSet<ProjectsGallery> ProjectsGallery { get; set; }
         public DbSet<User> User { get; set; }
+
+        public DbSet<Application> Application { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
@@ -70,7 +72,7 @@ namespace deneysan_DAL.Context
             modelBuilder.Entity<Projects>().ToTable("Projects");
             modelBuilder.Entity<ProjectsGallery>().ToTable("ProjectsGallery");
             modelBuilder.Entity<User>().ToTable("User");
-
+            modelBuilder.Entity<Application>().ToTable("Application");
         }
     }
 }

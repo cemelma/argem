@@ -1,0 +1,72 @@
+﻿@model deneysan.Models.ApplicationModel
+@{
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+    ViewBag.Title = "İş Başvurusu";
+}
+
+<div class="about-intro-wrap pull-left">
+    <div class="breadcrumbcustom">
+        <div class="container">
+            <!--Title / Beadcrumb-->
+            <div class="inner-page-title-wrap col-xs-12 col-md-12 col-sm-12">
+                <div class="bread-heading"><h1>@AccountRess.AccountStrings.girisyap</h1></div>
+                <div class="bread-crumb pull-right">
+                    <ul>
+                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_homepage">@SharedRess.SharedStrings.homepage</a></li>
+                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_login">@SharedRess.SharedStrings.login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 dept-tabs-wrap wow fadeInUp animated" data-wow-delay="1s" data-wow-offset="200">
+                <div class="tabbable tabs-left">
+                    
+                        <div class="tab-content col-md-6 col-sm-6 col-xs-6 col-centered" style="min-height:450px;float: none;display: block;margin-left: auto;margin-right: auto;">
+                            <div class="dept-title-tabs">@ContactRess.ContactStrings.basvuru</div>
+                            <br />
+
+                            @using (Html.BeginForm("Application", "FContact", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+
+                                <div class="form-horizontal">
+                                    @Html.ValidationSummary(true)
+                                    <div class="submit form-group" style="font-size: 16px;color: green;font-weight: bold;">
+                                        @ViewBag.process
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="controls">
+                                            @Html.TextBoxFor(model => model.FullName, new { @placeholder = ContactRess.ContactStrings.fullname, @class = "form-control" })
+                                            @Html.ValidationMessageFor(d => d.FullName)
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="email controls">
+                                            @Html.TextBoxFor(model => model.Email, new { @placeholder = AccountRess.AccountStrings.mail, @class = "form-control" })
+                                            @Html.ValidationMessageFor(d => d.Email)
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="controls">
+                                            @Html.TextBoxFor(model => model.CVFile, new { @placeholder = ContactRess.ContactStrings.cvfile, @class = "form-control", @type="file" })
+                                            @Html.ValidationMessageFor(d => d.CVFile)
+                                        </div>
+                                    </div>
+                                    <div class="submit form-group" style="margin-bottom:8px">
+                                        <input type="submit" value='@AccountRess.AccountStrings.kaydet' class="btn btn-primary">
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

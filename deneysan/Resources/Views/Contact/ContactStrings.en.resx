@@ -129,17 +129,32 @@
   <data name="bankaccounts" xml:space="preserve">
     <value>Bank Accounts</value>
   </data>
+  <data name="basvuru" xml:space="preserve">
+    <value>JOB APPLICATION</value>
+  </data>
+  <data name="basvuruimg" xml:space="preserve">
+    <value>/Images/is_en.jpg</value>
+  </data>
+  <data name="basvurulink" xml:space="preserve">
+    <value>/en/application</value>
+  </data>
   <data name="contact" xml:space="preserve">
     <value>Contact Details</value>
   </data>
   <data name="contactform" xml:space="preserve">
     <value>Contact Form</value>
   </data>
+  <data name="cvfile" xml:space="preserve">
+    <value>CV</value>
+  </data>
   <data name="email" xml:space="preserve">
     <value>Email</value>
   </data>
   <data name="faks" xml:space="preserve">
     <value>Fax:</value>
+  </data>
+  <data name="fullname" xml:space="preserve">
+    <value>Full Name</value>
   </data>
   <data name="konu" xml:space="preserve">
     <value>Subject*</value>

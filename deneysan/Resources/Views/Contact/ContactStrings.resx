@@ -129,17 +129,32 @@
   <data name="bankaccounts" xml:space="preserve">
     <value>Banka Hesaplarımız</value>
   </data>
+  <data name="basvuru" xml:space="preserve">
+    <value>İŞ BAŞVURUSU</value>
+  </data>
+  <data name="basvuruimg" xml:space="preserve">
+    <value>/Images/is.jpg</value>
+  </data>
+  <data name="basvurulink" xml:space="preserve">
+    <value>/tr/basvuru</value>
+  </data>
   <data name="contact" xml:space="preserve">
     <value>İletişim Bilgileri</value>
   </data>
   <data name="contactform" xml:space="preserve">
     <value>İletişim Formu</value>
   </data>
+  <data name="cvfile" xml:space="preserve">
+    <value>CV Dosyası</value>
+  </data>
   <data name="email" xml:space="preserve">
     <value>Eposta</value>
   </data>
   <data name="faks" xml:space="preserve">
     <value>Faks:</value>
+  </data>
+  <data name="fullname" xml:space="preserve">
+    <value>İsim Soyisim</value>
   </data>
   <data name="konu" xml:space="preserve">
     <value>Konu*</value>

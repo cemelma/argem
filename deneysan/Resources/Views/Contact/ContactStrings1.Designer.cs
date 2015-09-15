@@ -97,6 +97,33 @@ namespace ContactRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to İŞ BAŞVURUSU.
+        /// </summary>
+        public static string basvuru {
+            get {
+                return ResourceManager.GetString("basvuru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /Images/is.jpg.
+        /// </summary>
+        public static string basvuruimg {
+            get {
+                return ResourceManager.GetString("basvuruimg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /tr/basvuru.
+        /// </summary>
+        public static string basvurulink {
+            get {
+                return ResourceManager.GetString("basvurulink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to İletişim Bilgileri.
         /// </summary>
         public static string contact {
@@ -115,6 +142,15 @@ namespace ContactRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CV Dosyası.
+        /// </summary>
+        public static string cvfile {
+            get {
+                return ResourceManager.GetString("cvfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Eposta.
         /// </summary>
         public static string email {
@@ -129,6 +165,15 @@ namespace ContactRess {
         public static string faks {
             get {
                 return ResourceManager.GetString("faks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to İsim Soyisim.
+        /// </summary>
+        public static string fullname {
+            get {
+                return ResourceManager.GetString("fullname", resourceCulture);
             }
         }
         

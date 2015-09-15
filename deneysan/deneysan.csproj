@@ -1768,6 +1768,8 @@
     <Content Include="Images\argemlogo.png" />
     <Content Include="Images\en.png" />
     <Content Include="Images\favicon.ico" />
+    <Content Include="Images\is.jpg" />
+    <Content Include="Images\is_eng.jpg" />
     <Content Include="Images\tr.png" />
     <Content Include="js\fileuploader\app.js" />
     <Content Include="js\fileuploader\cors\jquery.postmessage-transport.js" />
@@ -2437,6 +2439,7 @@
     <Content Include="Views\FNews\NewsContent.cshtml" />
     <Content Include="Views\FAccount\NewRecord.cshtml" />
     <Content Include="Views\FHome\Index2.cshtml" />
+    <Content Include="Views\FContact\Application.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

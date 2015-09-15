@@ -144,4 +144,22 @@ namespace deneysan.Models
         public string Password { get; set; }
     }
 
+    public class ApplicationModel
+    {
+        [Required(ErrorMessage = "Mail Alanı Boş Geçilemez")]
+        [Display(Name = "Mail Adresi")]
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "İsim Alanı Boş Geçilemez")]
+        [Display(Name = "Ad Soyad")]
+        public string FullName { get; set; }
+
+        [Required(ErrorMessage = "CV Dosyası Alanı Boş Geçilemez")]
+        [Display(Name = "CV Dosyası")]
+        public string CVFile { get; set; }
+
+    }
+
+
 }
