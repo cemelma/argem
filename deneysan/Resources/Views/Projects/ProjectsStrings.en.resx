@@ -195,6 +195,27 @@
   <data name="resim" xml:space="preserve">
     <value>PROJECT IMAGES(you are allowed to add maximum 5 images.)</value>
   </data>
+  <data name="searchadi" xml:space="preserve">
+    <value>Project Name</value>
+  </data>
+  <data name="searchbutce" xml:space="preserve">
+    <value>Budget of Project</value>
+  </data>
+  <data name="searchbutton" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="searcherror" xml:space="preserve">
+    <value>Arama sırasında hata oluştu.</value>
+  </data>
+  <data name="searchsures" xml:space="preserve">
+    <value>Project Period</value>
+  </data>
+  <data name="searchtitle" xml:space="preserve">
+    <value>Project Search</value>
+  </data>
+  <data name="searchuyuglanacagiyer" xml:space="preserve">
+    <value>Used Places of Project</value>
+  </data>
   <data name="sonuclar" xml:space="preserve">
     <value>RESULTS OF PROJECT</value>
   </data>

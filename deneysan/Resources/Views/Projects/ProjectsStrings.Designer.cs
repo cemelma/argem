@@ -187,6 +187,15 @@ namespace ProjectsRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Proje Arama.
+        /// </summary>
+        public static string projearama {
+            get {
+                return ResourceManager.GetString("projearama", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Proje Başvuru Formu.
         /// </summary>
         public static string projebasvuruformu {
@@ -282,6 +291,69 @@ namespace ProjectsRess {
         public static string resim {
             get {
                 return ResourceManager.GetString("resim", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proje Adı.
+        /// </summary>
+        public static string searchadi {
+            get {
+                return ResourceManager.GetString("searchadi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proje Bütçesi.
+        /// </summary>
+        public static string searchbutce {
+            get {
+                return ResourceManager.GetString("searchbutce", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ara.
+        /// </summary>
+        public static string searchbutton {
+            get {
+                return ResourceManager.GetString("searchbutton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arama sırasında hata oluştu..
+        /// </summary>
+        public static string searcherror {
+            get {
+                return ResourceManager.GetString("searcherror", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proje Süresi.
+        /// </summary>
+        public static string searchsures {
+            get {
+                return ResourceManager.GetString("searchsures", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proje Arama.
+        /// </summary>
+        public static string searchtitle {
+            get {
+                return ResourceManager.GetString("searchtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uygulanacağı Yer.
+        /// </summary>
+        public static string searchuyuglanacagiyer {
+            get {
+                return ResourceManager.GetString("searchuyuglanacagiyer", resourceCulture);
             }
         }
         

@@ -12,6 +12,7 @@ using deneysan.Models;
 using deneysan_BLL.MailBL;
 using System.Net.Mail;
 using System.Net;
+using deneysan.utilities;
 
 namespace deneysan.Controllers
 {
@@ -152,7 +153,7 @@ namespace deneysan.Controllers
     {
       using (DeneysanContext db = new DeneysanContext())
       {
-        List<Projects> projects = db.Projects.Where(x => x.Language == lang && x.Deleted == false && x.Online == true && x.Status == 1).OrderByDescending(x => x.ProjeId).ToList();
+        List<Projects> projects = db.Projects.Where(x => x.Language == lang && x.Deleted == false && x.Online == true && x.Status == (int)EnumProjectStatus.Confirmed).OrderByDescending(x => x.ProjeId).ToList();
 
         return View(projects);
       }
@@ -190,6 +191,46 @@ namespace deneysan.Controllers
     {
       public Projects Project { get;set;}
       public List<ProjectsGallery> ProjectImages { get;set;}
+    }
+
+    public class SearchProjectCriteria
+    {
+      public string Adi { get; set; }
+      public string Suresi { get; set; }
+      public string Yer { get; set; }
+      public string Butce { get; set; }
+      
+    }
+
+    [HttpPost]
+    //public ActionResult SearchProject(SearchProjectCriteria criteria)
+    public ActionResult SearchProject(FormCollection frm)
+    {
+      SearchProjectCriteria criteria = new SearchProjectCriteria();
+      criteria.Adi = frm["txtsearchname"];
+      criteria.Yer = frm["txtsearchplace"];
+      criteria.Suresi = frm["txtsearchtime"];
+      criteria.Butce = frm["txtsearchbudget"];
+
+       List<Projects> projects = new List<Projects>();
+      using (DeneysanContext db = new DeneysanContext())
+      {
+        if (criteria != null)
+        {
+          bool isadNull = string.IsNullOrEmpty(criteria.Adi) ? true : false;
+          bool isyerNull = string.IsNullOrEmpty(criteria.Yer) ? true : false;
+          bool isbutceNull = string.IsNullOrEmpty(criteria.Butce) ? true : false;
+          bool issureNull = string.IsNullOrEmpty(criteria.Suresi) ? true : false;
+
+          projects = db.Projects.Where(x=>(isadNull || x.ProjeAdi.Contains(criteria.Adi)) && (isyerNull || x.UygulanacagiYer.Contains(criteria.Yer)) && (isbutceNull || x.ProjeButcesi == criteria.Butce) && (issureNull || x.ProjeSuresi==criteria.Suresi)).ToList();
+
+        }
+        else
+        {
+         projects = db.Projects.Where(x => x.Language == lang && x.Deleted == false && x.Online == true && x.Status == 1).OrderByDescending(x => x.ProjeId).ToList();
+        }
+        return PartialView("_projectlistpartial", projects);
+      }
     }
 
  

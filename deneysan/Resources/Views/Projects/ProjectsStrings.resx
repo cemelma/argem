@@ -159,6 +159,9 @@
   <data name="projeadi" xml:space="preserve">
     <value>PROJE ADI</value>
   </data>
+  <data name="projearama" xml:space="preserve">
+    <value>Proje Arama</value>
+  </data>
   <data name="projebasvuruformu" xml:space="preserve">
     <value>Proje Başvuru Formu</value>
   </data>
@@ -191,6 +194,27 @@
   </data>
   <data name="resim" xml:space="preserve">
     <value>PROJE RESİMLERİ</value>
+  </data>
+  <data name="searchadi" xml:space="preserve">
+    <value>Proje Adı</value>
+  </data>
+  <data name="searchbutce" xml:space="preserve">
+    <value>Proje Bütçesi</value>
+  </data>
+  <data name="searchbutton" xml:space="preserve">
+    <value>Ara</value>
+  </data>
+  <data name="searcherror" xml:space="preserve">
+    <value>Arama sırasında hata oluştu.</value>
+  </data>
+  <data name="searchsures" xml:space="preserve">
+    <value>Proje Süresi</value>
+  </data>
+  <data name="searchtitle" xml:space="preserve">
+    <value>Proje Arama</value>
+  </data>
+  <data name="searchuyuglanacagiyer" xml:space="preserve">
+    <value>Uygulanacağı Yer</value>
   </data>
   <data name="sonuclar" xml:space="preserve">
     <value>PROJENİN BEKLENEN SONUÇLARI</value>

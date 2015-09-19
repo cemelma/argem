@@ -1,0 +1,23 @@
+﻿@model List<deneysan_DAL.Entities.Projects>
+@foreach (var item in Model)
+{
+    <div class="panel panel-default panel-primary">
+        <div class="panel-heading clearfix" style="padding:5px 15px;">
+            <div class="pull-left"><i class="glyphicon glyphicon-book dept-icon" style="color:white;"></i></div>
+            <div class="pull-left" style="width:90%;"><span class="dep-txt" style="margin-left:20px;font-weight:bold;">@item.ProjeAdi.ToUpper()</span></div>
+        </div>
+        <div class="panel-body">
+            <h4 style="font-weight:bold;">Proje Özeti</h4>
+            <p>
+                @item.ProjeOzeti
+            </p>
+            <div class="purchase-strip-blue dept-apponit-butt" style="margin-top:20px;">
+                <section class="color-4">
+                    <p class="ipurchase-paragraph">
+                        <a class="fa-calendar fa-eye btn btn-4 btn-4a notViewed" href="/@SharedRess.SharedStrings.menu_culture/@ProjectsRess.ProjectsStrings.projedetaysayfasilink/@item.ProjeId">@ProjectsRess.ProjectsStrings.projedetaysayfasibutontext</a>
+                    </p>
+                </section>
+            </div>
+        </div>
+    </div>
+}

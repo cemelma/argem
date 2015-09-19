@@ -3,11 +3,23 @@
     Layout = "~/Views/Shared/frontlayout.cshtml";
 }
 @model List<deneysan_DAL.Entities.Projects>
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 
+<style>
+    .form-widget {
+        padding-top: 0px !important;
+    }
+    .appointment-form-title{
+        margin-bottom:10px;
+    }
+</style>
 <div class="about-intro-wrap pull-left">
     <div class="breadcrumbcustom">
         <div class="container">
-            <!--Title / Beadcrumb-->
+
             <div class="inner-page-title-wrap col-xs-12 col-md-12 col-sm-12">
                 <div class="bread-heading"><h1>@SharedRess.SharedStrings.projectlist_header</h1></div>
                 <div class="bread-crumb pull-right">
@@ -20,64 +32,125 @@
         </div>
     </div>
 
-    <div class="container" style="min-height:500px;">
-        <div class="row">
-            @foreach (var item in Model)
-            {
-                <div class="panel panel-default panel-primary">
-                    <div class="panel-heading clearfix" style="padding:5px 15px;">
-                        <div class="pull-left"><i class="glyphicon glyphicon-book dept-icon" style="color:white;"></i></div>
-                        <div class="pull-left" style="width:90%;"><span class="dep-txt" style="margin-left:20px;font-weight:bold;">@item.ProjeAdi.ToUpper()</span></div>
-                    </div>
-                    <div class="panel-body">
-                        <h4 style="font-weight:bold;">Proje Özeti</h4>
-                        <p>
-                            @item.ProjeOzeti
-                        </p>
-                        @*<ul class="list-unstyled profileInputs">
-                            <li style="line-height:40px"><i class="fa fa-money fa-fw fa-lg" style="font-size:24px;"></i><span style="font-weight:bold;font-size:14px">@ProjectsRess.ProjectsStrings.txtprojeButcesi</span> @item.ProjeButcesi</li>
-                            <li style="line-height:40px"><i class="fa fa-calendar fa-fw fa-lg" style="font-size:24px;"></i><span style="font-weight:bold;font-size:14px">@ProjectsRess.ProjectsStrings.txtprojeSuresi</span> @item.ProjeSuresi</li>
-                            
-                        </ul>*@
-                        <div class="purchase-strip-blue dept-apponit-butt" style="margin-top:20px;">
-                            <section class="color-4">
-                                <p class="ipurchase-paragraph">
-                                    <a class="fa-calendar fa-eye btn btn-4 btn-4a notViewed" href="/@SharedRess.SharedStrings.menu_culture/@ProjectsRess.ProjectsStrings.projedetaysayfasilink/@item.ProjeId">@ProjectsRess.ProjectsStrings.projedetaysayfasibutontext</a>
-                                </p>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-                
-                @*<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 ">
-                    <div id="accodion">
-                       
-                        <div>
-                            
-                            <div class="dept-content pull-left col-md-7 col-lg-8">
-                                <p>
-                                    @item.ProjeOzeti
-                                </p>
 
 
-                                <a href="#" class="dept-details-butt">Details</a>
 
-                                <div class="purchase-strip-blue dept-apponit-butt">
-                                    <section class="color-4">
-                                        <p class="ipurchase-paragraph">
-                                            <button class="icon-calendar btn btn-4 btn-4a notViewed">Appointment</button>
-                                        </p>
+    <section class="complete-content content-footer-space">
+        <div>
+            <div class="container">
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-left blgo-full-wrap no-pad">
+                  
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 side-bar-blog">
+
+                        @using (Ajax.BeginForm("SearchProject",null, new AjaxOptions() { HttpMethod = "POST", OnSuccess = "Success", OnBegin = "ShowLoader", OnFailure = "showError", UpdateTargetId = "divprojectList" }, new { @class="form-widget wow fadeInLeft", @data_wow_delay="0.5s" ,@data_wow_offset="200", @style="padding-top:0px !important;"  }))
+                        {
+                            @*<div class="form-widget wow fadeInLeft" data-wow-delay="0.5s" data-wow-offset="200" style="padding-top:0px !important;">*@
+
+                                <div class="appointment-form-title"><i class="icon-hospital2 appointment-form-icon"></i>@ProjectsRess.ProjectsStrings.searchtitle</div>
+                                <form class="appt-form">
+                                    <input type="text" id="txtsearchname" name="txtsearchname" class="appt-form-txt" placeholder="@ProjectsRess.ProjectsStrings.searchadi" />
+                                    <input type="text" id="txtsearchbudget" name="txtsearchbudget" class="appt-form-txt" placeholder="@ProjectsRess.ProjectsStrings.searchbutce" />
+                                    <input type="text" id="txtsearchtime" name="txtsearchtime" class="appt-form-txt" placeholder="@ProjectsRess.ProjectsStrings.searchsures" />
+                                    <input type="text" id="txtsearchplace" name="txtsearchplace" class="appt-form-txt" placeholder="@ProjectsRess.ProjectsStrings.searchuyuglanacagiyer" />
+                                    <section class="color-7">
+                                        @*<a href="#" class="icon-mail btn2-st2 btn-7 btn-7b iform-button" onclick="SearchProject();return false;">@ProjectsRess.ProjectsStrings.searchbutton</a>*@
+                                        <button type="submit" class="icon-mail btn2-st2 btn-7 btn-7b iform-button" onclick="SearchProject();return false;">@ProjectsRess.ProjectsStrings.searchbutton</button>
                                     </section>
-                                </div>
+                                </form>
 
-                                <div class="vspacer"></div>
-                            </div>
-                        </div>
+                            @*</div>*@
+                        }
+                        
                     </div>
-                </div>*@
+                    
+                    <!-- Blog column -->
+                    <div class="col-lg- col-md-8 col-sm-12 col-xs-12">
+                        <div class="alert alert-danger hide" id="errordiv">
+                            <strong>@ProjectsRess.ProjectsStrings.searcherror</strong>
+                        </div>
 
-            }
-
+                        <div class="row" id="divprojectList">
+                            @Html.Partial("_projectlistpartial", Model);
+                        </div>
+                    </div> <!-- Blog column end-->
+                </div>
+            </div>
         </div>
-    </div>
+        <!--Mid Content End-->
+        <!--Footer Start-->
+
+    </section>
+
+
+
+    <script type="text/javascript">
+
+        function Success() {
+            $("#loader-overlay").fadeOut();
+
+
+        }
+
+        function ShowLoader() {
+            $("#loader-overlay").fadeIn();
+        }
+
+        function showError() {
+            $("#loader-overlay").fadeOut();
+            $("#errordiv").removeClass("hide");
+
+        }
+
+        //function SearchProject() {
+        //    var adi = $("#txtsearchname").val();
+        //    var butce = $("#txtsearchbudget").val();
+        //    var sure = $("#txtsearchtime").val();
+        //    var yer = $("#txtsearchplace").val();
+
+        //    if (!adi && !butce && !sure && !yer) {
+        //        alert("Arama kriterlerinden en az birini doldurmalısınız.");
+        //        return false;
+        //    }
+
+        //    var criteria = {};
+
+        //    criteria.Adi = adi;
+        //    criteria.Suresi = sure;
+        //    criteria.Yer = yer;
+        //    criteria.Butce = butce;
+        //    $("#loader-overlay").fadeIn();
+        //    $.ajax({
+        //        url: 'SearchProject',
+        //        data: criteria,
+        //        type: 'POST',
+        //        contentType: 'application/json; charset=utf-8',
+
+        //        success: function (_result) {
+        //            if (_result != null) {
+        //                _studentRegistrationControls = _result.StudentRegistrationControls;
+        //            } else {
+        //                _studentRegistrationControls = null;
+        //            }
+        //            $("#divprojectList").html(data);
+        //        },
+        //        error: function (e) {
+        //            $("#errordiv").removeClass("hide");
+
+        //            $("#divprojectList").html("");
+        //        },
+        //        complete: function () {
+        //            $("#loader-overlay").fadeOut();
+        //        }
+        //    });
+
+        //}
+
+
+    </script>
+
+
+
+
+
 </div>

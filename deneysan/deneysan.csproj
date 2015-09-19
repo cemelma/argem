@@ -2440,6 +2440,7 @@
     <Content Include="Views\FAccount\NewRecord.cshtml" />
     <Content Include="Views\FHome\Index2.cshtml" />
     <Content Include="Views\FContact\Application.cshtml" />
+    <Content Include="Views\FProjects\_projectlistpartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
