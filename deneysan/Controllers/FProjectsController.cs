@@ -223,6 +223,7 @@ namespace deneysan.Controllers
           bool issureNull = string.IsNullOrEmpty(criteria.Suresi) ? true : false;
 
           projects = db.Projects.Where(x=>(isadNull || x.ProjeAdi.Contains(criteria.Adi)) && (isyerNull || x.UygulanacagiYer.Contains(criteria.Yer)) && (isbutceNull || x.ProjeButcesi == criteria.Butce) && (issureNull || x.ProjeSuresi==criteria.Suresi)).ToList();
+          projects = projects.Where(x=>x.Language == lang && x.Deleted == false && x.Online == true && x.Status == (int)EnumProjectStatus.Confirmed).OrderByDescending(x => x.ProjeId).ToList();
 
         }
         else
