@@ -11,6 +11,7 @@ using System.Net;
 using deneysan_BLL.MailBL;
 using deneysan.Models;
 using System.IO;
+using deneysan.Helpers;
 
 namespace deneysan.Controllers
 {
@@ -156,6 +157,37 @@ namespace deneysan.Controllers
                     if (lang == "en")
                         ViewBag.process = "CV has been successfully saved";
                     else ViewBag.process = "CV'niz başarıyla kaydedilmiştir.";
+
+                    #region Mail bildirimi
+
+                    try
+                    {
+                        var mset = MailManager.GetMailSettings();
+                        var msend = MailManager.GetMailUsersList(0);
+
+                        using (var client = new SmtpClient(mset.ServerHost, mset.Port))
+                        {
+                            client.EnableSsl = false;
+                            client.Credentials = new NetworkCredential(mset.ServerMail, mset.Password);
+                            var mail = new MailMessage();
+                            mail.From = new MailAddress(mset.ServerMail);
+                            foreach (var item in msend)
+                                mail.To.Add(item.MailAddress);
+                            mail.Subject = "argemsa.com Yeni CV Kaydı";
+                            mail.IsBodyHtml = true;
+
+                            //Mail Template Yükle ve Doldur
+                            string mailTemplate = (new MailTemplateUtil()).GetMailTemplate("NewCV");
+                            mailTemplate = (new MailTemplateUtil()).CustomFormat(mailTemplate, new string[] { });
+
+                            mail.Body = mailTemplate;
+                            if (mail.To.Count > 0) client.Send(mail);
+                        }
+                    }
+                    catch (Exception) { }
+
+                    #endregion
+
                 }
 
             }

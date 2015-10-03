@@ -194,6 +194,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\BankController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ApplicationController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContactController.cs" />
     <Compile Include="Areas\Admin\Controllers\DocumentGroupController.cs" />
     <Compile Include="Areas\Admin\Controllers\DocumentsController.cs" />
@@ -235,6 +236,7 @@
     </Compile>
     <Compile Include="Helpers\Enums\EnumMailUser.cs" />
     <Compile Include="Helpers\Enums\InstituionalTypes.cs" />
+    <Compile Include="Helpers\MailTemplateUtil.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Helpers\CyriptoClass.cs" />
     <Compile Include="Models\OfferWrapperModel.cs" />
@@ -1765,11 +1767,11 @@
     <Content Include="css\fileuploader\jquery.fileupload-ui.css" />
     <Content Include="css\fileuploader\jquery.fileupload.css" />
     <Content Include="css\fileuploader\style.css" />
+    <Content Include="HTMLTemplate\NewCV.html" />
     <Content Include="Images\argemlogo.png" />
     <Content Include="Images\en.png" />
     <Content Include="Images\favicon.ico" />
     <Content Include="Images\is.jpg" />
-    <Content Include="Images\is_eng.jpg" />
     <Content Include="Images\tr.png" />
     <Content Include="js\fileuploader\app.js" />
     <Content Include="js\fileuploader\cors\jquery.postmessage-transport.js" />
@@ -1990,6 +1992,8 @@
     <Content Include="js\uploadify\uploadify.php" />
     <Content Include="Areas\Admin\Views\Mail\AdminSettings.cshtml" />
     <Content Include="Areas\Admin\Views\Project\IptalEdilenProjeler.cshtml" />
+    <Content Include="Areas\Admin\Views\Application\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Application\link_leftbar.cshtml" />
     <None Include="Properties\PublishProfiles\deneme.pubxml" />
     <None Include="Properties\PublishProfiles\argemsan.pubxml" />
     <Content Include="js\jquery-1.7.2.min.js" />

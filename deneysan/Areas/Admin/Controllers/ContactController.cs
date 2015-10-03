@@ -32,8 +32,6 @@ namespace deneysan.Areas.Admin.Controllers
             return View();
         }
         
-
-
         string FillLanguagesList()
         {
             string lang = "";

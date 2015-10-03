@@ -87,7 +87,33 @@ namespace deneysan_BLL.ContactBL
                     return false;
                 }
             }
+        }
 
+        public static List<Application> GetApplicationList()
+        {
+            using (DeneysanContext db = new DeneysanContext())
+            {
+                var list = db.Application.OrderBy(d => d.ApplicationId).ToList();
+                return list;
+            }
+        }
+
+        public static bool Delete(int id)
+        {
+            using (DeneysanContext db = new DeneysanContext())
+            {
+                try
+                {
+                    var record = db.Application.FirstOrDefault(d => d.ApplicationId == id);
+                    db.Application.Remove(record);
+                    db.SaveChanges();
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
         }
 
     }

@@ -117,10 +117,10 @@ namespace deneysan.Areas.Admin
 
             context.MapRoute("ik_index", "yonetim/insankaynaklari", new { action = "Index", Controller = "HumanResource" });
             context.MapRoute("ik_mision_default", "yonetim/insankaynaklari/{lang}", new { action = "Index", Controller = "HumanResource" });
-            
 
 
-
+            //İş Başvuruları
+            context.MapRoute("cv_list", "yonetim/isbasvurulari", new { action = "Index", Controller = "Application" });
 
             context.MapRoute(
                 "Admin_default",
