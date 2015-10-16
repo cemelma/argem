@@ -55,7 +55,7 @@
                                     <input type="text" id="txtsearchplace" name="txtsearchplace" class="appt-form-txt" placeholder="@ProjectsRess.ProjectsStrings.searchuyuglanacagiyer" />
                                     <section class="color-7">
                                         @*<a href="#" class="icon-mail btn2-st2 btn-7 btn-7b iform-button" onclick="SearchProject();return false;">@ProjectsRess.ProjectsStrings.searchbutton</a>*@
-                                        <button type="submit" class="icon-mail btn2-st2 btn-7 btn-7b iform-button" onclick="SearchProject();return false;">@ProjectsRess.ProjectsStrings.searchbutton</button>
+                                        <button type="submit" class="icon-search btn2-st2 btn-7 btn-7b iform-button" onclick="SearchProject();return false;">@ProjectsRess.ProjectsStrings.searchbutton</button>
                                     </section>
                                 </form>
 
@@ -71,7 +71,7 @@
                         </div>
 
                         <div class="row" id="divprojectList">
-                            @Html.Partial("_projectlistpartial", Model);
+                            @Html.Partial("_projectlistpartial", Model)
                         </div>
                     </div> <!-- Blog column end-->
                 </div>
