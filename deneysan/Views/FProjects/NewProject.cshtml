@@ -107,6 +107,16 @@
                                     <div class="col-lg-4">@Html.ValidationMessageFor(model => model.Email)</div>
                                 </div>
                                 <div class="row">
+                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.projegrubusecimi</label></div>
+                                    <div class="col-lg-5">@Html.DropDownListFor(x => x.ProjectGroupId,(IEnumerable<SelectListItem>)ViewBag.ProjeGruplari, @ProjectsRess.ProjectsStrings.projegrubusecimiplaceholder, new { @class = "contact2-textbox", @placeholder = ProjectsRess.ProjectsStrings.projeadi.ToLower() })</div>
+
+                                    @*@Html.DropDownList("drpProjeGrubu", (IEnumerable<SelectListItem>)ViewBag.ProjeGruplari, @ProjectsRess.ProjectsStrings.projegrubusecimiplaceholder, new { @class = "required" })*@
+                                    <div class="col-lg-4">@Html.ValidationMessageFor(model => model.ProjectGroupId)</div>
+                                </div>
+
+                               
+
+                                <div class="row">
                                     <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.hedef</label></div>
                                     <div class="col-lg-5">@Html.TextAreaFor(x => x.ProjeHedefi,  new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.hedef.ToLower(),Rows="3" })</div>
                                     <div class="col-lg-4">@Html.ValidationMessageFor(model => model.ProjeHedefi)</div>

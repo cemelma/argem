@@ -206,9 +206,8 @@
     <Compile Include="Areas\Admin\Controllers\LinkController.cs" />
     <Compile Include="Areas\Admin\Controllers\MailController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ProductGroupController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProjectController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProjectGroupController.cs" />
     <Compile Include="Areas\Admin\Controllers\ReferenceController.cs" />
     <Compile Include="Areas\Admin\Controllers\TeklifController.cs" />
     <Compile Include="Areas\Admin\Filters\AuthenticateUser.cs" />
@@ -226,7 +225,6 @@
     <Compile Include="Controllers\FLinksController.cs" />
     <Compile Include="Controllers\FNewsController.cs" />
     <Compile Include="Controllers\FOffersController.cs" />
-    <Compile Include="Controllers\FProductsController.cs" />
     <Compile Include="Controllers\FProjectsController.cs" />
     <Compile Include="Controllers\FReferencesController.cs" />
     <Compile Include="Controllers\FSearchController.cs" />
@@ -1530,6 +1528,7 @@
     <Content Include="Areas\Admin\Content\scripts\pagescripts\proje\addproduct.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\proje\editproduct.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\proje\iptaledilenprojeler.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\proje\productgroup - Copy.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\proje\productgroup.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\proje\onaylananprojeler.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\proje\projelist.js" />
@@ -1994,6 +1993,8 @@
     <Content Include="Areas\Admin\Views\Project\IptalEdilenProjeler.cshtml" />
     <Content Include="Areas\Admin\Views\Application\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Application\link_leftbar.cshtml" />
+    <Content Include="Areas\Admin\Views\ProjectGroup\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProjectGroup\project_leftbar.cshtml" />
     <None Include="Properties\PublishProfiles\deneme.pubxml" />
     <None Include="Properties\PublishProfiles\argemsan.pubxml" />
     <Content Include="js\jquery-1.7.2.min.js" />

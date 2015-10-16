@@ -259,6 +259,24 @@ namespace ProjectsRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Proje Grubu.
+        /// </summary>
+        public static string projegrubusecimi {
+            get {
+                return ResourceManager.GetString("projegrubusecimi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proje Grubu Seçiniz....
+        /// </summary>
+        public static string projegrubusecimiplaceholder {
+            get {
+                return ResourceManager.GetString("projegrubusecimiplaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ADI SOYADI.
         /// </summary>
         public static string projesahibiadi {

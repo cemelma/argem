@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.Entity;
 using deneysan_DAL.Entities;
 using myBLOGData.Context;
+using deneysan_Data.Entities;
 namespace deneysan_DAL.Context
 {
     public class DeneysanContext : DbContext
@@ -37,6 +38,7 @@ namespace deneysan_DAL.Context
         public DbSet<MailUsers> MailUsers { get; set; }
         public DbSet<OfferNumber> OfferNumber { get; set; }
         public DbSet<Projects> Projects { get; set; }
+        public DbSet<ProjectGroup> ProjectGroup { get; set; }
         public DbSet<ProjectsGallery> ProjectsGallery { get; set; }
         public DbSet<User> User { get; set; }
 
@@ -73,6 +75,8 @@ namespace deneysan_DAL.Context
             modelBuilder.Entity<ProjectsGallery>().ToTable("ProjectsGallery");
             modelBuilder.Entity<User>().ToTable("User");
             modelBuilder.Entity<Application>().ToTable("Application");
+            modelBuilder.Entity<ProjectGroup>().ToTable("ProjectGroup");
+          
         }
     }
 }

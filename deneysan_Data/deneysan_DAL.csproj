@@ -57,6 +57,7 @@
     <Compile Include="Context\DatabaseCreatorClass.cs" />
     <Compile Include="Context\DeneysanContext.cs" />
     <Compile Include="Entities\Application.cs" />
+    <Compile Include="Entities\ProjectGroup.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\AdminUser.cs" />
     <Compile Include="Entities\BankInfo.cs" />

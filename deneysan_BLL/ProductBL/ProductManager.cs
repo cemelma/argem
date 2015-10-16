@@ -5,51 +5,44 @@ using System.Text;
 using System.Threading.Tasks;
 using deneysan_DAL.Context;
 using deneysan_DAL.Entities;
+using deneysan_Data.Entities;
 
 namespace deneysan_BLL.ProductBL
 {
     public class ProductManager
     {
-        #region ProductGroup
-        public static List<ProductGroup> GetProductGroupList(string language)
+        #region ProjectGroup
+        public static List<ProjectGroup> GetProjectGroupList(string language)
         {
             using (DeneysanContext db = new DeneysanContext())
             {
-                var list = db.ProductGroup.Where(d => d.Deleted == false && d.Language == language).OrderBy(d => d.SortNumber).ToList();
+                var list = db.ProjectGroup.Where(d => d.Language == language).OrderBy(d => d.SortNumber).ToList();
                 return list;
             }
         }
 
-        public static List<ProductGroup> GetProductGroupListForFront(string language)
+        public static List<ProjectGroup> GetProjectGroupListForFront(string language)
         {
             using (DeneysanContext db = new DeneysanContext())
             {
-                var list = db.ProductGroup.Where(d => d.Deleted == false && d.Language == language && d.Online==true).OrderBy(d => d.SortNumber).ToList();
+                var list = db.ProjectGroup.Where(d => d.Language == language && d.Online==true).OrderBy(d => d.SortNumber).ToList();
                 return list;
             }
         }
 
-        public static bool AddProductGroup(ProductGroup record)
+        public static bool AddProjectGroup(ProjectGroup record)
         {
             using (DeneysanContext db = new DeneysanContext())
             {
                 try
                 {
-                    record.TimeCreated = DateTime.Now;
-                    record.Deleted = false;
+                  
                     record.Online = true;
                     record.SortNumber = 9999;
-                    db.ProductGroup.Add(record);
+                    db.ProjectGroup.Add(record);
                     db.SaveChanges();
 
-                    //LogtrackManager logkeeper = new LogtrackManager();
-                    //logkeeper.LogDate = DateTime.Now;
-                    //logkeeper.LogProcess = EnumLogType.DokumanGrup.ToString();
-                    //logkeeper.Message = LogMessages.ProductGroupAdded;
-                    //logkeeper.User = HttpContext.Current.User.Identity.Name;
-                    //logkeeper.Data = record.GroupName;
-                    //logkeeper.AddInfoLog(logger);
-
+                
 
                     return true;
                 }
@@ -62,27 +55,26 @@ namespace deneysan_BLL.ProductBL
         }
 
 
-        public static bool EditProductGroup(ProductGroup record)
+        public static bool EditProjectGroup(ProjectGroup record)
         {
             using (DeneysanContext db = new DeneysanContext())
             {
                 try
                 {
-                    ProductGroup editrecord = db.ProductGroup.Where(d => d.ProductGroupId == record.ProductGroupId && d.Deleted == false).SingleOrDefault();
+                    ProjectGroup editrecord = db.ProjectGroup.Where(d => d.ProjectGroupId == record.ProjectGroupId ).SingleOrDefault();
                     if (record != null)
                     {
-                        editrecord.TimeUpdated = DateTime.Now;
+                      
                         editrecord.GroupName = record.GroupName;
                         editrecord.PageSlug = record.PageSlug;
-                        if (!string.IsNullOrEmpty(record.GroupImage))
-                            editrecord.GroupImage = record.GroupImage;
+                      
 
                         db.SaveChanges();
 
                         //LogtrackManager logkeeper = new LogtrackManager();
                         //logkeeper.LogDate = DateTime.Now;
                         //logkeeper.LogProcess = EnumLogType.DokumanGrup.ToString();
-                        //logkeeper.Message = LogMessages.ProductGroupAdded;
+                        //logkeeper.Message = LogMessages.ProjectGroupAdded;
                         //logkeeper.User = HttpContext.Current.User.Identity.Name;
                         //logkeeper.Data = record.GroupName;
                         //logkeeper.AddInfoLog(logger);
@@ -105,7 +97,7 @@ namespace deneysan_BLL.ProductBL
         {
             using (DeneysanContext db = new DeneysanContext())
             {
-                var list = db.ProductGroup.SingleOrDefault(d => d.ProductGroupId == id);
+                var list = db.ProjectGroup.SingleOrDefault(d => d.ProjectGroupId == id);
                 try
                 {
 
@@ -132,15 +124,15 @@ namespace deneysan_BLL.ProductBL
             {
                 try
                 {
-                    var record = db.ProductGroup.FirstOrDefault(d => d.ProductGroupId == id);
-                    record.Deleted = true;
+                    var record = db.ProjectGroup.FirstOrDefault(d => d.ProjectGroupId == id);
+                    db.ProjectGroup.Remove(record);
 
                     db.SaveChanges();
 
                     //LogtrackManager logkeeper = new LogtrackManager();
                     //logkeeper.LogDate = DateTime.Now;
                     //logkeeper.LogProcess = EnumLogType.DokumanGrup.ToString();
-                    //logkeeper.Message = LogMessages.ProductGroupDeleted;
+                    //logkeeper.Message = LogMessages.ProjectGroupDeleted;
                     //logkeeper.User = HttpContext.Current.User.Identity.Name;
                     //logkeeper.Data = record.GroupName;
                     //logkeeper.AddInfoLog(logger);
@@ -154,13 +146,13 @@ namespace deneysan_BLL.ProductBL
             }
         }
 
-        public static ProductGroup GetProductGroupById(int nid)
+        public static ProjectGroup GetProjectGroupById(int nid)
         {
             using (DeneysanContext db = new DeneysanContext())
             {
                 try
                 {
-                    ProductGroup record = db.ProductGroup.Where(d => d.ProductGroupId == nid).SingleOrDefault();
+                    ProjectGroup record = db.ProjectGroup.Where(d => d.ProjectGroupId == nid).SingleOrDefault();
                     if (record != null)
                         return record;
                     else
@@ -173,25 +165,25 @@ namespace deneysan_BLL.ProductBL
             }
         }
 
-        public static bool EditProductGroup(int id, string name, string pageslug)
+        public static bool EditProjectGroup(int id, string name, string pageslug)
         {
             using (DeneysanContext db = new DeneysanContext())
             {
                 try
                 {
-                    ProductGroup record = db.ProductGroup.Where(d => d.ProductGroupId == id && d.Deleted == false).SingleOrDefault();
+                    ProjectGroup record = db.ProjectGroup.Where(d => d.ProjectGroupId == id).SingleOrDefault();
                     if (record != null)
                     {
 
                         record.GroupName = name;
                         record.PageSlug = pageslug;
-                        record.TimeUpdated = DateTime.Now;
+                     
                         db.SaveChanges();
 
                         //LogtrackManager logkeeper = new LogtrackManager();
                         //logkeeper.LogDate = DateTime.Now;
                         //logkeeper.LogProcess = EnumLogType.DokumanGrup.ToString();
-                        //logkeeper.Message = LogMessages.ProductGroupEdited;
+                        //logkeeper.Message = LogMessages.ProjectGroupEdited;
                         //logkeeper.User = HttpContext.Current.User.Identity.Name;
                         //logkeeper.Data = record.GroupName;
                         //logkeeper.AddInfoLog(logger);
@@ -221,7 +213,7 @@ namespace deneysan_BLL.ProductBL
                     foreach (string id in idsList)
                     {
                         int mid = Convert.ToInt32(id);
-                        ProductGroup sortingrecord = db.ProductGroup.SingleOrDefault(d => d.ProductGroupId == mid);
+                        ProjectGroup sortingrecord = db.ProjectGroup.SingleOrDefault(d => d.ProjectGroupId == mid);
                         sortingrecord.SortNumber = Convert.ToInt32(row);
                         db.SaveChanges();
                         row++;
@@ -235,7 +227,7 @@ namespace deneysan_BLL.ProductBL
             }
         }
 
-        #endregion ProductGroup
+        #endregion ProjectGroup
 
 
 
@@ -605,13 +597,13 @@ namespace deneysan_BLL.ProductBL
             }
         }
 
-        public static ProductGroup GetGroupById(int nid)
+        public static ProjectGroup GetGroupById(int nid)
         {
             using (DeneysanContext db = new DeneysanContext())
             {
                 try
                 {
-                    ProductGroup record = db.ProductGroup.Where(d => d.ProductGroupId == nid && d.Deleted==false).SingleOrDefault();
+                  ProjectGroup record = db.ProjectGroup.Where(d => d.ProjectGroupId == nid).SingleOrDefault();
                     if (record != null)
                         return record;
                     else

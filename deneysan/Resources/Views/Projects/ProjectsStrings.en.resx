@@ -183,6 +183,12 @@
   <data name="projedokumaniyok" xml:space="preserve">
     <value>There is no file related to the project</value>
   </data>
+  <data name="projegrubusecimi" xml:space="preserve">
+    <value>Project Group</value>
+  </data>
+  <data name="projegrubusecimiplaceholder" xml:space="preserve">
+    <value>Choose Project Group</value>
+  </data>
   <data name="projesahibiadi" xml:space="preserve">
     <value>NAME SURNAME</value>
   </data>

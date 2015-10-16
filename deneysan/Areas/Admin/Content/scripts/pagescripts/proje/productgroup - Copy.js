@@ -8,14 +8,14 @@
 
     $("#drplanguage").change(function () {
         var lang = $("#drplanguage option:selected").val();
-        window.location.href = "/yonetim/projegruplari/" + lang;
+        window.location.href = "/yonetim/urungruplari/" + lang;
     });
 
     //  var countMember = parseInt($('#ModelDataCount').val());
     // if (countMember > 0) TableSorter("tblcategory", "0,2,4");
 
     //Sorting
-    SortOrder("/ProjectGroup/SortRecords");
+    SortOrder("/ProductGroup/SortRecords");
     // $("#txtname").focus();
 });
 
@@ -57,7 +57,7 @@ function UpdateRecord(id) {
 
     $.ajax({
         type: 'POST',
-        url: '/ProjectGroup/UpdateRecord',
+        url: '/ProductGroup/UpdateRecord',
         data: '{id:"' + id + '",name:"' + name + '"}',
         contentType: "application/json; charset=utf-8",
         dataType: 'json',

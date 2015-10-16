@@ -1,4 +1,5 @@
-﻿using System;
+﻿using deneysan_Data.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -104,5 +105,9 @@ namespace deneysan_DAL.Entities
         public bool Online { get; set; }
         public bool Deleted { get; set; }
         public int Status { get; set; }
+
+        [Required(ErrorMessage = "Proje grubunu seçiniz")]
+        public int ProjectGroupId { get; set; }
+        public virtual ProjectGroup ProjectGroup { get; set; }
     }
 }

@@ -13,6 +13,8 @@ using deneysan_BLL.MailBL;
 using System.Net.Mail;
 using System.Net;
 using deneysan.utilities;
+using deneysan_BLL.ProductBL;
+using deneysan_Data.Entities;
 
 namespace deneysan.Controllers
 {
@@ -25,6 +27,8 @@ namespace deneysan.Controllers
 
     public ActionResult NewProject()
     {
+      List<ProjectGroup> projeGruplari = ProductManager.GetProjectGroupList(lang);
+      ViewBag.ProjeGruplari = new SelectList(projeGruplari, "ProjectGroupId", "GroupName");
         HttpCookie cookie = Request.Cookies["RegCookie"];
         if (cookie != null)
         {

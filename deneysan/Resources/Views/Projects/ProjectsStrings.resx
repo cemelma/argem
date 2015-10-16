@@ -183,6 +183,12 @@
   <data name="projedokumaniyok" xml:space="preserve">
     <value>Projeye ait döküman bulunmamaktadır</value>
   </data>
+  <data name="projegrubusecimi" xml:space="preserve">
+    <value>Proje Grubu</value>
+  </data>
+  <data name="projegrubusecimiplaceholder" xml:space="preserve">
+    <value>Proje Grubu Seçiniz...</value>
+  </data>
   <data name="projesahibiadi" xml:space="preserve">
     <value>ADI SOYADI</value>
   </data>
