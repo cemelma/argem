@@ -27,7 +27,7 @@ namespace deneysan.Controllers
 
     public ActionResult NewProject()
     {
-      List<ProjectGroup> projeGruplari = ProductManager.GetProjectGroupList(lang);
+      List<ProjectGroup> projeGruplari = ProductManager.GetProjectGroupListForFront(lang);
       ViewBag.ProjeGruplari = new SelectList(projeGruplari, "ProjectGroupId", "GroupName");
         HttpCookie cookie = Request.Cookies["RegCookie"];
         if (cookie != null)
@@ -157,6 +157,8 @@ namespace deneysan.Controllers
     {
       using (DeneysanContext db = new DeneysanContext())
       {
+        List<ProjectGroup> projeGruplari = ProductManager.GetProjectGroupListForFront(lang);
+        ViewBag.ProjeGruplari = new SelectList(projeGruplari, "ProjectGroupId", "GroupName");
         List<Projects> projects = db.Projects.Where(x => x.Language == lang && x.Deleted == false && x.Online == true && x.Status == (int)EnumProjectStatus.Confirmed).OrderByDescending(x => x.ProjeId).ToList();
 
         return View(projects);
@@ -203,6 +205,7 @@ namespace deneysan.Controllers
       public string Suresi { get; set; }
       public string Yer { get; set; }
       public string Butce { get; set; }
+      public int? ProjeGrubu{ get; set; }
       
     }
 
@@ -215,6 +218,12 @@ namespace deneysan.Controllers
       criteria.Yer = frm["txtsearchplace"];
       criteria.Suresi = frm["txtsearchtime"];
       criteria.Butce = frm["txtsearchbudget"];
+      if (!string.IsNullOrEmpty(frm["drpprojegruplari"].ToString()))
+        criteria.ProjeGrubu = Convert.ToInt32(frm["drpprojegruplari"]);
+      
+      if(!string.IsNullOrEmpty(criteria.Adi))
+        criteria.Adi = criteria.Adi.Replace(',',' ').Trim();
+
 
        List<Projects> projects = new List<Projects>();
       using (DeneysanContext db = new DeneysanContext())
@@ -225,10 +234,14 @@ namespace deneysan.Controllers
           bool isyerNull = string.IsNullOrEmpty(criteria.Yer) ? true : false;
           bool isbutceNull = string.IsNullOrEmpty(criteria.Butce) ? true : false;
           bool issureNull = string.IsNullOrEmpty(criteria.Suresi) ? true : false;
+          bool isgrupNull = !criteria.ProjeGrubu.HasValue ? true : false;
 
-          projects = db.Projects.Where(x=>(isadNull || x.ProjeAdi.Contains(criteria.Adi)) && (isyerNull || x.UygulanacagiYer.Contains(criteria.Yer)) && (isbutceNull || x.ProjeButcesi == criteria.Butce) && (issureNull || x.ProjeSuresi==criteria.Suresi)).ToList();
-          projects = projects.Where(x=>x.Language == lang && x.Deleted == false && x.Online == true && x.Status == (int)EnumProjectStatus.Confirmed).OrderByDescending(x => x.ProjeId).ToList();
+          projects = db.Projects.Where(x => (isadNull || x.ProjeAdi.Contains(criteria.Adi)) && (isyerNull || x.UygulanacagiYer.Contains(criteria.Yer)) && (isbutceNull || x.ProjeButcesi == criteria.Butce) && (issureNull || x.ProjeSuresi == criteria.Suresi)).ToList();
 
+          if (criteria.ProjeGrubu.HasValue)
+            projects = projects.Where(x=>x.Language == lang && x.Deleted == false && x.Online == true && x.Status == (int)EnumProjectStatus.Confirmed && x.ProjectGroupId==criteria.ProjeGrubu.Value).OrderByDescending(x => x.ProjeId).ToList();
+          else
+            projects = projects.Where(x => x.Language == lang && x.Deleted == false && x.Online == true && x.Status == (int)EnumProjectStatus.Confirmed).OrderByDescending(x => x.ProjeId).ToList();
         }
         else
         {

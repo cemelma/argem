@@ -49,6 +49,8 @@
 
                                 <div class="appointment-form-title"><i class="icon-hospital2 appointment-form-icon"></i>@ProjectsRess.ProjectsStrings.searchtitle</div>
                                 <form class="appt-form">
+                                    @Html.DropDownList("drpprojegruplari", (IEnumerable<SelectListItem>)ViewBag.ProjeGruplari, @ProjectsRess.ProjectsStrings.projegrubusecimiplaceholder, new { @class = "appt-form-txt" })
+                                    <input type="text" id="txtsearchname" name="txtsearchname" class="appt-form-txt" placeholder="@ProjectsRess.ProjectsStrings.searchadi" />
                                     <input type="text" id="txtsearchname" name="txtsearchname" class="appt-form-txt" placeholder="@ProjectsRess.ProjectsStrings.searchadi" />
                                     <input type="text" id="txtsearchbudget" name="txtsearchbudget" class="appt-form-txt" placeholder="@ProjectsRess.ProjectsStrings.searchbutce" />
                                     <input type="text" id="txtsearchtime" name="txtsearchtime" class="appt-form-txt" placeholder="@ProjectsRess.ProjectsStrings.searchsures" />
