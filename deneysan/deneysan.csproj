@@ -1524,6 +1524,7 @@
     <Content Include="Areas\Admin\Content\scripts\pagescripts\news\addnews.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\news\editnews.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\news\newslist.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\proje\addnewporject.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\proje\editproject.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\proje\addproduct.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\proje\editproduct.js" />
@@ -1995,6 +1996,7 @@
     <Content Include="Areas\Admin\Views\Application\link_leftbar.cshtml" />
     <Content Include="Areas\Admin\Views\ProjectGroup\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ProjectGroup\project_leftbar.cshtml" />
+    <Content Include="Areas\Admin\Views\Project\YeniProjeEkleme.cshtml" />
     <None Include="Properties\PublishProfiles\deneme.pubxml" />
     <None Include="Properties\PublishProfiles\argemsan.pubxml" />
     <Content Include="js\jquery-1.7.2.min.js" />

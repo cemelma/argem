@@ -12,6 +12,11 @@ using deneysan_DAL.Entities;
 using deneysan.Areas.Admin.Filters;
 using deneysan_DAL.Context;
 using deneysan.utilities;
+using deneysan_Data.Entities;
+using deneysan_BLL.ProductBL;
+using deneysan_BLL.MailBL;
+using System.Net;
+using System.Net.Mail;
 
 namespace deneysan.Areas.Admin.Controllers
 {
@@ -404,9 +409,70 @@ namespace deneysan.Areas.Admin.Controllers
     }
 
 
+    public ActionResult YeniProjeEkleme()
+    {
+      List<ProjectGroup> projeGruplari = ProductManager.GetProjectGroupListForFront("tr");
+      ViewBag.ProjeGruplari = new SelectList(projeGruplari, "ProjectGroupId", "GroupName");
+      FillLanguagesList();
+      return View();
+    }
+
+
+    [HttpPost]
+    public JsonResult SaveNewProject(Projects model, string hdndokumanfile, string hdnimagefile)
+    {
+      using (DeneysanContext db = new DeneysanContext())
+      {
+        model.PageSlug = Utility.SetPagePlug(model.ProjeAdi);
+        model.TimeCreated = DateTime.Now;
+        model.ProjectGroupId = 1;
+        model.Status = 1;
+        model.Language = "tr";
+        model.Online = true;
+        
+
+        if (!string.IsNullOrEmpty(hdnimagefile))
+        {
+          model.ProjeDokümani = "/Content/projectfiles/" + hdndokumanfile;
+        }
+
+        db.Projects.Add(model);
+        db.SaveChanges();
+
+        if (!string.IsNullOrEmpty(hdnimagefile))
+        {
+
+          string[] imagesArray = hdnimagefile.Split(',');
+
+          if (imagesArray != null && imagesArray.Length > 0)
+          {
+            for (int i = 0; i < imagesArray.Length; i++)
+            {
+              ProjectsGallery g = new ProjectsGallery();
+              g.ProjeId = model.ProjeId;
+              g.Image = "/Content/images/projects/" + imagesArray[i];
+              g.ImageThumb = "/Content/images/projects/" + "thumb_" + imagesArray[i];
+              db.ProjectsGallery.Add(g);
+            }
+          }
+
+          db.SaveChanges();
+
+
+
+      
+
+        }
+
+      }
+      return Json(true);
+    }
+
   }
 
   
+ 
+
 
   public class ProjectDetailModel
   {

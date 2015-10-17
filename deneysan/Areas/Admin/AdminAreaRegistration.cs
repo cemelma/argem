@@ -46,6 +46,7 @@ namespace deneysan.Areas.Admin
             context.MapRoute("projectgroupindex", "yonetim/projegruplari", new { action = "Index", Controller = "ProjectGroup" });
             context.MapRoute("projectgroupindex_en", "yonetim/projegruplari/{lang}", new { action = "Index", Controller = "ProjectGroup" });
 
+            context.MapRoute("projectaddadmin", "yonetim/yeniprojeekle", new { action = "YeniProjeEkleme", Controller = "Project" });
 
             //TEKLİFLER
          //   context.MapRoute("teklif_default", "yonetim/tumteklifler", new { action = "Index", Controller = "Teklif" });
