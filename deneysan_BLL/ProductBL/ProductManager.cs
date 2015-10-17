@@ -30,6 +30,15 @@ namespace deneysan_BLL.ProductBL
             }
         }
 
+        public static List<ProjectGroup> GetProjectGroupListForFront2()
+        {
+          using (DeneysanContext db = new DeneysanContext())
+          {
+            var list = db.ProjectGroup.Where(d => d.Online == true).OrderBy(d => d.SortNumber).ToList();
+            return list;
+          }
+        }
+
         public static bool AddProjectGroup(ProjectGroup record)
         {
             using (DeneysanContext db = new DeneysanContext())

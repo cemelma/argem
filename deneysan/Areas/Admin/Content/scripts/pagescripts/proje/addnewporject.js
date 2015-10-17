@@ -2,12 +2,45 @@
 var addedFile = "";
 jQuery(function ($) {
 
+    var projegruplari = $("#hdnprojegruplari").attr("data-value");
+
+    $("#Language").change(function () {
+        var selVal = $("#Language option:selected").val();
+       
+        if (selVal) {
+            var postdata = { lang:selVal };
+            $.ajax({
+                method: "POST",
+                url: "../Project/GetProjegruplari",
+                //               data: '{id:"' + id + '",status:"' + status + '"}',
+                data: '{lang:' + selVal + '}',
+
+              //  data: postdata
+            })
+               .done(function (data) {
+                   $("#ProjectGroupId").html("");
+                   if (data != null) {
+                       $("#ProjectGroupId").append("<option>Proje Grubu Seçiniz...</option>");
+                       $.each(data, function (ind, item) {
+                           var html = "<option value=" + item.ProjectGroupId + ">" + item.GroupName + "</option>";
+                           $("#ProjectGroupId").append(html);
+
+                       });
+                   }
+               });
+
+        }
+
+
+    });
+
+
     var docSize = 0;
 
     $('#projedokumanfile').uploadify({
         'preventCaching': false,
         'swf': "http://localhost:1745/js/uploadify/uploadify.swf",
-        "uploader": '../FProjects/SaveProjectDocumentFile',
+        "uploader": '../Project/SaveProjectDocumentFile',
         'folder': 'http://localhost:1745/Content/uploads',
         "cancelImg": "http://localhost:1745/js/uploadify/uploadify-cancel.png",
         "removeCompleted": false,
@@ -32,7 +65,7 @@ jQuery(function ($) {
     $('#projeresimfile').uploadify({
         'preventCaching': false,
         'swf': "http://localhost:1745/js/uploadify/uploadify.swf",
-        "uploader": '../FProjects/SaveProjectImages',
+        "uploader": '../Project/SaveProjectImages',
         'folder': 'http://localhost:1745/Content/uploads',
         "cancelImg": "http://localhost:1745/js/uploadify/uploadify-cancel.png",
         "removeCompleted": false,

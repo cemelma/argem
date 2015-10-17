@@ -411,10 +411,20 @@ namespace deneysan.Areas.Admin.Controllers
 
     public ActionResult YeniProjeEkleme()
     {
-      List<ProjectGroup> projeGruplari = ProductManager.GetProjectGroupListForFront("tr");
-      ViewBag.ProjeGruplari = new SelectList(projeGruplari, "ProjectGroupId", "GroupName");
+      List<ProjectGroup> projeGruplari = ProductManager.GetProjectGroupListForFront2();
+      ViewBag.ProjeGruplari =  new SelectList(projeGruplari, "ProjectGroupId", "GroupName");
+      ViewBag.ProjeGruplari2 = projeGruplari;
       FillLanguagesList();
       return View();
+    }
+
+
+    public JsonResult GetProjegruplari(string lang)
+    {
+
+      List<ProjectGroup> projeGruplari = ProductManager.GetProjectGroupListForFront(lang);
+      return Json(projeGruplari,JsonRequestBehavior.AllowGet);
+      //ViewBag.ProjeGruplari = new SelectList(projeGruplari, "ProjectGroupId", "GroupName");
     }
 
 

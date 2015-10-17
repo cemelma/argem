@@ -11,9 +11,7 @@
 
 
 
-<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
 
 
 
@@ -31,6 +29,7 @@
 </style>
 @Html.Partial("project_leftbar")
 
+ <input type="hidden" data-value="@ViewBag.ProjeGruplari2" id="hdnprojegruplari" />
 <div id="page-content" class="container_12">
     <div id="page-header">
         <h2>PROJE BİLGİLERİ</h2>
@@ -50,6 +49,12 @@
                     @Html.LabelFor(m => m.Language)
                     @Html.DropDownListFor(m => m.Language, (IEnumerable<SelectListItem>)ViewBag.LanguageList, "Dil Seçiniz...")
                     @Html.ValidationMessageFor(m => m.Language)
+
+                </p>
+                <p>
+                    @Html.Label("Proje Grubu")
+                    @Html.DropDownListFor(m => m.ProjectGroupId, (IEnumerable<SelectListItem>)ViewBag.ProjeGruplari, "Proje Grubu Seçiniz...")
+                    @Html.ValidationMessageFor(m => m.ProjectGroupId)
 
                 </p>
                 <p>
@@ -139,33 +144,33 @@
 
             </fieldset>
 
-        <fieldset>
-            <p>
-                <label>Proje Dökümanı</label>
-                <div>
-                    <input id="projedokumanfile" name="projedokumanfile" type="file">
+            <fieldset>
+                <p>
+                    <label>Proje Dökümanı</label>
+                    <div>
+                        <input id="projedokumanfile" name="projedokumanfile" type="file">
 
-                    @*<input class="multifile" type="file"  id="projedokumanfile" maxlength="1">*@
-                    <span id="uploadedfilename"></span>
-                    @Html.Hidden("hdndokumanfile")
+                        @*<input class="multifile" type="file"  id="projedokumanfile" maxlength="1">*@
+                        <span id="uploadedfilename"></span>
+                        @Html.Hidden("hdndokumanfile")
 
-                </div>
-            </p>
+                    </div>
+                </p>
 
-           <p>
-               <label>Proje Resimleri (en fazla 5 resim ekleyebilirisniz.)</label>
-               <div>
-                   <input id="projeresimfile" name="projeresimfile">
-                   @Html.Hidden("hdnimagefile")
-               </div>
+                <p>
+                    <label>Proje Resimleri (en fazla 5 resim ekleyebilirisniz.)</label>
+                    <div>
+                        <input id="projeresimfile" name="projeresimfile">
+                        @Html.Hidden("hdnimagefile")
+                    </div>
 
-           </p>
+                </p>
 
 
-             
-                  
-              
-           </fieldset>
+
+
+
+            </fieldset>
 
 
             <p>
@@ -193,5 +198,6 @@
         <script src="~/Areas/Admin/Content/CKEditor/ckfinder/ckfinder.js"></script>
         <script src="~/Areas/Admin/Content/scripts/myscripts/CKEditorCreate.js"></script>*@
 
+   
 
 }
