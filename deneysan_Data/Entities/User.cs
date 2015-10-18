@@ -15,5 +15,11 @@ namespace deneysan_DAL.Entities
         public string Email { get; set; }
        
         public string Password { get; set; }
+
+        public string Institution { get; set; }
+
+        public string Contact { get; set; }
+
+        public bool isActive { get; set; }
     }
 }

@@ -126,6 +126,9 @@ namespace deneysan.Areas.Admin
             //İş Başvuruları
             context.MapRoute("cv_list", "yonetim/isbasvurulari", new { action = "Index", Controller = "Application" });
 
+            //Üyeler
+            context.MapRoute("user", "yonetim/uyeler", new { action = "Index", Controller = "User" });
+
             context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",

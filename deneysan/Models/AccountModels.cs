@@ -142,6 +142,14 @@ namespace deneysan.Models
         [DataType(DataType.Password)]
         [Display(Name = "Şifre")]
         public string Password { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        [Display(Name = "Bağlı bulunduğunuz kurum/şirket")]
+        public string Institution { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        [Display(Name = "İletişim bilgisi")]
+        public string Contact { get; set; }
     }
 
     public class ApplicationModel

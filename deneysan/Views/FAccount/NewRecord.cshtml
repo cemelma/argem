@@ -34,7 +34,13 @@
                             @using (Html.BeginForm("NewRecord", "FAccount", FormMethod.Post, new { }))
                             {
                                 <div class="form-horizontal">
-                                    @Html.ValidationSummary(true)
+                                    <div class="submit form-group" style="font-size: 16px;color: red;font-weight: bold;">
+                                        @ViewBag.process
+                                    </div>
+                                    <div style="font-weight:bold; font-size:16px; color:red">
+                                        @Html.ValidationSummary(true)
+                                    </div>
+                                    <br />
 
                                     <div class="form-group">
                                         <div class="email controls">
@@ -57,16 +63,26 @@
                                         </div>
                                     </div>
 
+                                    <div class="form-group">
+                                        <div class="email controls">
+                                            @Html.TextAreaFor(model => model.Institution, new { @placeholder = AccountRess.AccountStrings.institution, @class = "form-control" })
+                                            @Html.ValidationMessageFor(d => d.Institution)
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="email controls">
+                                            @Html.TextAreaFor(model => model.Contact,new { @placeholder = AccountRess.AccountStrings.contact, @class = "form-control" })
+                                            @Html.ValidationMessageFor(d => d.Contact)
+                                        </div>
+                                    </div>
+
                                     <div class="submit form-group">
                                         <input type="submit" value='@AccountRess.AccountStrings.kaydet' class="btn btn-primary">
                                         &nbsp;&nbsp;&nbsp; <a href="@AccountRess.AccountStrings.sifremiunuttumlink">@AccountRess.AccountStrings.sifremiunuttumtext</a>,&nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;<a href="@SharedRess.SharedStrings.menu_login">@SharedRess.SharedStrings.login</a>
                                     </div>
                                     
-                                    <div class="submit form-group" style="font-size: 16px;color: green;font-weight: bold;">
-                                        @ViewBag.process 
-                                    </div>
-
                                     <div class="submit form-group" style="margin-bottom:8px">
                                         
                                     </div>

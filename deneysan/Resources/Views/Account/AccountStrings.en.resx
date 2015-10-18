@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="contact" xml:space="preserve">
+    <value>Contact information</value>
+  </data>
   <data name="fullname" xml:space="preserve">
     <value>Full Name</value>
   </data>
@@ -125,6 +128,9 @@
   </data>
   <data name="hatirlat" xml:space="preserve">
     <value>Send</value>
+  </data>
+  <data name="institution" xml:space="preserve">
+    <value>Present your company/institution</value>
   </data>
   <data name="kaydet" xml:space="preserve">
     <value>Save</value>
@@ -146,6 +152,9 @@
   </data>
   <data name="sistemegiris" xml:space="preserve">
     <value>LOGIN</value>
+  </data>
+  <data name="uyelik" xml:space="preserve">
+    <value>New User</value>
   </data>
   <data name="uyelikinfo" xml:space="preserve">
     <value>For making  a project application, please register.</value>

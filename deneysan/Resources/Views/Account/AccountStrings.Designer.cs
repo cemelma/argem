@@ -61,6 +61,15 @@ namespace AccountRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to İletişim bilgisi.
+        /// </summary>
+        public static string contact {
+            get {
+                return ResourceManager.GetString("contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ad &amp; Soyad.
         /// </summary>
         public static string fullname {
@@ -93,6 +102,15 @@ namespace AccountRess {
         public static string hatirlat {
             get {
                 return ResourceManager.GetString("hatirlat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bağlı bulunduğunuz kurum/şirket.
+        /// </summary>
+        public static string institution {
+            get {
+                return ResourceManager.GetString("institution", resourceCulture);
             }
         }
         
@@ -183,6 +201,15 @@ namespace AccountRess {
         public static string uyelikinfo {
             get {
                 return ResourceManager.GetString("uyelikinfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Üye Ol.
+        /// </summary>
+        public static string uyeol {
+            get {
+                return ResourceManager.GetString("uyeol", resourceCulture);
             }
         }
         

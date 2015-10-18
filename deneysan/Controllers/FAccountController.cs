@@ -168,7 +168,7 @@ namespace deneysan.Controllers
             {
                 if(!UserManager.IsMailControlRecord(model.Email))
                 {
-                    if (UserManager.Record(model.FullaName, model.Email, model.Password))
+                    if (UserManager.Record(model.FullaName, model.Email, model.Password, model.Institution, model.Contact))
                     {
                         ViewBag.process = "Üyeliğiniz gerçekleşmiştir, sisteme giriş yapabilirsiniz.";
                         //return RedirectToRoute("login_" + lang, new { controller = "FAccount", action = "Index" });

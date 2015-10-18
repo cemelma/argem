@@ -55,6 +55,9 @@
                     </div>
                     @*<div id="search" class="fa fa-search search-head"></div>*@
                         
+                    
+
+
 
                         <div class="top-info-contact pull-right col-md-3">
                             @{
@@ -66,6 +69,8 @@
 
                         </div>
 
+                    
+
                     @{
                         <div class="top-info-contact pull-right col-md-3">
                             @if (Request.Cookies["RegCookie"] != null)
@@ -74,8 +79,13 @@
                                 <text>|</text>
                                 <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_changepass" style="font-size: 13px;">@SharedRess.SharedStrings.sifremidegis</a>
                             }
+                            else
+                            {
+                                <a href="@AccountRess.AccountStrings.yeniuyeliklink">@AccountRess.AccountStrings.uyeol</a>
+                            }
                         </div>
                     }
+                    
 
                         @*<div class="top-info-contact pull-right col-md-6">
                 Yeni Sanayi Sitesi 60. Sok. No:2-1/A KARESİ BALIKESİR   |   0 266 246 2 274<div id="search" class="fa fa-search search-head"></div>

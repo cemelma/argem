@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="contact" xml:space="preserve">
+    <value>İletişim bilgisi</value>
+  </data>
   <data name="fullname" xml:space="preserve">
     <value>Ad &amp; Soyad</value>
   </data>
@@ -128,6 +131,9 @@
   </data>
   <data name="hatirlat" xml:space="preserve">
     <value>Hatırlat</value>
+  </data>
+  <data name="institution" xml:space="preserve">
+    <value>Bağlı bulunduğunuz kurum/şirket</value>
   </data>
   <data name="kaydet" xml:space="preserve">
     <value>Kaydet</value>
@@ -158,6 +164,9 @@
   </data>
   <data name="uyelikinfo" xml:space="preserve">
     <value>Proje başvurusu yapabilmek için üye olmanız gerekmektedir. Üyelik formunu doldurarak üye olunuz.</value>
+  </data>
+  <data name="uyeol" xml:space="preserve">
+    <value>Üye Ol</value>
   </data>
   <data name="yeniuyeliklink" xml:space="preserve">
     <value>/tr/yeniuyelik</value>

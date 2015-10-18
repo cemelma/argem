@@ -55,7 +55,7 @@ namespace deneysan_BLL.UserBL
                 else return false;
             }
         }
-        public static bool Record(string fullname, string email, string password)
+        public static bool Record(string fullname, string email, string password, string institution, string contact)
         {
             try
             {
@@ -65,6 +65,9 @@ namespace deneysan_BLL.UserBL
                     record.Email = email;
                     record.FullName = fullname;
                     record.Password = password;
+                    record.Institution = institution;
+                    record.Contact = contact;
+                    record.isActive = true;
                     db.User.Add(record);
                     db.SaveChanges();
                     return true;
@@ -107,5 +110,31 @@ namespace deneysan_BLL.UserBL
                 return false;
         }
 
+        public static List<User> UserList()
+        {
+            using (DeneysanContext db = new DeneysanContext())
+            {
+                var list = db.User.Where(d =>d.isActive == true).ToList();
+                return list;
+            }
+        }
+
+        public static bool UserDelete(int id)
+        {
+            using (DeneysanContext db = new DeneysanContext())
+            {
+                try
+                {
+                    var record = db.User.FirstOrDefault(d => d.UserId == id);
+                    record.isActive = false;
+                    db.SaveChanges();
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+        }
     }
 }
