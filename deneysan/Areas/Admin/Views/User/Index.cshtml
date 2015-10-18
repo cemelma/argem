@@ -1,0 +1,63 @@
+﻿@model IEnumerable<deneysan_DAL.Entities.User>
+@{
+    ViewBag.Title = "Üyeler";
+    Layout = "~/Areas/Admin/Views/Shared/adminlayout.cshtml";
+}
+
+<link href="~/Areas/Admin/Content/styles/pluginstyles/jquery.msgbox.css" rel="stylesheet" />
+<link href="~/Areas/Admin/Content/styles/forms.css" rel="stylesheet" />
+<link href="~/Areas/Admin/Content/styles/table.css" rel="stylesheet" />
+
+@Html.Partial("link_leftbar")
+
+
+<div id="page-content" class="container_12">
+    <div id="page-header">
+       <h2>BAŞVURULAR</h2>
+    </div>  
+    <section class="grid_12 form">
+    <div class="box-header" >
+        <h1>Üye Listesi (@Model.Count())</h1>
+
+    </div>
+    <table id="tblcategory" class="table no-border tablesorter">
+        <thead>
+            <tr>
+                <th class="width20">Adı Soyadı</th>
+                <th class="width20">Mail</th>
+                <th class="width25">Kurum/Şirket</th>
+                <th class="width25">İletişim</th>
+                <th class="center witdh20">İşlem</th>
+            </tr>
+        </thead>
+         <tbody id="item-list">
+            @foreach (var item in Model)
+            {
+                <tr id="listItem_@item.UserId"  class="handle">
+                    <td>
+                        <span id="spanitem_@item.UserId">@item.FullName</span>
+                        <input type="text" id="textitem_@item.UserId" value="" class="displaynone textwidth90"/>
+                    </td>
+                    <td>@item.Email</td>
+                    <td>@item.Institution</td>
+                    <td>@item.Contact</td>
+                    <td class="center">
+                       <img id="DeleteImage_@item.UserId" src="/Areas/Admin/Content/images/icons/16/delete.png" class="cursorpointer"  title="Sil" onclick="DeleteRecord('/User/DeleteRecord',@item.UserId)">
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+ <br class="cl" />
+<div id="info"></div>
+</div>
+
+<link href="~/Areas/Admin/Content/styles/pluginstyles/jquery.msgbox.css" rel="stylesheet" />
+<script src="~/Areas/Admin/Content/scripts/plugins/jquery.msgbox.min.js"></script>
+<script src="~/Areas/Admin/Content/scripts/myscripts/MessageBox.js"></script>
+
+<script src="~/Areas/Admin/Content/scripts/myscripts/DeleteRecordTable.js"></script>
+<script src="~/Areas/Admin/Content/scripts/myscripts/generalprocess.js"></script>
+
+
