@@ -19,7 +19,7 @@ namespace deneysan_BLL.UserBL
         {
             using (DeneysanContext db = new DeneysanContext())
             {
-                User record = db.User.SingleOrDefault(d => d.Email == email && d.Password == password);
+                User record = db.User.SingleOrDefault(d => d.Email == email && d.Password == password && d.isActive == true);
                 if (record != null)
                 {
                     return true;
