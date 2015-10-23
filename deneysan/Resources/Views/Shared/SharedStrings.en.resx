@@ -297,4 +297,7 @@
   <data name="projebasvurutext" xml:space="preserve">
     <value>New Project</value>
   </data>
+  <data name="projearamasearch" xml:space="preserve">
+    <value>Type prject name...</value>
+  </data>
 </root>

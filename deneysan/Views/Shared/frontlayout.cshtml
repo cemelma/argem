@@ -26,19 +26,20 @@
         <script src="~/Content/Scripts/modernizr-2.0.4.min.js"></script>*@
 </head>
 <body>
+    <input type="hidden" id="hdnCulture" value="@System.Threading.Thread.CurrentThread.CurrentUICulture" />
     <div id="loader-overlay"><img src="/images/loader.gif" alt="Loading" /></div>
     <header>
 
         <div class="header-bg">
 
-            @*<div id="search-overlay">
+            <div id="search-overlay">
                 <div class="container">
-                    <div id="close">X</div>
+                    <div id="close" class="searchboxclose">X</div>
 
-                    <input id="hidden-search" type="text" placeholder="Start Typing..." autofocus autocomplete="off" /> 
-                    <input id="display-search" type="text" placeholder="Start Typing..." autofocus autocomplete="off" />
+                    <input id="hidden-search" type="text" placeholder="@SharedRess.SharedStrings.projearamasearch" autofocus autocomplete="off" /> 
+                    <input id="display-search" type="text" placeholder="@SharedRess.SharedStrings.projearamasearch" autofocus autocomplete="off" />
                 </div>
-            </div>*@
+            </div>
 
 
             <!--Topbar-->
@@ -53,7 +54,7 @@
                             <li><a href="#"><i class="icon-rss head-social-icon" id="rss-head" data-original-title="" title=""></i></a></li>*@
                         </ul>
                     </div>
-                    @*<div id="search" class="fa fa-search search-head"></div>*@
+                    <div id="search" class="fa fa-search search-head"></div>
                         
                     
 
@@ -262,11 +263,18 @@
 <script type="text/javascript" src="/js/jquery.flexisel.min.js"></script>
 <script type="text/javascript" src="/js/jquery.imedica.min.js"></script>
 <script type="text/javascript" src="/js/custom-imedicajs.min.js"></script>
+<script type="text/javascript" src="/js/search.js"></script>
 <script type='text/javascript'>
     $(window).load(function () {
         $('#loader-overlay').fadeOut(900);
         $("html").css("overflow", "visible");
     });
+
+  
+
+
+  
+
 </script>
 
 @RenderSection("scripts", false)

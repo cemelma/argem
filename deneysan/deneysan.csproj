@@ -1988,6 +1988,7 @@
     <Content Include="fonts\icomoon.woff" />
     <Content Include="Areas\Admin\Views\Project\OnaylananProjeler.cshtml" />
     <Content Include="Areas\Admin\Views\Project\BekleyenProjeler.cshtml" />
+    <Content Include="js\search.js" />
     <Content Include="js\uploadify\check-exists.php" />
     <Content Include="js\uploadify\index.php" />
     <Content Include="js\uploadify\uploadify.php" />

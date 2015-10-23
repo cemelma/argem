@@ -7913,12 +7913,16 @@ label.error {
 }
 
 #close {
-    cursor: pointer;
+  cursor: pointer;
     position: fixed;
     right: 253px;
     font-size: 28px;
     top: 30px;
     color: #DBDBDB;
+    width: 40px;
+    text-align: center;
+    border: solid 1px white;
+    z-index:999;
 }
 
 .search-head {

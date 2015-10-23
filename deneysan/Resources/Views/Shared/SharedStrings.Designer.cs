@@ -502,6 +502,15 @@ namespace SharedRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Proje adını giriniz....
+        /// </summary>
+        public static string projearamasearch {
+            get {
+                return ResourceManager.GetString("projearamasearch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to /tr/projebasvuru.
         /// </summary>
         public static string projebasvurulinki {

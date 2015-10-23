@@ -38,5 +38,10 @@ namespace deneysan.Controllers
           HomePageWrapperModel modelbind = new HomePageWrapperModel(news, references);
           return View(modelbind);
         }
+
+        public void KriteriAyarla(string kriter)
+        {
+          TempData["kriter"] = kriter;
+        }
     }
 }

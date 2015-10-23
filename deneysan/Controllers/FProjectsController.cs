@@ -155,12 +155,25 @@ namespace deneysan.Controllers
 
     public ActionResult ProjectList()
     {
+      
       using (DeneysanContext db = new DeneysanContext())
       {
+        string kriter ="";
+        if(TempData["kriter"]!=null)
+         kriter = TempData["kriter"].ToString();
         List<ProjectGroup> projeGruplari = ProductManager.GetProjectGroupListForFront(lang);
         ViewBag.ProjeGruplari = new SelectList(projeGruplari, "ProjectGroupId", "GroupName");
-        List<Projects> projects = db.Projects.Where(x => x.Language == lang && x.Deleted == false && x.Online == true && x.Status == (int)EnumProjectStatus.Confirmed).OrderByDescending(x => x.ProjeId).ToList();
-
+        List<Projects> projects = new List<Projects>();
+        if (!string.IsNullOrEmpty(kriter))
+        {
+          projects = db.Projects.Where(x => x.Language == lang && x.Deleted == false && x.Online == true && x.Status == (int)EnumProjectStatus.Confirmed && x.ProjeAdi.ToLower().Trim().Contains(kriter.ToLower().Trim())).OrderByDescending(x => x.ProjeId).ToList();
+        }
+        else
+        {
+         projects = db.Projects.Where(x => x.Language == lang && x.Deleted == false && x.Online == true && x.Status == (int)EnumProjectStatus.Confirmed).OrderByDescending(x => x.ProjeId).ToList();
+        }
+        
+        ViewBag.Kriter = kriter;
         return View(projects);
       }
 
