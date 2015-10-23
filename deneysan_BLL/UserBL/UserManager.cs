@@ -136,5 +136,70 @@ namespace deneysan_BLL.UserBL
                 }
             }
         }
+
+        public static bool AddUsers(User record)
+        {
+            using (DeneysanContext db = new DeneysanContext())
+            {
+                try
+                {
+                    record.isActive = true;
+                    db.User.Add(record);
+                    db.SaveChanges();
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+
+        }
+
+        public static User GetUsersById(int nid)
+        {
+            using (DeneysanContext db = new DeneysanContext())
+            {
+                try
+                {
+                    User record = db.User.Where(d => d.UserId == nid).SingleOrDefault();
+                    if (record != null)
+                        return record;
+                    else
+                        return null;
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+            }
+        }
+
+        public static bool EditUser(User model)
+        {
+            using (DeneysanContext db = new DeneysanContext())
+            {
+                try
+                {
+                    User record = db.User.Where(d => d.UserId == model.UserId).SingleOrDefault();
+                    if (record != null)
+                    {
+                        record.FullName = model.FullName;
+                        record.Email = model.Email;
+                        if(model.Password != "") record.Password = model.Password;
+                        record.Institution = model.Institution;
+                        record.Contact = model.Contact;
+                        db.SaveChanges();
+                        return true;
+                    }
+                    else return false;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+        }
+
     }
 }

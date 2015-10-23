@@ -128,6 +128,8 @@ namespace deneysan.Areas.Admin
 
             //Üyeler
             context.MapRoute("user", "yonetim/uyeler", new { action = "Index", Controller = "User" });
+            context.MapRoute("useradd", "yonetim/uyeekle", new { action = "Add", Controller = "User" });
+            context.MapRoute("useredit", "yonetim/uyeduzenle/{id}", new { action = "Edit", Controller = "User" });
 
             context.MapRoute(
                 "Admin_default",

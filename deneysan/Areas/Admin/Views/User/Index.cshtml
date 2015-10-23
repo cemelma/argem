@@ -42,6 +42,9 @@
                     <td>@item.Institution</td>
                     <td>@item.Contact</td>
                     <td class="center">
+                        <a href="/yonetim/uyeduzenle/@item.UserId">
+                            <img id="btn_update_@item.UserId" src="/Areas/Admin/Content/images/icons/16/edit.png" title="Güncelle" class="cursorpointer">
+                        </a>
                        <img id="DeleteImage_@item.UserId" src="/Areas/Admin/Content/images/icons/16/delete.png" class="cursorpointer"  title="Sil" onclick="DeleteRecord('/User/DeleteRecord',@item.UserId)">
                     </td>
                 </tr>
