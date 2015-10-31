@@ -185,15 +185,16 @@ namespace deneysan.Controllers
       using (DeneysanContext db = new DeneysanContext())
       {
        Projects project = db.Projects.Where(x => x.ProjeId == id).FirstOrDefault();
+       List<ProjectsGallery> gallery = new List<ProjectsGallery>();
         if(project!=null)
         {
           model.Project = project;
 
-          List<ProjectsGallery> gallery = db.ProjectsGallery.Where(x=>x.ProjeId==id).ToList();
-          if(gallery!=null && gallery.Count()>0 )
-            model.ProjectImages = gallery;
+          gallery = db.ProjectsGallery.Where(x=>x.ProjeId==id).ToList();
+        //  if(gallery!=null && gallery.Count()>0 )
+           
         }
-
+           model.ProjectImages = gallery;
         return View(model);
       }
 
