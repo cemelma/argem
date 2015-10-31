@@ -72,6 +72,10 @@
     <Reference Include="NotFoundMvc">
       <HintPath>..\packages\NotFoundMvc.1.0.0\lib\net40\NotFoundMvc.dll</HintPath>
     </Reference>
+    <Reference Include="NReco.PdfGenerator, Version=1.1.10.0, Culture=neutral, PublicKeyToken=231663d50a41b451, processorArchitecture=MSIL">
+      <HintPath>..\packages\NReco.PdfGenerator.1.1.10.0\lib\net20\NReco.PdfGenerator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -1509,6 +1513,8 @@
     <Content Include="Areas\Admin\Content\images\icons\usermanual.png" />
     <Content Include="Areas\Admin\Content\images\icons\video.png" />
     <Content Include="Areas\Admin\Content\images\logo-deneysan.png" />
+    <Content Include="Areas\Admin\Content\images\teklif\imzapdf.png" />
+    <Content Include="Areas\Admin\Content\images\teklif\pdflogo.png" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\bank\banklist.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\contact\contact.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\documents\adddocument.js" />
@@ -1769,6 +1775,7 @@
     <Content Include="css\fileuploader\jquery.fileupload.css" />
     <Content Include="css\fileuploader\style.css" />
     <Content Include="HTMLTemplate\NewCV.html" />
+    <Content Include="HTMLTemplate\teklif.html" />
     <Content Include="Images\argemlogo.png" />
     <Content Include="Images\en.png" />
     <Content Include="Images\favicon.ico" />
@@ -2003,6 +2010,7 @@
     <Content Include="Areas\Admin\Views\User\link_leftbar.cshtml" />
     <Content Include="Areas\Admin\Views\User\Add.cshtml" />
     <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Project\ProjectDetail.cshtml" />
     <None Include="Properties\PublishProfiles\deneme.pubxml" />
     <None Include="Properties\PublishProfiles\argemsan.pubxml" />
     <Content Include="js\jquery-1.7.2.min.js" />

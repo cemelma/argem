@@ -165,3 +165,5 @@ C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\en\deneysan.resour
 C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\obj\Debug\deneysan.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\obj\Debug\deneysan.Tests.dll
 C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\obj\Debug\deneysan.Tests.pdb
+E:\CEM\GitWorks\argem\deneysan.Tests\bin\Debug\NReco.PdfGenerator.dll
+E:\CEM\GitWorks\argem\deneysan.Tests\bin\Debug\NReco.PdfGenerator.xml

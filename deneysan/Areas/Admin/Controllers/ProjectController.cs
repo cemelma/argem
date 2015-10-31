@@ -17,6 +17,7 @@ using deneysan_BLL.ProductBL;
 using deneysan_BLL.MailBL;
 using System.Net;
 using System.Net.Mail;
+using deneysan.Helpers;
 
 namespace deneysan.Areas.Admin.Controllers
 {
@@ -478,10 +479,44 @@ namespace deneysan.Areas.Admin.Controllers
       return Json(true);
     }
 
-  }
+    public ActionResult ProjectDetail(int id)
+    {
+        ProjectDetailModel model = new ProjectDetailModel();
+        using (DeneysanContext db = new DeneysanContext())
+        {
+            Projects project = db.Projects.Where(x => x.ProjeId == id).FirstOrDefault();
+            if (project != null)
+            {
+                model.Project = project;
 
-  
- 
+                List<ProjectsGallery> gallery = db.ProjectsGallery.Where(x => x.ProjeId == id).ToList();
+                if (gallery != null && gallery.Count() > 0)
+                    model.ProjectImages = gallery;
+            }
+
+            return View(model);
+        }
+
+    }
+
+        //Burdan pdf kaydettirilip mail gönderilecek
+    public ActionResult SavePdf()
+    {
+        string mailTemplate = (new MailTemplateUtil()).GetMailTemplate("teklif");
+        mailTemplate = (new MailTemplateUtil()).CustomFormat(mailTemplate, new string[] { });
+
+
+        //var htmlContent = String.Format("<body>Hello world: {0}</body>",DateTime.Now);
+        var htmlToPdf = new NReco.PdfGenerator.HtmlToPdfConverter();
+        var pdfBytes1 = htmlToPdf.GeneratePdf(mailTemplate);
+
+        //var pdfBytes = (new NReco.PdfGenerator.HtmlToPdfConverter()).GeneratePdf(htmlContent);
+
+        System.IO.File.WriteAllBytes("c:\\temp\\asd.pdf", pdfBytes1);
+        return View("");
+    }
+
+}
 
 
   public class ProjectDetailModel
@@ -490,5 +525,7 @@ namespace deneysan.Areas.Admin.Controllers
     public List<ProjectsGallery> ProjectImages { get; set; }
   }
 
+
+    
 
 }
