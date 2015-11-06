@@ -2011,6 +2011,7 @@
     <Content Include="Areas\Admin\Views\User\Add.cshtml" />
     <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Project\ProjectDetail.cshtml" />
+    <Content Include="Content\pdf\2.pdf" />
     <None Include="Properties\PublishProfiles\deneme.pubxml" />
     <None Include="Properties\PublishProfiles\argemsan.pubxml" />
     <Content Include="js\jquery-1.7.2.min.js" />
