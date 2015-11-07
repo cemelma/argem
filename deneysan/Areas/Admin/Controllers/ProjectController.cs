@@ -18,6 +18,7 @@ using deneysan_BLL.MailBL;
 using System.Net;
 using System.Net.Mail;
 using deneysan.Helpers;
+using System.Data;
 
 namespace deneysan.Areas.Admin.Controllers
 {
@@ -269,9 +270,8 @@ namespace deneysan.Areas.Admin.Controllers
 
             model.ProjectImages = db.ProjectsGallery.Where(x => x.ProjeId == id).ToList();
 
-            var languages = LanguageManager.GetLanguages();
-            var list = new SelectList(languages, "Culture", "Language", record.Language);
-            ViewBag.LanguageList = list;
+            List<ProjectGroup> projeGruplari = ProductManager.GetProjectGroupListForFront(model.Project.Language);
+            ViewBag.ProjeGruplari = new SelectList(projeGruplari, "ProjectGroupId", "GroupName");
             return View(model);
           }
           else
@@ -286,9 +286,9 @@ namespace deneysan.Areas.Admin.Controllers
 
 
     [HttpPost]
-    public ActionResult EditProject(Projects model, string hdnProjeDokumani,string hdnimagefile)
+    public ActionResult EditProject(ProjectDetailModel model2, string hdnProjeDokumani, string hdnimagefile)
     {
-    
+      Projects model = model2.Project;
       using (DeneysanContext db = new DeneysanContext())
       {
 
@@ -301,6 +301,7 @@ namespace deneysan.Areas.Admin.Controllers
           model.ProjeDokümani = "";
 
         model.TimeUpdated = DateTime.Now;
+        db.Entry(model).State =EntityState.Modified;     
 
         db.SaveChanges();
 
@@ -325,10 +326,20 @@ namespace deneysan.Areas.Admin.Controllers
           db.SaveChanges();
         }
 
-        var languages = LanguageManager.GetLanguages();
-        var list = new SelectList(languages, "Culture", "Language", model.Language);
-        ViewBag.LanguageList = list;
-        return View(model);
+        List<ProjectGroup> projeGruplari = ProductManager.GetProjectGroupListForFront(model.Language);
+        ViewBag.ProjeGruplari = new SelectList(projeGruplari, "ProjectGroupId", "GroupName");
+        ViewBag.ProjeGruplari = new SelectList(projeGruplari, "ProjectGroupId", "GroupName");
+
+        ProjectDetailModel rmodel = new ProjectDetailModel();
+        rmodel.Project = model;
+        
+         List<ProjectsGallery> gallery = db.ProjectsGallery.Where(x=>x.ProjeId==model.ProjeId).ToList();
+          if(gallery!=null && gallery.Count()>0 )
+            rmodel.ProjectImages = gallery;
+
+          rmodel.ProjectImages = gallery;
+        
+        return View(rmodel);
 
       }
     
@@ -384,19 +395,19 @@ namespace deneysan.Areas.Admin.Controllers
 
     public FileResult Download(string fileName)
     {
-
-      return File(Server.MapPath("~/Content/projectfiles/" + fileName), "text/plain", "text/plain");
+      var mimeType = MimeMapping.GetMimeMapping(fileName);
+      return File(Server.MapPath("~/Content/projectfiles/" + fileName), mimeType);
     }
 
 
-    [HttpPost]
+    
     public void DeleteProjectImage(int id)
     {
       using (DeneysanContext db = new DeneysanContext())
       {
         try
         {
-          var record = db.ProjectsGallery.FirstOrDefault(d => d.ProjeId == id);
+          var record = db.ProjectsGallery.FirstOrDefault(d => d.Id == id);
           db.ProjectsGallery.Remove(record);
           db.SaveChanges();
 

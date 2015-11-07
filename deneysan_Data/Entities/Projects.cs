@@ -108,6 +108,9 @@ namespace deneysan_DAL.Entities
 
         [Required(ErrorMessage = "Proje grubunu seçiniz")]
         public int ProjectGroupId { get; set; }
-        public virtual ProjectGroup ProjectGroup { get; set; }
+     //   public virtual ProjectGroup ProjectGroup { get; set; }
+
+        public string ProjeTeklifFiyati { get; set; }
+        public string ProjeTeklifNumarasi { get; set; }
     }
 }

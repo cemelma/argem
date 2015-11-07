@@ -14,7 +14,7 @@
     }
 </style>
 @Html.Partial("project_leftbar")
-@Html.Hidden("imagesCount",@Model.ProjectImages.Count())
+@Html.Hidden("imagesCount", @Model.ProjectImages.Count())
 <div id="page-content" class="container_12">
     <div id="page-header">
         <h2>PROJE BİLGİLERİ</h2>
@@ -22,18 +22,22 @@
 
     <section class="grid_12 form">
         @Html.Hidden("ProcessMessage", (object)@ViewBag.ProcessMessage)
-        @Html.HiddenFor(x => x.Project.ProjeId)
+
         @using (Html.BeginForm("EditProject", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             @Html.Hidden("hdfieldcategory")
+            @Html.HiddenFor(x => x.Project.ProjeId)
+            @Html.HiddenFor(x => x.Project.Language)
+            @Html.HiddenFor(x => x.Project.ProjeDokümani)
+
             @Html.Hidden("hdfieldtaglist")
             @Html.ValidationSummary(true)
             <fieldset>
                 <legend>Proje Sahibi Bilgileri</legend>
                 <p>
-                    @Html.LabelFor(m => m.Project.Language)
-                    @Html.DropDownListFor(m => m.Project.Language, (IEnumerable<SelectListItem>)ViewBag.LanguageList, "Dil Seçiniz...")
-                    @Html.ValidationMessageFor(m => m.Project.Language)
+                    @Html.LabelFor(m => m.Project.ProjectGroupId)
+                    @Html.DropDownListFor(m => m.Project.ProjectGroupId, (IEnumerable<SelectListItem>)ViewBag.ProjeGruplari, "Proje Grubu Seçiniz...")
+                    @Html.ValidationMessageFor(m => m.Project.ProjectGroupId)
 
                 </p>
                 <p>
@@ -122,7 +126,19 @@
 
 
             </fieldset>
+            <fieldset>
+                <legend>Proje Teklif Bilgileri</legend>
+                <p>
+                    @Html.Label("Proje Teklif Fiyatı")
+                    @Html.TextBoxFor(m => m.Project.ProjeTeklifFiyati, new { @class = "textwidth50" })
 
+                </p>
+                <p>
+                    @Html.Label("Proje Teklif Numarası")
+                    @Html.TextBoxFor(m => m.Project.ProjeTeklifNumarasi, new { @class = "textwidth50", @Rows = "5" })
+            
+                </p>
+            </fieldset>
             <fieldset>
                 <legend>Proje Dosyaları</legend>
                 <p>
@@ -134,7 +150,7 @@
                                     @if (!string.IsNullOrEmpty(Model.Project.ProjeDokümani))
                                     {
                                         <label class="projedokumanilabel">@Model.Project.ProjeDokümani.Split('/')[3]</label>
-                                        <a href="/Project/Download?fileName=@Model.Project.ProjeDokümani">Dökümanı İndir</a>
+                                        <a id="dwnloadFile" href="/Project/Download?fileName=@Model.Project.ProjeDokümani.Split('/')[3]">Dökümanı İndir</a>
                                     }
                                     else
                                     {
@@ -165,16 +181,16 @@
 
 
 
-                    @if(Model.ProjectImages!=null && Model.ProjectImages.Count()>0)
+                    @if (Model.ProjectImages != null && Model.ProjectImages.Count() > 0)
                     {
-                        <ul style="list-style-type:none;">
+                        <ul style="list-style-type:none;width:100%;">
 
-                            @foreach(var item in Model.ProjectImages)
+                            @foreach (var item in Model.ProjectImages)
                             {
-                                <li class="float:left">
-                                    <img src="@item.ImageThumb" id="projectImage_@item.ProjeId" />
-                                    <div style="position:absolute;bottom:0;height:40px;width:40px;">
-                                        <img src="/Areas/Admin/Content/images/icons/16/delete.png" style="width:32px;" class="cursorpointer" title="Sil" onclick="DeleteProjectImage(@item.Id)">
+                                <li style="float:left;width:25%;position:relative;">
+                                    <img src="@item.ImageThumb" id="projectImage_@item.ProjeId" style="height: 200px;width:85%;" />
+                                    <div style="position:absolute;bottom:-20px;height:40px;width:40px;">
+                                        <img src="/Areas/Admin/Content/images/icons/16/delete.png" style="width:32px;" class="cursorpointer" title="Sil" onclick="DeleteProjectImage(@item.Id)" id="projectImage_@item.Id">
                                     </div>
                                 </li>
                             }

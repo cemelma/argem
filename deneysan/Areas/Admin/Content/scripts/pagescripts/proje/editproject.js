@@ -86,18 +86,21 @@ function RemoveDokuman() {
     $("#hdnProjeDokumani").val("");
     $('#projedokumanfile-button').removeClass('disabled');
     $(".projedokumanilabel").text("Proje Dökümanı eklenmemiş");
+    $("#hdnProjeDokumani").val("");
+    $("#Project_ProjeDok_mani").val("");
+    $("#dwnloadFile").text("");
 }
 
 function DeleteProjectImage(id) {
 
-
+    var postdata = { id: id };
     $.ajax({
         type: 'POST',
-        url: "../Project/DeleteProjectImage",
-        data: "{'id':'" + id + "'}",
+        url: "/Project/DeleteProjectImage",
+        data: postdata,
      
         success: function (result) {
-            $("#projectImage_" + id).parents("li").fadeOut();
+            $("#projectImage_" + id).closest("li").fadeOut();
         },
         error: function () {
          alert("İşlem sırasında bir hata oluştu")
