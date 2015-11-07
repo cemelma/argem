@@ -490,6 +490,7 @@ namespace deneysan.Areas.Admin.Controllers
       return View();
     }
 
+        //Burda pdf oluşturmadan ekran görüntüsüne bakılabilir
     public ActionResult ProjectDetail(int id)
     {
         ProjectDetailModel model = new ProjectDetailModel();
@@ -510,22 +511,52 @@ namespace deneysan.Areas.Admin.Controllers
 
     }
 
+        [HttpPost]
+        public PartialViewResult ProjectDetailPdf(int id)
+        {
+            ProjectDetailModel model = new ProjectDetailModel();
+            using (DeneysanContext db = new DeneysanContext())
+            {
+                Projects project = db.Projects.Where(x => x.ProjeId == id).FirstOrDefault();
+                if (project != null)
+                {
+                    model.Project = project;
+
+                    List<ProjectsGallery> gallery = db.ProjectsGallery.Where(x => x.ProjeId == id).ToList();
+                    if (gallery != null && gallery.Count() > 0)
+                        model.ProjectImages = gallery;
+                }
+
+                return PartialView("ProjectDetail", model);
+            }
+
+        }
+
         //Burdan pdf kaydettirilip mail gönderilecek
-    public ActionResult SavePdf()
+    public ActionResult SavePdf(string mailTemplate,int id)
     {
-        string mailTemplate = (new MailTemplateUtil()).GetMailTemplate("teklif");
-        mailTemplate = (new MailTemplateUtil()).CustomFormat(mailTemplate, new string[] { });
+            try
+            {
+                //string mailTemplate = (new MailTemplateUtil()).GetMailTemplate("teklif");
+                //mailTemplate = (new MailTemplateUtil()).CustomFormat(mailTemplate, new string[] { });
+                //var htmlContent = String.Format("<body>Hello world: {0}</body>",DateTime.Now);
 
+                mailTemplate = System.Uri.UnescapeDataString(mailTemplate);
 
-        //var htmlContent = String.Format("<body>Hello world: {0}</body>",DateTime.Now);
-        var htmlToPdf = new NReco.PdfGenerator.HtmlToPdfConverter();
-        var pdfBytes1 = htmlToPdf.GeneratePdf(mailTemplate);
+                var htmlToPdf = new NReco.PdfGenerator.HtmlToPdfConverter();
+                var pdfBytes1 = htmlToPdf.GeneratePdf(mailTemplate);
+                string targetFolder = Server.MapPath("/Content/pdf");
+                string targetPath = Path.Combine(targetFolder, id.ToString() + ".pdf");
+                //file.SaveAs(targetPath);
 
-        //var pdfBytes = (new NReco.PdfGenerator.HtmlToPdfConverter()).GeneratePdf(htmlContent);
-
-        System.IO.File.WriteAllBytes("c:\\temp\\asd.pdf", pdfBytes1);
-        return View("");
-    }
+                System.IO.File.WriteAllBytes(targetPath, pdfBytes1);
+            }
+            catch (Exception)
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+            return Json(true, JsonRequestBehavior.AllowGet);
+        }
 
 }
 

@@ -32,8 +32,8 @@
                     <th class="center width15">Proje Durumu</th>
                     @*<th class="center widt5">Resim</th>*@
                     <th class="width20">Proje Adı</th>
-                    <th class="center width60">Proje Özeti</th>
-                   
+                    <th class="center width50">Proje Özeti</th>
+                    <th class="center witdh5">Proforma</th>
                     <th class="center witdh5">Online</th>
                     <th class="center witdh5">İşlem</th>
                 </tr>
@@ -61,6 +61,10 @@
                             <input type="text" id="textitem_@item.ProjeId" value="" class="displaynone textwidth90" />
                         </td>
                        
+                        <td class="center">
+                            <img  src="~/Areas/Admin/Content/images/icons/16/image_add.png" class="cursorpointer" title="Teklif Gönder" onclick="SendPdf(@item.ProjeId)">
+                        </td>
+
                         <td class="center">
                             @if (item.Online == true)
                             {<img id="img_online_@item.ProjeId" src="/Areas/Admin/Content/images/icons/online.png" class="cursorpointer" title="Offline yap" onclick="SetOnlineStatus('/Project/EditStatus',@item.ProjeId)" />}
@@ -100,4 +104,29 @@
 <script src="~/Areas/Admin/Content/scripts/myscripts/DeleteRecordTable.js"></script>
 
 <script src="~/Areas/Admin/Content/scripts/pagescripts/proje/projelist.js"></script>
-
+<script>
+        function SendPdf(id)
+        {
+            $.ajax({
+                url: '@Url.Action("ProjectDetailPdf", "Project")',
+                data: { id: id },
+                cache: false,
+                type: "POST",
+                dataType: "html",
+                success: function (data, textStatus, XMLHttpRequest) {
+                    console.log(data);
+                    $.ajax({
+                        url: '@Url.Action("SavePdf", "Project")',
+                        data: { mailTemplate: encodeURIComponent(data), id: id },
+                        cache: false,
+                        type: "POST",
+                        dataType: "html",
+                        success: function (data2, textStatus2, XMLHttpRequest2) {
+                            console.log(data2);
+                        }
+                    });
+                }
+            });
+        }
+ 
+</script>

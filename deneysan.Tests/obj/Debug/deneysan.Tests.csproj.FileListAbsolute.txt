@@ -134,3 +134,5 @@ E:\CEM\GitWorks\argem\deneysan.Tests\obj\Debug\deneysan.Tests.dll
 E:\CEM\GitWorks\argem\deneysan.Tests\obj\Debug\deneysan.Tests.pdb
 E:\CEM\GitWorks\argem\deneysan.Tests\bin\Debug\NReco.PdfGenerator.dll
 E:\CEM\GitWorks\argem\deneysan.Tests\bin\Debug\NReco.PdfGenerator.xml
+C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\NReco.PdfGenerator.dll
+C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\NReco.PdfGenerator.xml

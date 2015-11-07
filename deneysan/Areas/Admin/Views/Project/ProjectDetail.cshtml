@@ -1,216 +1,224 @@
-﻿@{
-    //ViewBag.Title = "ProjectDetail";
+﻿@model deneysan.Areas.Admin.Controllers.ProjectDetailModel
+@{
+    Layout = null;
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    @*<link rel="stylesheet" type="text/css" href="/css/blue.css" id="style-switch" />*@
+    <link href="http://argemsan.com/css/blue.css" rel="stylesheet" />
+    <style>
+       
 
-@model deneysan.Areas.Admin.Controllers.ProjectDetailModel
-
-<link rel="stylesheet" type="text/css" href="/css/blue.css" id="style-switch" />
 
 
-<style>
-    table, th, td {
-        border: 1px solid black;
-    }
+            table, th, td {
+                border: 1px solid black;
+            }
 
-    table {
-        border-collapse: collapse;
-    }
+            table {
+                border-collapse: collapse;
+            }
 
-    .about-intro-wrap{background:none !important;}
-    .container {
-    margin-right: 0;
-    margin-left: 0;
-    padding-left: 0; 
-    padding-right: 0;
-    border: solid 1px #000;
-    width: 100% !important;
-}
-</style>
+            .about-intro-wrap{background:none !important;}
+            .container {
+            margin-right: 0;
+            margin-left: 0;
+            padding-left: 0;
+            padding-right: 0;
+            border: solid 1px #000;
+            width: 100% !important;
+        }
+    </style>
+    </head>
 
-<div style="width:100%; text-align:center">
+<body>
+    <div style="width:100%; text-align:center">
+        <table style="width:90%;  margin-left:auto; margin-right:auto; font-weight:bold">
+            <tr>
+                <td style="text-align:center;position: relative; padding:5px;" colspan="2"><img src="http://argemsan.com/Areas/Admin/Content/images/teklif/pdflogo.png" /></td>
+            </tr>
+            <tr>
+                <td style="font-size:25px; padding:15px;text-align:center;" colspan="2">
+                    PROFORMA FATURA
+                </td>
+            </tr>
+            <tr>
+                <td style="font-weight:bold; text-align:left; padding:15px;" colspan="2">
+                    Konu: Firmamızdan talep etmiş olduğunuz hizmet alımları ile ilgili fiyat teklifimiz aşağıda incelemelerinize sunulmuştur.<br />
+                    <span style="margin-left:47px;">Teklifimizin olumlu karşılanacağını umar, çalışmalarınızda başarılar dileriz.</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:15px">
+                    <div style="text-decoration:underline">Müşteri Bilgileri:</div>
+                    <div>
+                        DENEYSAN EĞİTİM CİHAZLARI SAN VE TİC. LTD. ŞTİ.<br />
+                        YENİ SANAYİ SİTESİ 12 EKİM CADDESİ<br />
+                        52. SOK. NO:18/A KARESİ / BALIKESİR
+                        <br /><br />
+                        Tel : 0 266 246 10 75 fax : 0 266 246 09 48
+                        <br />Sn
+                    </div>
+                </td>
+                <td style="padding:15px">
+                    <div style="text-decoration:underline">Teklif Bilgileri:</div>
+                    <div>
+                        Teklif Tarihi:
+                    </div>
+                    <div style="text-decoration:underline">Teklif no:</div>
+                    <div style="text-decoration:underline">Geçerlilik Tarihi:</div>
+                    <div style="text-decoration:underline">Teslimat Süresi:</div>
+                </td>
+            </tr>
+        </table>
 
-    <div style="width:90%; text-align:center; margin-left:auto; margin-right:auto"><img src="~/Areas/Admin/Content/images/teklif/pdflogo.png" /></div>
+        <div style="border:solid 1px #dfdfdf;text-align: center;/* float: left; */width: 90%;margin-left: auto;margin-right: auto;">
 
-    <table style="width:90%;  margin-left:auto; margin-right:auto; font-weight:bold">
-        <tr>
-            <td style="font-size:25px; padding:15px;text-align:center;" colspan="2">
-                PROFORMA FATURA
-            </td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; text-align:left; padding:15px;" colspan="2">
-                Konu: Firmamızdan talep etmiş olduğunuz hizmet alımları ile ilgili fiyat teklifimiz aşağıda incelemelerinize sunulmuştur.<br />
-                <span style="margin-left:47px;">Teklifimizin olumlu karşılanacağını umar, çalışmalarınızda başarılar dileriz.</span>
-            </td>
-        </tr>
-        <tr>
-            <td style="padding:15px" >
-                <div style="text-decoration:underline">Müşteri Bilgileri:</div>
-                <div>
-                    DENEYSAN EĞİTİM CİHAZLARI SAN VE TİC. LTD. ŞTİ.<br />
-                    YENİ SANAYİ SİTESİ 12 EKİM CADDESİ<br />
-                    52. SOK. NO:18/A KARESİ / BALIKESİR
-                    <br /><br />
-                    Tel : 0 266 246 10 75 fax : 0 266 246 09 48
-                    <br />Sn
-                </div>
-            </td>
-            <td style="padding:15px">
-                <div style="text-decoration:underline">Teklif Bilgileri:</div>
-                <div>
-                   Teklif Tarihi:
-                </div>
-                <div style="text-decoration:underline">Teklif no:</div>
-                <div style="text-decoration:underline">Geçerlilik Tarihi:</div>
-                <div style="text-decoration:underline">Teslimat Süresi:</div>
-            </td>
-        </tr>
-    </table>
+            @if (Model.Project != null)
+            {
+                <div class="about-intro-wrap pull-left">
 
-    <div style="border:solid 1px #dfdfdf;text-align: center;/* float: left; */width: 90%;margin-left: auto;margin-right: auto;">
+                    <div class="container" style="min-height:1108px;">
+                        <div class="tab-content col-md-12 col-sm-12 col-xs-12 pull-right" style="min-height:450px" id="projectform">
+                            <fieldset>
+                                <legend style="text-align:left">
+                                    <br />
+                                    @ProjectsRess.ProjectsStrings.projedetay
+                                </legend>
 
-        @if (Model.Project != null)
-        {
-            <div class="about-intro-wrap pull-left">
+                                <div class="row">
+                                    <div class="col-lg-3" style="text-align:left"><label>PROJE ADI</label></div>
+                                    <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.ProjeAdi, "", new { @class = "contact2-textbox", @readonly = "true" })</div>
 
-                <div class="container" style="min-height:500px;">
-                    <div class="tab-content col-md-12 col-sm-12 col-xs-12 pull-right" style="min-height:450px" id="projectform">
-                        <fieldset>
-                            <legend style="text-align:left">
-                                <br />
-                                @ProjectsRess.ProjectsStrings.projedetay
-                            </legend>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.hedef</label></div>
+                                    <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.ProjeHedefi, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.hedef.ToLower(), @readonly = "true" })</div>
 
-                            <div class="row">
-                                <div class="col-lg-3" style="text-align:left"><label>Proje Adı</label></div>
-                                <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.ProjeAdi, "", new { @class = "contact2-textbox", @readonly = "true" })</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.amac</label></div>
+                                    <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.ProjeAmac, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.amac.ToLower(), @readonly = "true" })</div>
 
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.hedef</label></div>
-                                <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.ProjeHedefi, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.hedef.ToLower(), @readonly = "true" })</div>
+                                </div>
 
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.amac</label></div>
-                                <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.ProjeAmac, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.amac.ToLower(), @readonly = "true" })</div>
+                                @*<div class="row">
+                                        <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.sure</label></div>
+                                        <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.ProjeSuresi, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.sure.ToLower(), @readonly = "true" })</div>
 
-                            </div>
+                                    </div>
 
-                            @*<div class="row">
-                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.sure</label></div>
-                                    <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.ProjeSuresi, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.sure.ToLower(), @readonly = "true" })</div>
+                                    <div class="row">
+                                        <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.butce</label></div>
+                                        <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.ProjeButcesi, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.butce.ToLower(), @readonly = "true" })</div>
+
+                                    </div>*@
+
+                                @*<div class="row">
+                                        <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.finanseeden</label></div>
+                                        <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.FinanseEdenKurum, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.finanseeden.ToLower(), @readonly = "true" })</div>
+
+                                    </div>*@
+
+                                <div class="row">
+                                    <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.uygulanacagiyer</label></div>
+                                    <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.UygulanacagiYer, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.uygulanacagiyer.ToLower(), @readonly = "true" })</div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.sonuclar</label></div>
+                                    <div class="col-lg-9">@Html.TextAreaFor(x => x.Project.BeklenenSonuclar, new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.sonuclar.ToLower(), @readonly = "true" })</div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.ozet</label></div>
+                                    <div class="col-lg-9">@Html.TextAreaFor(x => x.Project.ProjeOzeti, new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.ozet.ToLower(), @readonly = "true", @disabled = "true", @style = "background-color:white" })</div>
+
+                                </div>
+
+                                @*<div class="row" style="margin-top:25px;">
+                                        <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.resim</label></div>
+                                        <div class="col-lg-9" style="text-align:left">
+                                            @foreach (var itemimage in Model.ProjectImages)
+                                        {
+                                        <img src="@itemimage.ImageThumb" width="140" height="120" />
+                                        }
+                                        </div>
+                                    </div>*@
+
+                            </fieldset>
+
+                            <fieldset style="margin-top:20px;">
+                                <legend style="text-align:left">
+                                    @ProjectsRess.ProjectsStrings.projesahibibaslik
+                                </legend>
+                                <div class="row">
+                                    <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.projesahibiadi</label></div>
+                                    <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.ProjeSahibi, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.projesahibiadi.ToLower(), @readonly = "true" })</div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.projesahibikurum</label></div>
+                                    <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.ProjeSahibiKurumu, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.projesahibikurum.ToLower(), @readonly = "true" })</div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.telefonno</label></div>
+                                    <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.Telefon, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.telefonno.ToLower(), @readonly = "true" })</div>
 
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.butce</label></div>
-                                    <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.ProjeButcesi, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.butce.ToLower(), @readonly = "true" })</div>
+                                    <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.faksno</label></div>
+                                    <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.Faks, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.faksno.ToLower(), @readonly = "true" })</div>
 
-                                </div>*@
-
-                            @*<div class="row">
-                                    <div class="col-lg-3"><label>@ProjectsRess.ProjectsStrings.finanseeden</label></div>
-                                    <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.FinanseEdenKurum, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.finanseeden.ToLower(), @readonly = "true" })</div>
-
-                                </div>*@
-
-                            <div class="row">
-                                <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.uygulanacagiyer</label></div>
-                                <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.UygulanacagiYer, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.uygulanacagiyer.ToLower(), @readonly = "true" })</div>
-
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.sonuclar</label></div>
-                                <div class="col-lg-9">@Html.TextAreaFor(x => x.Project.BeklenenSonuclar, new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.sonuclar.ToLower(), @readonly = "true" })</div>
-
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.ozet</label></div>
-                                <div class="col-lg-9">@Html.TextAreaFor(x => x.Project.ProjeOzeti, new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.ozet.ToLower(), @readonly = "true", @disabled = "true", @style="background-color:white" })</div>
-
-                            </div>
-
-                            <div class="row" style="margin-top:25px;">
-                                <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.resim</label></div>
-                                <div class="col-lg-9" style="text-align:left">
-                                    @foreach (var itemimage in Model.ProjectImages)
-                                {
-                                <img src="@itemimage.ImageThumb" width="140" height="120" />
-                                }
                                 </div>
-                            </div>
 
-                        </fieldset>
+                                <div class="row">
+                                    <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.postaadresi</label></div>
+                                    <div class="col-lg-9">@Html.TextAreaFor(x => x.Project.PostaAdresi, new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.postaadresi.ToLower(), @readonly = "true" })</div>
 
-                        <fieldset style="margin-top:20px;">
-                            <legend style="text-align:left">
-                                @ProjectsRess.ProjectsStrings.projesahibibaslik
-                            </legend>
-                            <div class="row">
-                                <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.projesahibiadi</label></div>
-                                <div class="col-lg-5">@Html.TextBoxFor(x =>x.Project.ProjeSahibi, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.projesahibiadi.ToLower(),@readonly="true" })</div>
+                                </div>
 
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.projesahibikurum</label></div>
-                                <div class="col-lg-5">@Html.TextBoxFor(x => x.Project.ProjeSahibiKurumu, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.projesahibikurum.ToLower(), @readonly = "true" })</div>
+                                <div class="row">
+                                    <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.eposta</label></div>
+                                    <div class="col-lg-9">@Html.TextBoxFor(x => x.Project.Email, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.eposta.ToLower(), @readonly = "true" })</div>
 
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.telefonno</label></div>
-                                <div class="col-lg-5">@Html.TextBoxFor(x => x.Project.Telefon, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.telefonno.ToLower(), @readonly = "true" })</div>
-
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.faksno</label></div>
-                                <div class="col-lg-5">@Html.TextBoxFor(x => x.Project.Faks, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.faksno.ToLower(), @readonly = "true" })</div>
-
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.postaadresi</label></div>
-                                <div class="col-lg-5">@Html.TextAreaFor(x => x.Project.PostaAdresi, new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.postaadresi.ToLower(), @readonly = "true" })</div>
-
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-3" style="text-align:left"><label>@ProjectsRess.ProjectsStrings.eposta</label></div>
-                                <div class="col-lg-5">@Html.TextBoxFor(x => x.Project.Email, "", new { @class = "contact2-textbox", @placeholder = @ProjectsRess.ProjectsStrings.eposta.ToLower(), @readonly = "true" })</div>
-
-                            </div>
+                                </div>
 
 
-                        </fieldset>
+                            </fieldset>
 
 
+                        </div>
                     </div>
                 </div>
-            </div>
-        }
+            }
 
+        </div>
+
+        <table style="width:90%;  margin-left:auto; margin-right:auto; font-weight:bold">
+            <tr>
+                <td style="padding:15px">
+                    <div style="text-decoration:underline">Notlar:</div>
+                    <div>
+                        Fiyatlarımıza 18% KDV dahil değildir.<br />
+                        Fiyatlarımıza eğitim, montaj ve nakliye ücretleri dahildir.<br />
+                        <br /><br />
+                        <span style="text-decoration:underline">GARANTİ:</span> Ürünlerimiz 2 yıl (iki) garantilidir.
+                    </div>
+                </td>
+                <td style="padding:15px">
+                    <div style="text-decoration:underline">Ara Toplam:</div>
+                    <div style="text-decoration:underline">K.D.V. %18:</div>
+                    <div style="text-decoration:underline">G. Toplam:</div>
+                </td>
+            </tr>
+        </table>
+
+        <div style="width:90%; text-align:center; margin-left:auto; margin-right:auto;margin-top: 20px;"><img src="http://argemsan.com/Areas/Admin/Content/images/teklif/imzapdf.png" /></div>
     </div>
-
-    <table style="width:90%;  margin-left:auto; margin-right:auto; font-weight:bold">
-        <tr>
-            <td style="padding:15px">
-                <div style="text-decoration:underline">Notlar:</div>
-                <div>
-                    Fiyatlarımıza 18% KDV dahil değildir.<br />
-                    Fiyatlarımıza eğitim, montaj ve nakliye ücretleri dahildir.<br />
-                    <br /><br />
-                    <span style="text-decoration:underline">GARANTİ:</span> Ürünlerimiz 2 yıl (iki) garantilidir.   
-                </div>
-            </td>
-            <td style="padding:15px">
-                <div style="text-decoration:underline">Ara Toplam:</div>
-                <div style="text-decoration:underline">K.D.V. %18:</div>
-                <div style="text-decoration:underline">G. Toplam:</div>
-            </td>
-        </tr>
-    </table>
-
-    <div style="width:90%; text-align:center; margin-left:auto; margin-right:auto"><img src="~/Areas/Admin/Content/images/teklif/imzapdf.png" /></div>
-
-</div>
+</body>
+</html>
