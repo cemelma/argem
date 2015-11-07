@@ -22,7 +22,7 @@ namespace deneysan_Data.Entities
     public bool Online { get; set; }
   
 
-    public virtual ICollection<Projects>Projects { get; set; }
+  
 
     [Required(ErrorMessage = "Dili Seçiniz.")]
     public string Language { get; set; }

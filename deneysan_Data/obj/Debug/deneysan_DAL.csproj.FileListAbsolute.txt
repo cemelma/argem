@@ -33,6 +33,7 @@ E:\CEM\GitWorks\argem\deneysan_Data\bin\Debug\EntityFramework.xml
 E:\CEM\GitWorks\argem\deneysan_Data\bin\Debug\log4net.xml
 E:\CEM\GitWorks\argem\deneysan_Data\obj\Debug\deneysan_Data.dll
 E:\CEM\GitWorks\argem\deneysan_Data\obj\Debug\deneysan_Data.pdb
+E:\CEM\GitWorks\argem\deneysan_Data\obj\Debug\deneysan_DAL.csprojResolveAssemblyReference.cache
 C:\Users\Asus\Documents\GitHub\argem\deneysan_Data\bin\Debug\deneysan_Data.dll.config
 C:\Users\Asus\Documents\GitHub\argem\deneysan_Data\bin\Debug\deneysan_Data.dll
 C:\Users\Asus\Documents\GitHub\argem\deneysan_Data\bin\Debug\deneysan_Data.pdb
@@ -44,5 +45,3 @@ C:\Users\Asus\Documents\GitHub\argem\deneysan_Data\bin\Debug\EntityFramework.xml
 C:\Users\Asus\Documents\GitHub\argem\deneysan_Data\bin\Debug\log4net.xml
 C:\Users\Asus\Documents\GitHub\argem\deneysan_Data\obj\Debug\deneysan_Data.dll
 C:\Users\Asus\Documents\GitHub\argem\deneysan_Data\obj\Debug\deneysan_Data.pdb
-E:\CEM\GitWorks\argem\deneysan_Data\obj\Debug\deneysan_DAL.csprojResolveAssemblyReference.cache
-C:\Users\Asus\Documents\GitHub\argem\deneysan_Data\obj\Debug\deneysan_DAL.csprojResolveAssemblyReference.cache

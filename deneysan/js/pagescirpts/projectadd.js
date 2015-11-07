@@ -6,14 +6,15 @@ jQuery(function ($) {
   
        $('#projedokumanfile').uploadify({
         'preventCaching': false,
-        'swf': "http://localhost:1745/js/uploadify/uploadify.swf",
+        'swf': "/js/uploadify/uploadify.swf",
         "uploader": '../FProjects/SaveProjectDocumentFile',
-        'folder': 'http://localhost:1745/Content/uploads',
-        "cancelImg": "http://localhost:1745/js/uploadify/uploadify-cancel.png",
+        'folder': '/Content/uploads',
+        "cancelImg": "/js/uploadify/uploadify-cancel.png",
         "removeCompleted": false,
         'buttonText': 'Dosya Seçin',
         'queueSizeLimit': 1,
         'multi': false,
+        'uploadLimit': 1,
         'onUploadSuccess': function (file, data, response) {
             $('#projedokumanfile').uploadify('disable', true);
             $("#hdndokumanfile").val(data);
@@ -31,10 +32,10 @@ jQuery(function ($) {
 
     $('#projeresimfile').uploadify({
         'preventCaching': false,
-        'swf': "http://localhost:1745/js/uploadify/uploadify.swf",
+        'swf': "/js/uploadify/uploadify.swf",
         "uploader": '../FProjects/SaveProjectImages',
-        'folder': 'http://localhost:1745/Content/uploads',
-        "cancelImg": "http://localhost:1745/js/uploadify/uploadify-cancel.png",
+        'folder': '/Content/uploads',
+        "cancelImg": "/js/uploadify/uploadify-cancel.png",
         "removeCompleted": false,
         'buttonText': 'Dosya Seçin',
         'uploadLimit': 5,

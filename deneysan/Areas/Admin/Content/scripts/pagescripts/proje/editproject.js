@@ -6,14 +6,15 @@ $(function () {
         imageCount = imgsize;
     $('#projedokumanfile').uploadify({
         'preventCaching': false,
-        'swf': "http://localhost:1745/js/uploadify/uploadify.swf",
+        'swf': "/js/uploadify/uploadify.swf",
         "uploader": '/Project/SaveProjectDocumentFile',
-        //       'folder': 'http://localhost:1745/Content/uploads',
-        //      "cancelImg": "http://localhost:1745/js/uploadify/uploadify-cancel.png",
+        //       'folder': '/Content/uploads',
+        //      "cancelImg": "/js/uploadify/uploadify-cancel.png",
         "removeCompleted": false,
         'buttonText': 'Yeni Dosya Seçin',
         'queueSizeLimit': 1,
         'multi': false,
+        'uploadLimit' : 1,
         'onUploadSuccess': function (file, data, response) {
             $('#projedokumanfile').uploadify('disable', true);
             $("#hdnProjeDokumani").val(data);
@@ -27,10 +28,10 @@ $(function () {
 
     $('#projeresimfile').uploadify({
         'preventCaching': false,
-        'swf': "http://localhost:1745/js/uploadify/uploadify.swf",
+        'swf': "/js/uploadify/uploadify.swf",
         "uploader": '/Project/SaveProjectImages',
-   //     'folder': 'http://localhost:1745/Content/uploads',
-        "cancelImg": "http://localhost:1745/js/uploadify/uploadify-cancel.png",
+   //     'folder': '/Content/uploads',
+        "cancelImg": "/js/uploadify/uploadify-cancel.png",
         "removeCompleted": false,
         'buttonText': 'Dosya Seçin',
         'uploadLimit': 5-imageCount,

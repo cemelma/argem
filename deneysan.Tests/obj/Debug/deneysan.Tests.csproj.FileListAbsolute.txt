@@ -132,6 +132,8 @@ E:\CEM\GitWorks\argem\deneysan.Tests\bin\Debug\en\deneysan.resources.dll
 E:\CEM\GitWorks\argem\deneysan.Tests\obj\Debug\deneysan.Tests.csprojResolveAssemblyReference.cache
 E:\CEM\GitWorks\argem\deneysan.Tests\obj\Debug\deneysan.Tests.dll
 E:\CEM\GitWorks\argem\deneysan.Tests\obj\Debug\deneysan.Tests.pdb
+E:\CEM\GitWorks\argem\deneysan.Tests\bin\Debug\NReco.PdfGenerator.dll
+E:\CEM\GitWorks\argem\deneysan.Tests\bin\Debug\NReco.PdfGenerator.xml
 C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\deneysan.Tests.dll.config
 C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\deneysan.Tests.dll
 C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\deneysan.Tests.pdb
@@ -147,6 +149,7 @@ C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\EntityFramework.dl
 C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\System.Web.Optimization.dll
 C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\deneysan_Data.dll
 C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\deneysan_BLL.dll
+C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\NReco.PdfGenerator.dll
 C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\log4net.dll
 C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\WebGrease.dll
 C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\Antlr3.Runtime.dll
@@ -160,12 +163,9 @@ C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\System.Web.WebPage
 C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\EntityFramework.xml
 C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\deneysan_Data.pdb
 C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\deneysan_BLL.pdb
+C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\NReco.PdfGenerator.xml
 C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\log4net.xml
 C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\en\deneysan.resources.dll
 C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\obj\Debug\deneysan.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\obj\Debug\deneysan.Tests.dll
 C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\obj\Debug\deneysan.Tests.pdb
-E:\CEM\GitWorks\argem\deneysan.Tests\bin\Debug\NReco.PdfGenerator.dll
-E:\CEM\GitWorks\argem\deneysan.Tests\bin\Debug\NReco.PdfGenerator.xml
-C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\NReco.PdfGenerator.dll
-C:\Users\Asus\Documents\GitHub\argem\deneysan.Tests\bin\Debug\NReco.PdfGenerator.xml

@@ -6,14 +6,14 @@ jQuery(function ($) {
 
     $("#Language").change(function () {
         var selVal = $("#Language option:selected").val();
-       
+        var postdata = {lang:selVal};
         if (selVal) {
             var postdata = { lang:selVal };
             $.ajax({
                 method: "POST",
                 url: "../Project/GetProjegruplari",
-                //               data: '{id:"' + id + '",status:"' + status + '"}',
-                data: '{lang:' + selVal + '}',
+             //   contentType: "application/json",
+                data: postdata,
 
               //  data: postdata
             })
@@ -47,6 +47,7 @@ jQuery(function ($) {
         'buttonText': 'Dosya Seçin',
         'queueSizeLimit': 1,
         'multi': false,
+        'uploadLimit' : 1,
         'onUploadSuccess': function (file, data, response) {
             $('#projedokumanfile').uploadify('disable', true);
             $("#hdndokumanfile").val(data);
