@@ -56,7 +56,7 @@ namespace deneysan.Controllers
         model.Online = true;
 
 
-        if (!string.IsNullOrEmpty(hdnimagefile))
+        if (!string.IsNullOrEmpty(hdndokumanfile))
         {
           model.ProjeDokümani = "/Content/projectfiles/" + hdndokumanfile;
         }

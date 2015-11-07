@@ -12,13 +12,10 @@ namespace deneysan_DAL.Context
     {
         public Configration()
         {
-<<<<<<< HEAD
+
             AutomaticMigrationsEnabled = false;
             AutomaticMigrationDataLossAllowed = false;
-=======
-            AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
->>>>>>> master
+
         }
 
 
