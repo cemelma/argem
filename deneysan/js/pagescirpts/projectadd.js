@@ -1,10 +1,11 @@
 ﻿var imageFiles = [];
 var addedFile = "";
+var docFile;
 jQuery(function ($) {
 
     var docSize = 0;
   
-       $('#projedokumanfile').uploadify({
+       docFile=$('#projedokumanfile').uploadify({
         'preventCaching': false,
         'swf': "/js/uploadify/uploadify.swf",
         "uploader": '../FProjects/SaveProjectDocumentFile',
@@ -14,10 +15,10 @@ jQuery(function ($) {
         'buttonText': 'Dosya Seçin',
         'queueSizeLimit': 1,
         'multi': false,
-        'uploadLimit': 1,
+      //  'uploadLimit': 1,
         'onUploadSuccess': function (file, data, response) {
-            //$('#projedokumanfile').uploadify('disable', true);
-          //  $('#projedokumanfile-button').addClass('disabled');
+            $('#projedokumanfile').uploadify('disable', true);
+            $('#projedokumanfile-button').addClass('disabled');
             $("#hdndokumanfile").val(data);
             $('.uploadify-queue').css("display", "block");
             //$('.uploadify-queue').show();
@@ -111,6 +112,8 @@ function RemoveDocumentFile(e) {
     $(e).closest(".uploadify-queue-item").css("display", "none");
     //$('.uploadify-queue').css("display", "none");
     $('#projedokumanfile-button').removeClass('disabled');
+    docFile.uploadify('disable', false);
+  
   //  $('#projedokumanfile').uploadify('disable', false);
     $("#hdndokumanfile").val("");
     // $('#projedokumanfile').uploadify('clearQueue')
