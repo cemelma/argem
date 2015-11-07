@@ -8,22 +8,22 @@ jQuery(function ($) {
         'preventCaching': false,
         'swf': "/js/uploadify/uploadify.swf",
         "uploader": '../FProjects/SaveProjectDocumentFile',
-        'folder': '/Content/uploads',
+       // 'folder': '/Content/uploads',
         "cancelImg": "/js/uploadify/uploadify-cancel.png",
         "removeCompleted": false,
         'buttonText': 'Dosya Seçin',
-     //   'queueSizeLimit': 1,
+        'queueSizeLimit': 1,
         'multi': false,
-   //     'uploadLimit': 1,
+        'uploadLimit': 1,
         'onUploadSuccess': function (file, data, response) {
             //$('#projedokumanfile').uploadify('disable', true);
-            $('#projedokumanfile-button').addClass('disabled');
+          //  $('#projedokumanfile-button').addClass('disabled');
             $("#hdndokumanfile").val(data);
             $('.uploadify-queue').css("display", "block");
             //$('.uploadify-queue').show();
             $(".uploadify-queue-item").children(".cancel").children("a").attr("href", "#");
             $(".uploadify-queue-item").children(".cancel").children("a").remove();
-            $(".uploadify-queue-item").children(".cancel").append("<span onclick='RemoveDocumentFile();return false;' style='float:right;cursor:pointer;'>X</span>");
+            $(".uploadify-queue-item").children(".cancel").append("<span onclick='RemoveDocumentFile(this);return false;' style='float:right;cursor:pointer;'>X</span>");
           
             //  $(".uploadify-queue-item").children(".cancel").children("a").attr("onclick", "RemoveDocumentFile()");
         }
@@ -35,7 +35,7 @@ jQuery(function ($) {
         'preventCaching': false,
         'swf': "/js/uploadify/uploadify.swf",
         "uploader": '../FProjects/SaveProjectImages',
-        'folder': '/Content/uploads',
+       // 'folder': '//Content/uploads',
         "cancelImg": "/js/uploadify/uploadify-cancel.png",
         "removeCompleted": false,
         'buttonText': 'Dosya Seçin',
@@ -107,12 +107,15 @@ function RemoveImageFile(e) {
 
 
 
-function RemoveDocumentFile() {
-    $('.uploadify-queue').css("display", "none");
+function RemoveDocumentFile(e) {
+    $(e).closest(".uploadify-queue-item").css("display", "none");
+    //$('.uploadify-queue').css("display", "none");
     $('#projedokumanfile-button').removeClass('disabled');
   //  $('#projedokumanfile').uploadify('disable', false);
     $("#hdndokumanfile").val("");
-   // $('#projedokumanfile').uploadify('clearQueue')
+    // $('#projedokumanfile').uploadify('clearQueue')
+ 
+
 }
 
 function Success() {
