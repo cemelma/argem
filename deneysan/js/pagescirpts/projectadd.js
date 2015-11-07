@@ -12,11 +12,12 @@ jQuery(function ($) {
         "cancelImg": "/js/uploadify/uploadify-cancel.png",
         "removeCompleted": false,
         'buttonText': 'Dosya Seçin',
-        'queueSizeLimit': 1,
+     //   'queueSizeLimit': 1,
         'multi': false,
-        'uploadLimit': 1,
+   //     'uploadLimit': 1,
         'onUploadSuccess': function (file, data, response) {
-            $('#projedokumanfile').uploadify('disable', true);
+            //$('#projedokumanfile').uploadify('disable', true);
+            $('#projedokumanfile-button').addClass('disabled');
             $("#hdndokumanfile").val(data);
             $('.uploadify-queue').css("display", "block");
             //$('.uploadify-queue').show();
@@ -109,7 +110,9 @@ function RemoveImageFile(e) {
 function RemoveDocumentFile() {
     $('.uploadify-queue').css("display", "none");
     $('#projedokumanfile-button').removeClass('disabled');
+  //  $('#projedokumanfile').uploadify('disable', false);
     $("#hdndokumanfile").val("");
+   // $('#projedokumanfile').uploadify('clearQueue')
 }
 
 function Success() {

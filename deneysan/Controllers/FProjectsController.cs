@@ -204,8 +204,9 @@ namespace deneysan.Controllers
 
     public FileResult Download(string fileName)
     {
-   
-      return File(Server.MapPath("~/Content/projectfiles/"+fileName), "text/plain", "text/plain");
+      var mimeType = MimeMapping.GetMimeMapping(fileName);
+      return File(Server.MapPath("~/Content/projectfiles/" + fileName), mimeType);
+ 
     }
 
 

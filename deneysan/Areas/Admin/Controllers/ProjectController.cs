@@ -441,7 +441,7 @@ namespace deneysan.Areas.Admin.Controllers
 
 
     [HttpPost]
-    public JsonResult SaveNewProject(Projects model, string hdndokumanfile, string hdnimagefile)
+    public ActionResult SaveNewProject(Projects model, string hdndokumanfile, string hdnimagefile)
     {
       using (DeneysanContext db = new DeneysanContext())
       {
@@ -487,7 +487,7 @@ namespace deneysan.Areas.Admin.Controllers
         }
 
       }
-      return Json(true);
+      return View();
     }
 
     public ActionResult ProjectDetail(int id)
