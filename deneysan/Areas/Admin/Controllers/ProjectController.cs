@@ -400,7 +400,65 @@ namespace deneysan.Areas.Admin.Controllers
     }
 
 
-    
+    public FileResult DownloadProforma(int fileId)
+    {
+      if (System.IO.File.Exists(Server.MapPath("~/Content/pdf/" + fileId + ".pdf")))
+      {
+        return File(Server.MapPath("~/Content/pdf/" + fileId + ".pdf"), "application/pdf");
+      }
+      else
+        return null;
+     
+    }
+
+
+    public JsonResult SendProjectDetailPdfMail(int id)
+    {
+      bool proceesResult = false;
+      using (DeneysanContext db = new DeneysanContext())
+      {
+        Projects pr = db.Projects.Where(x => x.ProjeId == id).First();
+
+        var mset = MailManager.GetMailSettings();
+
+        try
+        {
+
+          using (var client = new SmtpClient(mset.ServerHost, mset.Port))
+          {
+            client.EnableSsl = false;
+            client.Credentials = new NetworkCredential(mset.ServerMail, mset.Password);
+            var mail = new MailMessage();
+            mail.From = new MailAddress(mset.ServerMail);
+            mail.To.Add(pr.Email);
+            mail.Subject = "Proje Başvurusu Proforma Bildirim Maili";
+            mail.IsBodyHtml = true;
+            mail.Body = "<h5><b>Başvuruda bulunduğunuz" + pr.ProjeAdi + " isimli proje için proforma, ekte bulunmaktadır.</b></h5>";
+
+            if (System.IO.File.Exists(Server.MapPath("~/Content/pdf/" + pr.ProjeId + ".pdf")))
+            {
+              var att = new Attachment(Server.MapPath("~/Content/pdf/" + pr.ProjeId + ".pdf"));
+              mail.Attachments.Add(att);
+              //return File(Server.MapPath("~/Content/pdf/" + fileId + ".pdf"), "application/pdf");
+            }
+            if (mail.To.Count > 0) client.Send(mail);
+          }
+
+          proceesResult = true;
+
+        }
+        catch(Exception ex)
+        {
+          proceesResult = false;
+        }
+        
+
+
+      }
+
+      return Json(proceesResult);
+
+    }
     public void DeleteProjectImage(int id)
     {
       using (DeneysanContext db = new DeneysanContext())

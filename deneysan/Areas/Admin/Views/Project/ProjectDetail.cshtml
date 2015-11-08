@@ -190,7 +190,19 @@
 
 
                             </fieldset>
+                            <fieldset>
+                                <legend>Proje Teklif Bilgileri</legend>
+                                <p>
+                                    @Html.Label("Proje Teklif Fiyatı")
+                                    @Html.TextBoxFor(m => m.Project.ProjeTeklifFiyati, new { @class = "textwidth50" })
 
+                                </p>
+                                <p>
+                                    @Html.Label("Proje Teklif Numarası")
+                                    @Html.TextBoxFor(m => m.Project.ProjeTeklifNumarasi, new { @class = "textwidth50"})
+
+                                </p>
+                            </fieldset>
 
                         </div>
                     </div>

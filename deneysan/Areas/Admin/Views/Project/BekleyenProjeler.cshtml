@@ -33,7 +33,7 @@
                     @*<th class="center widt5">Resim</th>*@
                     <th class="width20">Proje Adı</th>
                     <th class="center width50">Proje Özeti</th>
-                    <th class="center witdh5">Proforma</th>
+                   
                     <th class="center witdh5">Online</th>
                     <th class="center witdh5">İşlem</th>
                 </tr>
@@ -61,9 +61,7 @@
                             <input type="text" id="textitem_@item.ProjeId" value="" class="displaynone textwidth90" />
                         </td>
                        
-                        <td class="center">
-                            <img  src="~/Areas/Admin/Content/images/icons/16/image_add.png" class="cursorpointer" title="Teklif Gönder" onclick="SendPdf(@item.ProjeId)">
-                        </td>
+                        
 
                         <td class="center">
                             @if (item.Online == true)
@@ -78,6 +76,14 @@
                                 <img id="btn_update_@item.ProjeId" src="/Areas/Admin/Content/images/icons/16/edit.png" title="Güncelle" class="cursorpointer">
                             </a>
                             <img id="DeleteImage_@item.ProjeId" src="/Areas/Admin/Content/images/icons/16/delete.png" class="cursorpointer" title="Sil" onclick="DeleteRecord('/Project/DeleteRecord',@item.ProjeId)">
+
+                            <img src="~/Areas/Admin/Content/images/icons/technic.png" style="width:16px;height:16px;" class="cursorpointer" title="Proforma Oluştur" onclick="SendPdf(@item.ProjeId)">
+                            <a id="dwnloadFile" href="/Project/DownloadProforma?fileId=@item.ProjeId" target="_blank">
+                                <img src="~/Areas/Admin/Content/images/icons/lookup.png" style="width:16px;height:16px;" class="cursorpointer" title="Proformayı Aç">
+                            </a>
+                            
+                            <img src="~/Areas/Admin/Content/images/icons/mail.png" style="width:16px;height:16px;" class="cursorpointer" title="Proformayı Mail olarak Oluştur" onclick="SendProformaMail(@item.ProjeId)">
+
                         </td>
                     </tr>
                 }
@@ -123,10 +129,29 @@
                         dataType: "html",
                         success: function (data2, textStatus2, XMLHttpRequest2) {
                             console.log(data2);
+                            alert("Proforma Başarıyla oluşturuldu");
                         }
                     });
                 }
             });
         }
+
+
+
+    function SendProformaMail(id) {
+        $.ajax({
+            url: '@Url.Action("SendProjectDetailPdfMail", "Project")',
+            data: { id: id },
+            cache: false,
+            type: "POST",
+           
+            success: function (data, textStatus, XMLHttpRequest) {
+                alert("Proforma bilgilendirme maili başarıyla gönderildi");
+            },
+            error: function (data, textStatus, XMLHttpRequest) {
+                alert("Proforma bilgilendirme maili gönderimi sırasında hata oluştu.");
+            }
+        });
+    }
  
 </script>
