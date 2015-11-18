@@ -28,14 +28,11 @@
         <table id="tblcategory" class="table no-border tablesorter">
             <thead>
                 <tr>
-                    @*<th class="center width5">Sırala</th>*@
                     <th class="center width15">Proje Durumu</th>
-                    @*<th class="center widt5">Resim</th>*@
                     <th class="width20">Proje Adı</th>
                     <th class="center width50">Proje Özeti</th>
-                   
                     <th class="center witdh5">Online</th>
-                    <th class="center witdh5">İşlem</th>
+                    <th class="center witdh10" style="width: 14%;">İşlem</th>
                 </tr>
             </thead>
             <tbody id="item-list">
@@ -113,23 +110,34 @@
 <script>
         function SendPdf(id)
         {
-            $.ajax({
-                url: '@Url.Action("ProjectDetailPdf", "Project")',
-                data: { id: id },
-                cache: false,
-                type: "POST",
-                dataType: "html",
-                success: function (data, textStatus, XMLHttpRequest) {
-                    console.log(data);
+            $.msgbox("Proforma oluşturma işlemi başlasın mı? </br ></br > <span style='font-size:10px'>(Bu işlemin tamamlanması için bir kaç saniye bekleyiniz.)</span>", {
+                type: "confirm",
+                buttons: [
+                  { type: "submit", value: "Evet" },
+                  { type: "cancel", value: "Hayır" }
+
+                ]
+            }, function (result) {
+                if (result != false) {
                     $.ajax({
-                        url: '@Url.Action("SavePdf", "Project")',
-                        data: { mailTemplate: encodeURIComponent(data), id: id },
+                        url: '@Url.Action("ProjectDetailPdf", "Project")',
+                        data: { id: id },
                         cache: false,
                         type: "POST",
                         dataType: "html",
-                        success: function (data2, textStatus2, XMLHttpRequest2) {
-                            console.log(data2);
-                            alert("Proforma Başarıyla oluşturuldu");
+                        success: function (data, textStatus, XMLHttpRequest) {
+                            console.log(data);
+                            $.ajax({
+                                url: '@Url.Action("SavePdf", "Project")',
+                                data: { mailTemplate: encodeURIComponent(data), id: id },
+                                cache: false,
+                                type: "POST",
+                                dataType: "html",
+                                success: function (data2, textStatus2, XMLHttpRequest2) {
+                                    console.log(data2);
+                                    alert("Proforma Başarıyla oluşturuldu");
+                                }
+                            });
                         }
                     });
                 }
@@ -139,18 +147,31 @@
 
 
     function SendProformaMail(id) {
-        $.ajax({
-            url: '@Url.Action("SendProjectDetailPdfMail", "Project")',
-            data: { id: id },
-            cache: false,
-            type: "POST",
-           
-            success: function (data, textStatus, XMLHttpRequest) {
-                alert("Proforma bilgilendirme maili başarıyla gönderildi");
-            },
-            error: function (data, textStatus, XMLHttpRequest) {
-                alert("Proforma bilgilendirme maili gönderimi sırasında hata oluştu.");
+
+        $.msgbox("Mail Göndermek İstediğinize Emin misiniz?", {
+            type: "confirm",
+            buttons: [
+              { type: "submit", value: "Evet" },
+              { type: "cancel", value: "Hayır" }
+
+            ]
+        }, function (result) {
+            if (result != false) {
+                $.ajax({
+                    url: '@Url.Action("SendProjectDetailPdfMail", "Project")',
+                    data: { id: id },
+                    cache: false,
+                    type: "POST",
+
+                    success: function (data, textStatus, XMLHttpRequest) {
+                        alert("Proforma bilgilendirme maili başarıyla gönderildi");
+                    },
+                    error: function (data, textStatus, XMLHttpRequest) {
+                        alert("Proforma bilgilendirme maili gönderimi sırasında hata oluştu.");
+                    }
+                });
             }
+
         });
     }
  
